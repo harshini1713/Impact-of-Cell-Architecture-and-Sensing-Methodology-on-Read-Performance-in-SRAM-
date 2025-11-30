@@ -1,6 +1,9 @@
 *.lib './FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib' norm_2DFET
 .lib './FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib' Std_FET_22n_hp
 *.include './differential_sa.sp'
+*.hdl '../Jeffry/efet_comsol.va'
+*.lib '../Jeffry/RSA_22_JV.lib' RSA
+*.lib '../FEFET_LK_Model_ICDL_PSU/FEFET_LIB_UnEncrypted_22_mod.lib' fefet
 
 *Include DC operating point capacitances.
 .OPTIONS DCCAP = 1
@@ -17,10 +20,13 @@
 .OPTION CO=132
 *Output .meas results in a convenient format.
 .option measform=3
+*.OPTION MEASFILE=1 
 
 ******************************************************
 * GLOBAL SUPPLIES (Unified VDD)
-****************************************************** .param vdd_supply = 0.8
+******************************************************
+.param vdd_supply = 0.8
+
 Vvdd   VDD  0   'vdd_supply'
 Vvdd_array VDD_ARR 0  'vdd_supply'
 Vgnd   gnd  0   0
@@ -48,40 +54,30 @@ Xp Out In vdd vdd pfet1 W = '22n'
 Xn Out In vss vss nfet1 W ='44n'
 .ends
 
-* -----------------------------------------------------------
-* 4T Single-Ended SRAM Bitcell
-* Based on user provided figure:
-* - M2 (PMOS): Pulls Q up, Gate connected to QB
-* - M4 (PMOS) & M3 (NMOS): Inverter driving QB, Input is Q
-* - M5 (NMOS): Access Transistor connecting Q to BL
-* -----------------------------------------------------------
+******************************************************
+* 4T SRAM BITCELL DEFINITION
+* (Modified from 6T - PMOS removed)
+******************************************************
 .subckt SRAM wl bl blb vdd vss 
+* Note: 'vdd' pin is kept for instantiation compatibility
+* but is not used in the 4T loadless cell.
 
-* --- Inverter Stage (M4 and M3) driving QB ---
-* M4 PMOS (Source=VDD, Drain=QB, Gate=Q)
-X4 qb q vdd vdd pfet1 W='22n'
-* M3 NMOS (Source=VSS, Drain=QB, Gate=Q)
-X3 qb q vss vss nfet1 W='22n'
+* --- Driver Transistors (Pull-Down NMOS) ---
+* Driver 1: Pulls node q down if qb is high
+Xd1 q qb vss vss nfet1 W ='44n'
 
-* --- Storage Node Q Stage (M2) ---
-* M2 PMOS (Source=VDD, Drain=Q, Gate=QB)
-X2 q qb vdd vdd pfet1 W='22n'
-* Note: There is NO NMOS pull-down on Node Q in this 4T topology.
+* Driver 2: Pulls node qb down if q is high
+Xd2 qb q vss vss nfet1 W ='44n'
 
-* --- Access Transistor (M5) ---
-* M5 NMOS (Drain=Q, Source=BL, Gate=WL)
-* Body tied to VSS
-X5 q wl bl vss nfet1 W='33n'
+* --- Access Transistors ---
+X1a q wl bl vss nfet1 W ='33n'
+X1b qb wl blb vss nfet1 W ='33n'
 
-* --- Unused Port ---
-* BLB is not used in this single-ended cell, but kept for 
-* testbench compatibility. It is floating.
-
-* --- Initial Conditions ---
-* Initialize Q=0, QB=1
+* Initial Conditions
 .ic V(q) = 0
 .ic V(qb) = 0.8
 .ends
+******************************************************
 
 .subckt INVERTER_special In Out vdd vss
 Xp Out In vdd vdd pfet1 W = '100n'
@@ -121,18 +117,20 @@ Vhac1_RGT    HAC_WL_RGTx 0 0
 *****************************************************************************
 
 **** WL Driver for left subarray****
-Vwl_enbl_LFT    wl_enbl_LFT        0              0.8
-Xpu2_LFT    WL_LFT             wl_enbl_LFT    vdd_arr     vdd_arr     pfet1 W = '360n'
-Xpd2_LFT    WL_LFT             wl_enbl_LFT    gnd         gnd         nfet1 W = '180n'
+Vwl_enbl_LFT    wl_enbl_LFT         0              0.8
+Xpu2_LFT    WL_LFT              wl_enbl_LFT    vdd_arr     vdd_arr     pfet1 W = '360n'
+Xpd2_LFT    WL_LFT              wl_enbl_LFT    gnd         gnd         nfet1 W = '180n'
 ************************************
 
 **** WL Driver for right subarray****
-
-Vwl_enbl_RGT    wl_enbl_RGT        0       pwl    0 0.8 9.0n 0.8 9.1n 0 18n 0 18.1n 0.8
-Xpu2_RGT    WL_RGT wl_enbl_RGT vdd     vdd     pfet1 W = '360n'
-Xpd2_RGT    WL_RGT wl_enbl_RGT gnd     gnd     nfet1 W = '180n'
+Vwl_enbl_RGT    wl_enbl_RGT        0       pwl     0 0.8 9.0n 0.8 9.1n 0 18n 0 18.1n 0.8
+Xpu2_RGT    WL_RGT wl_enbl_RGT vdd      vdd     pfet1 W = '360n'
+Xpd2_RGT    WL_RGT wl_enbl_RGT gnd      gnd     nfet1 W = '180n'
 ************************************
 
+
+*Vbl BL 0 pwl 0 0.8 
+*Vblb BLB 0 pwl 0 0
 
 * ------------------------------------------------
 * Precharge / bitline driver logic
@@ -140,23 +138,23 @@ Xpd2_RGT    WL_RGT wl_enbl_RGT gnd     gnd     nfet1 W = '180n'
 **** BL Pre-charge left ****
 Vbl_pch_lft    bl_pch_lft   0 pwl 0 0   8.9n 0   8.91n 0.8   30n 0.8
 
-Xpch1_lft      BL_LFT  bl_pch_lft   vdd_arr  vdd_arr  pfet1  W = '360n'
-Xpch2_lft      BLB_LFT  bl_pch_lft  vdd_arr  vdd_arr  pfet1  W = '360n'
-Xpeq_lft       BL_LFT  bl_pch_lft   BLB_LFT  vdd_arr  pfet1  W = '360n'
+Xpch1_lft      BL_LFT   bl_pch_lft   vdd_arr  vdd_arr  pfet1  W = '360n'
+Xpch2_lft      BLB_LFT  bl_pch_lft   vdd_arr  vdd_arr  pfet1  W = '360n'
+Xpeq_lft       BL_LFT   bl_pch_lft   BLB_LFT  vdd_arr  pfet1  W = '360n'
 *****************************
 
 **** BL Pre-charge Right ****
 Vbl_pch_rgt    bl_pch_rgt   0 pwl 0 0   8.9n 0   8.91n 0.8   30n 0.8
 
-Xpch1_rgt      BL_RGT  bl_pch_rgt   vdd      vdd  pfet1  W = '360n'
-Xpch2_rgt      BLB_RGT  bl_pch_rgt  vdd      vdd  pfet1  W = '360n'
-Xpeq_rgt       BL_RGT  bl_pch_rgt   BLB_RGT  vdd  pfet1  W = '360n'
+Xpch1_rgt      BL_RGT   bl_pch_rgt   vdd      vdd  pfet1  W = '360n'
+Xpch2_rgt      BLB_RGT  bl_pch_rgt   vdd      vdd  pfet1  W = '360n'
+Xpeq_rgt       BL_RGT   bl_pch_rgt   BLB_RGT  vdd  pfet1  W = '360n'
 
 *****************************
 
 ****Sense Line Enable****
 Vse_lft    SE_LFT  0 0.8
-Vse_rgt    SE_RGT  0 pwl 0 0.8      8.9n 0.8      9.0n 0         30n 0
+Vse_rgt    SE_RGT  0 pwl 0 0.8      8.9n 0.8      9.0n 0          30n 0
 Xpd3_LFT    SL_LFT   SE_LFT   gnd       gnd      nfet1 W ='180n'
 Xpd3_RGT    SL_RGT   SE_RGT   gnd       gnd      nfet1 W ='180n'
 *************************

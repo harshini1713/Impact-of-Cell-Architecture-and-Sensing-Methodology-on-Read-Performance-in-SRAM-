@@ -1,0 +1,5 @@
+$DATA1 SOURCE='PrimeSim HSPICE' VERSION='V-2023.12-SP2-1 linux64' PARAM_COUNT=0
+$OPTION MEASFORM=3
+.TITLE '*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet'
+twl_rgt_init,twl_rgt_fin,twl_rgt,tbl_rgt_init,tbl_rgt_fin,tblb_rgt,tinv_rgt_init,tinv_rgt_fin,tinv_rgt,tnor_init,tnor_fin,wl2q_delay_rgt,e_read,temper,alter#
+ 9.082e-09, 9.250e-09, 1.681e-10, 9.261e-09, 1.026e-08, 1.003e-09, 9.630e-09, 9.767e-09, 1.378e-10, 9.740e-09, 9.811e-09, 7.289e-10, 3.734e-14,  25.0000,1
