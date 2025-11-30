@@ -6,7 +6,7 @@ This project systematically compares **read latency** and **read static noise ma
 
 ---
 
-## 📌 Objectives
+## Objectives
 
 ### **1. Comparative Evaluation of Memory Cell & Sense Amplifier Architectures**
 
