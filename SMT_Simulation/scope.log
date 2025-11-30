@@ -1,0 +1,7 @@
+ScopeSigMgr:loadpffile /home/min/a/hjaigane/SMT_Interm/SMT_Simulation/Outputs/SRAM_read_latency_differential_sa_8T.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 232x342+756+424
+Mdi:FullSize
+ScopeSigMgr:loadpffile /home/min/a/hjaigane/SMT_Interm/SMT_Simulation/Outputs/SRAM_read_latency_differential_sa_8T.tr0 1 openonly
+# PF:1
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_differential_sa_8T.tr0}}

@@ -1,0 +1,135 @@
+ ****** HSPICE -- Q-2020.03 linux64 (Mar  8 2020) ******                        
+  Copyright (c) 1986 - 2025 by Synopsys, Inc. All Rights Reserved.              
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: SRAM_read_latency_differential_sa_10T.sp                          
+  Command line options: /package/eda/synopsys/hspice-Q-2020.03/hspice/linux64/hspice -i SRAM_read_latency_differential_sa_10T.sp -o Outputs/
+  Start time: Sat Nov 29 22:30:26 2025
+ lic:  
+ lic: FLEXlm: SDK_12.6 
+ lic: USER:   hjaigane             HOSTNAME: ececomp2.ecn.purdue.edu 
+ lic: HOSTID: "ec2a720a9b5a"       PID:      1581296 
+ lic: Using FLEXlm license file: 
+ lic: 1718@marina.ecn.purdue.edu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 08-sep-2026/2025.06 
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 1718@marina.ecn.purdue.edu 
+ lic:   
+  
+  ******  Machine Information  ***********************************
+  CPU:
+  model name	: AMD EPYC 7513 32-Core Processor
+  cpu MHz	: 2595.162
+  
+  OS:
+  Linux version 4.18.0-553.78.1.el8_10.x86_64 (mockbuild@host-100-100-224-106) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-28.0.1) (GCC)) #1 SMP Tue Oct 7 02:24:16 PDT 2025
+
+  ******  Loading Files  *****************************************
+  Loading 'SRAM_read_latency_differential_sa_10T.sp '
+  Loading '/package/eda/synopsys/hspice-Q-2020.03/hspice/hspice.ini '
+  Loading './FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib '
+  Loading './FEFET_LK_Model_ICDL_PSU/./MOSFET_MODELS/22fet_hp.pm '
+  **warning** (SRAM_read_latency_differential_sa_10T.sp:32) Both nodes of element vgnd are connected together; Line ignored.
+  **info** (SRAM_read_latency_differential_sa_10T.sp:126) DC voltage reset to initial transient source value in source 0:vrbl_pch. new dc=0.0000D+00
+  **warning** (pmos:mpfet (./FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib:118)) Warning:  Acde = 0.259654 may be too small in BSIM4 model with w=3.6e-07 l=2.2e-08.
+  
+      
+ **info** set option symb=1 internally to help for convergence.
+ ******  Options set in the netlist  ****************************
+ co      = 131       dccap   = 1         ingold  = 1         
+ lis_new = 1         measform= 3         method  = trap      
+ post    = binary    runlvl  = 6         
+ search  = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/behave
+  
+  
+  ******  Summary of possible problems in netlist  ***************
+  Negative resistor :      0
+  Negative capacitor:      0
+  Negative inductor :      0
+  Unconnected node  :      0
+  Dangling terminal :      0
+  Source loop       :      0
+  
+  ******  Circuit Statistics  ************************************
+  Capacitors(total)   :       6
+     Coupling Capacitors :       0
+  Voltage Sources     :      15
+  MOSFETs             :      35
+  Total # of Nodes    :     171
+  Total # of Elements :      56
+
+
+  
+  ******  Analysis Details  **************************************
+  dcop: begin dcop, cpu clock= 7.12E-02                                         
+                                                  
+ **info** dc convergence successful at Newton-Raphson method 
+ ****** HSPICE -- Q-2020.03 linux64 (Mar  8 2020) ******                        
+ ******  
+ *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+  dcop: end dcop, cpu clock= 7.62E-02 peak memory=     418 mb tot_iter=      12 
+                                                  
+  Opening 'Outputs/SRAM_read_latency_differential_sa_10T.tr0' for output.
+  Waveform Format: POST=Binary, POST_VERSION=2013
+ 
+  Transient Beginning
+  100.00% Tran Time= 2.00000e-08s Estimated Time Left: 0:00:00        
+  Transient End
+ ******
+ *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+ 
+  ******  Measured values for the netlist  ***********************
+ trwl_rise= 9.1339e-09
+ trbl_disch= 9.4939e-09
+ read_delay= 3.6001e-10
+ rbl_val=   0.6366
+ rblb_val=   0.8146
+ diff_sig=   0.1779
+ q_noise= 4.1426e-04    at= 9.1047e-09
+             from= 9.0000e-09    to= 1.5000e-08
+
+          ***** job concluded
+ ******  
+ *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :   128
+  Actual Threads Count       :     1
+
+
+  ****** Statistics of Ignored Elements ******
+  Voltage Sources :       1
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.01           1          12
+  transient          0.02       20001         600         197 rev=        30
+  readin             0.02
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        418.67 megabytes
+           total cpu time            0.06 seconds
+           total elapsed time        0.10 seconds
+           job started at     22:30:26 11/29/2025
+           job ended   at     22:30:26 11/29/2025
+           job total runtime         0.10 seconds
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.03(s)

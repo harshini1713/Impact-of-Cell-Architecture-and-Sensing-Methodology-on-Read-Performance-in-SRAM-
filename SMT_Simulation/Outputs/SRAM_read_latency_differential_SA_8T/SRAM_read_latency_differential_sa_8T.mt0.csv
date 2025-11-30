@@ -1,0 +1,5 @@
+$DATA1 SOURCE='HSPICE' VERSION='Q-2020.03 linux64' PARAM_COUNT=0
+$OPTION MEASFORM=3
+.TITLE '*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet'
+twl_init,twl_fin,twl,tbl_init,tbl_fin,tbl,tsa_init,tsa_fin,tsa,wl2q_delay,bl_voltage,blb_voltage,delta_v,e_read,temper,alter#
+ 9.091e-09, 9.424e-09, 3.326e-10, 9.412e-09, 1.141e-08, 1.998e-09, 9.469e-09, 9.522e-09, 5.281e-11, 4.309e-10,   0.7473,   0.8161, 6.884e-02, 7.808e-14,  25.0000,1

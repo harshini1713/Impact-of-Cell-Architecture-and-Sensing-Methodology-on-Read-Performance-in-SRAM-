@@ -1,0 +1,127 @@
+
+
+***********************************************************************************
+* Library of baseline MOSFETs
+***********************************************************************************
+
+
+****************************************************************
+*** Acknowledgement :  http://ptm.asu.edu/
+*** Authors : Ahmedullah Aziz and Sumeet Kumar Gupta, Penn State
+****************************************************************
+
+
+.LIB Std_FET_45n
+
+.param w_fet=1u
+.param lg_fet=45n
+.param vdd_fet=1
+
+.subckt nfet d g s b l=lg_fet w=w_fet
+.include './MOSFET_MODELS/45fet_hp.pm'
+mnfet d g s b nmos L=l w=w
+.ends nfet
+
+.subckt pfet d g s b l=lg_fet w=w_fet
+.include './MOSFET_MODELS/45fet_hp.pm'
+mpfet d g s b pmos l=l w=w
+.ends pfet
+
+.ENDL Std_FET_45n
+**************************************************************************
+.LIB Std_FET_22n
+
+.param w_fet=1u
+.param lg_fet=22n
+.param vdd_fet=1
+
+.subckt nfet d g s b l=lg_fet w=w_fet
+.include './MOSFET_MODELS/22nfet_hp.pm'
+mnfet d g s b nmos L=l w=w
+.ends nfet
+
+.subckt pfet d g s b l=lg_fet w=w_fet
+.include './MOSFET_MODELS/22nfet_hp.pm'
+mpfet d g s b pmos l=l w=w
+.ends pfet
+
+.ENDL Std_FET_22n
+*****************************************************************************
+.LIB Std_FET_22n_org
+
+.param w_fet=1u
+.param lg_fet=22n
+.param vdd_fet=1
+
+.subckt nfet_org d g s b l=lg_fet w=w_fet
+.include './MOSFET_MODELS/22nfet_hp_org.pm'
+mnfet d g s b nmos L=l w=w
+.ends nfet_org
+
+.subckt pfet_org d g s b l=lg_fet w=w_fet
+.include './MOSFET_MODELS/22nfet_hp_org.pm'
+mpfet d g s b pmos l=l w=w
+.ends pfet_org
+
+.ENDL Std_FET_22n_org
+**********************************************************************************
+.LIB Std_FET_10n
+
+.param fin_height_fet=21n
+.param fin_width_fet=10n
+.param lg_fet=14n
+.param vdd_fet=0.75
+.param no_of_fins_fet=1
+
+.subckt nfet d g s b l=lg_fet nfin=no_of_fins_fet
+.include './MOSFET_MODELS/10nfet_hp.pm'
+mnfet d g s b nfet L=l NFIN=nfin
+.ends nfet
+
+.subckt pfet d g s b l=lg_fet nfin=no_of_fins_fet
+.include './MOSFET_MODELS/10pfet_hp.pm'
+mpfet d g s b pfet l=l NFIN=nfin
+.ends pfet
+
+.ENDL Std_FET_10n
+
+********************************************************************
+***capacitance customized for FEFET
+.LIB NP_2DFET_20nm
+
+.param w_fet=1u
+.param n_mod_par = 0.1
+
+.subckt nfet d g s b n_mod=n_mod_par w_par=w_fet 
+.hdl './MOSFET_MODELS/2D_FET.va'
+Xnfet d g s b efet_110 type_FET=1 type=1 n=n_mod W=w_par
+.ends nfet
+
+.subckt pfet d g s b n_mod=n_mod_par w_par=w_fet
+.hdl './MOSFET_MODELS/2D_FET.va'
+Xpfet d g s b efet_110 type_FET=1 type=-1 n=n_mod W=w_par
+.ends pfet
+
+.ENDL NP_2DFET_20nm
+
+***********************************************************************************
+***capacitance customized for FEFET
+.LIB norm_2DFET
+
+.param w_fet_n = 200n
+.param w_fet_p = 200n
+.param n_mod_par = 0.1
+
+.subckt nfet_norm d g s b w_par_n=w_fet_n
+.hdl './MOSFET_MODELS/2D_FET_norm.va'
+Xnfet d g s b efet_norm type_FET=1 type=1  W=w_par_n
+.ends nfet_norm
+
+.subckt pfet_norm d g s b w_par_p=w_fet_p
+.hdl './MOSFET_MODELS/2D_FET_norm.va'
+Xpfet d g s b efet_norm type_FET=1 type=-1 W=w_par_p
+.ends pfet_norm
+
+.ENDL norm_2DFET
+
+

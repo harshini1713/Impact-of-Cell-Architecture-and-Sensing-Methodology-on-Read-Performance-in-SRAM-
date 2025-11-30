@@ -1,0 +1,429 @@
+**********************
+* Library for FEFETs
+**********************
+
+***************************************************************
+*** Copyright @ 2015, ICDL, The Pennsylvania State University
+***
+*** The terms under which the software and associated 
+*** documentation are provided :
+***
+*** The Software is provided "as is", without warranty of any 
+*** kind, express or implied, including but not 
+*** limited to the warranties of merchantability, fitness for a 
+*** particular purpose and noninfringement. 
+*** 
+*** In no event shall the authors or copyright holders be liable 
+*** for any claim, damages or other liability, 
+*** whether in an action of contract, tort or otherwise, arising 
+*** from, out of or in connection with the 
+*** Software or the use or other dealings in the Software.
+***
+*** The Pennsylvania State University grants, free of charge, to 
+*** any users the right to modify, copy, and 
+*** redistribute the Software, both within the user's 
+*** organization and externally, subject to the following 
+*** restrictions:
+***
+*** 1. The users agree not to charge for the code itself but may 
+*** charge for additions, extensions, or support.
+***
+*** 2. In any product based on the Software, the users agree to 
+*** acknowledge the The Pennsylvania State University's 
+*** Integrated Circuits and Devices Lab (ICDL) Research Group 
+*** that developed the software. This acknowledgment shall 
+*** appear in the product documentation.
+***
+*** 3. The users agree to obey all U.S. Government restrictions 
+*** governing redistribution or export of the software.
+***
+*** 4. The users agree to reproduce any copyright notice which 
+*** appears on the software on any copy or modification of such 
+*** made available to others.
+***
+*** Agreed to by 
+*** Sumeet Kumar Gupta, The Pennsylvania State University
+*** October 28, 2015
+*************************************************************
+
+.LIB fefet
+
+.include './FE_PARAMS22.inc'
+
+.global fe_init_n fe_init_p fe_en_V fe_en_V2 fe_en_I
+
+.param T_quart_Pinit_FE='0.1*rho_FE/abs(alpha_FE)'
+.param pvdd_Pinit_FE=pvdd
+
+.param cref='0.025f'
+
+.param gwf='0.15'
+
+
+Vfe_init_n fe_init_n 0 pwl 0 0 'T_quart_Pinit_FE' '1*pvdd_Pinit_FE' '2*T_quart_Pinit_FE' 0
+Vfe_init_p fe_init_p 0 pwl 0 0 'T_quart_Pinit_FE' '-1*pvdd_Pinit_FE' '2*T_quart_Pinit_FE' 0 
+Vfe_en_V fe_en_V 0 pwl 0 0  '2*T_quart_Pinit_FE' 0 '3*T_quart_Pinit_FE' 1
+***
+Vfe_en_V2 fe_en_V2 0 pwl 0 0  '4*T_quart_Pinit_FE' 0 '5*T_quart_Pinit_FE' 1
+***
+Vfe_en_I fe_en_I 0 pwl 0 0  '2*T_quart_Pinit_FE' 0 '3.5*T_quart_Pinit_FE' 1 '4*T_quart_Pinit_FE' 1
+
+.param lambda1_FE='8e-11'
+.param lambda2_FE='8e-11'
+.param epsm1_FE=50
+.param epsm2_FE=50 
+.param lambda1_FE=8e-11 
+.param lambda2_FE=8e-11 
+.param Tm1_FE=10e-9 
+.param Tm2_FE=10e-9
+
+
+.subckt FEcap_LK n1 n2 Wz='toxfe_dev' Wy='w_dev' Wx='lg_dev' alpha='alpha_FE' beta='beta_FE' gamma='gamma_FE' rho='rho_FE' epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+
+* SUBCKT for Ferroelectric Capacitor
+* Wx and Wy form the cross-sectional area and Wz is along the direction of the dielectric thickness
+
+.param eps0='8.85e-12'
+
+.param Pc_par = 'sqrt((sqrt(9*beta*beta-20*alpha*gamma)-3*beta)/(10*gamma))'
+.param Ec_par = '(2*beta*Pc_par^3+4*gamma*Pc_par^5)'
+
+
+* Normalize E with respect to Ec and P with respect to Pc
+
+.param alpha_n = 'alpha*Pc_par/Ec_par'
+.param beta_n = 'beta*Pc_par*Pc_par*Pc_par/Ec_par'
+*.param gamma_n = 'gamma*Pc_par*Pc_par*Pc_par*Pc_par*Pc_par/Ec_par'
+.param gamma_n = '-1-alpha_n-beta_n'
+.param C0_par = 'eps0*Wx*Wy/Wz'
+.param R_rho = 'rho*Wz/(Wx*Wy)'
+
+.param screen_factor1 = 'exp(-Tm1/lambda1)'
+.param lambda1_eff = 'lambda1-Tm1*screen_factor1/(1-screen_factor1)'
+
+.param screen_factor2 = 'exp(-Tm2/lambda2)'
+.param lambda2_eff = 'lambda2-Tm2*screen_factor2/(1-screen_factor2)'
+
+.param Cdp_par1 = 'eps0*epsm1*Wx*Wy/lambda1_eff'
+.param Cdp_par2 = 'eps0*epsm2*Wx*Wy/lambda2_eff'
+
+*.param Cdp_par1 = 'eps0*epsm1*Wx*Wy/lambda1_eff'
+*.param Cdp_par2 = 'eps0*epsm2*Wx*Wy/lambda2_eff'
+
+
+****************************************************************************
+* LK module: Terminals: n1_FEcap, n2
+EEeff Eeff 0 VOL='V(n1_FEcap,n2_met)/(Wz*Ec_par)'
+EPn Pn_ 0 VOL='(1/alpha_n)*(V(Eeff)-V(fb))'
+Vpn_z Pn_ Pn 0
+Efb fb 0 VOL='beta_n*V(Pn)*V(Pn)*V(Pn)+gamma_n*V(Pn)*V(Pn)*V(Pn)*V(Pn)*V(Pn)'
+*****************************************************************************
+
+* FE cap modeled as charge
+CFE_LK n1_FEcap n2_met q='Wx*Wy*(Pc_par*V(Pn))'
+RFE_LK n1_FEr n2_FEr R_rho
+Vdum_LK n2_FEr n1_FEcap 0
+C0 n1_vac n2_met C0_par
+Vdum_vac n1_FEr n1_vac 0
+Vdum_tot n1_met n1_FEr 0
+
+*Modeling depolarization field
+Cdp_1 n1 n1_met Cdp_par1
+Cdp_2 n2 n2_met Cdp_par2
+
+*Edebug_q debug_q 0 VOL='Wx*Wy*(Pc_par*V(Pn))'
+*Ecdp debug_cdp 0 VOL= 'eps0*epsm1*Wx*Wy/lambda1_eff'
+*EVdp debug_Vdp 0 VOL='V(n1, n1_met)'
+*Eqcal debug_qcal 0 VOL='V(debug_cdp)*V(debug_Vdp)'
+
+* To obtain Eapp
+*EEapp Eapp 0 VOL='V(n1,n2)/(Wz*Ec_par)'
+*EEapp_FE Eapp_FE 0 VOL='V(n1_met,n2_met)/(Wz*Ec_par)'
+
+.ends
+
+.subckt nfefet d g s b sw l=lg_dev Tfe='Toxfe_dev' a_par='const_a' w_par='const_w'
+
+E_init_g init_g 0 VOL='V(fe_init_n)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb db 0 VOL='V(d)-V(b)'
+Egb_app gb_app 0 VOL='V(g)-V(b)'
+Esb sb 0 VOL='V(s)-V(b)'
+
+Egb gb 0 VOL='(1-V(en_V))*V(init_g)+V(en_V)*V(gb_app)'
+
+XFE gb gb_int FEcap_LK Wz='Tfe' Wy='a_par' Wx='l' alpha='alpha_FE' beta='beta_FE' gamma='gamma_FE' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+XM db_ gb_int_ sb_ ngnd_ nfet w='w_par' l='l'
+
+Vdummy_Ig gb_int gb_int_ 0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+Gswitch gb_int 0 VCR PWL(1) sw 0 0v,1e17 1v,0.1m
+
+G_g g 0 CUR='V(en_I)*I(Vdummy_Ig)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+.ends
+
+.subckt nfefetgw d g s b sw l=lg_dev Tfe='Toxfe_dev' a_par='const_a' w_par='const_w' lcap='lcap_par'
+
+Vdummy_Ig g g_ pwl 0 0 
+
+XFE g_ g_int FEcap_LK Wz='Tfe' Wy='a_par' Wx='lcap' alpha='alpha_FE' beta='beta_FE' gamma='gamma_FE' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+
+Vdummy_Ig1 g_int_ g_int pwl 0 0 '100p' '0' '200p' '0.15'
+
+XM d_ g_int_ s_ b_ nfet w='w_par' 
+ 
+Vdummy_Id d d_ 0
+Vdummy_Is s s_ 0
+Vdummy_Ib b b_ 0
+
+Gswitch g_int 0 VCR PWL(1) sw 0 0v,1e17 1v,0.1m
+
+.ends
+
+
+.subckt pfefet d g s b w=w_dev l=lg_dev Tfe='Toxfe_dev' 
+
+E_init_g init_g 0 VOL='V(fe_init_p)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb db 0 VOL='V(d)-V(b)'
+Egb_app gb_app 0 VOL='V(g)-V(b)'
+Esb sb 0 VOL='V(s)-V(b)'
+
+Egb gb 0 VOL='(1-V(en_V))*V(init_g)+V(en_V)*V(gb_app)'
+
+XFE gb gb_int FEcap_LK Wz='Tfe' Wy='w' Wx='l' alpha='alpha_FE' beta='beta_FE' gamma='gamma_FE' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+XM db_ gb_int_ sb_ ngnd_ pfet w='w' lg='l'
+
+Vdummy_Ig gb_int gb_int_ 0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+G_g g 0 CUR='V(en_I)*I(Vdummy_Ig)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+.ends
+
+.subckt pfefinfet d g s b nfin=no_of_fins_dev l=lg_dev Tfe='Toxfe_dev' 
+
+E_init_g init_g 0 VOL='V(fe_init_p)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb db 0 VOL='V(d)-V(b)'
+Egb_app gb_app 0 VOL='V(g)-V(b)'
+Esb sb 0 VOL='V(s)-V(b)'
+
+Egb gb 0 VOL='(1-V(en_V))*V(init_g)+V(en_V)*V(gb_app)'
+
+XFE gb gb_int FEcap_LK Wz='Tfe' Wy='nfin*(2*fin_height_fet+fin_width_fet)' Wx='l' alpha='alpha_FE' beta='beta_FE' gamma='gamma_FE' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+XM db_ gb_int_ sb_ ngnd_ pfet nfin='nfin' lg='l'
+
+Vdummy_Ig gb_int gb_int_ 0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+G_g g 0 CUR='V(en_I)*I(Vdummy_Ig)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+.ends
+
+.subckt nfefinfet d g s b nfin=no_of_fins_dev l=lg_dev Tfe='Toxfe_dev' wf_par='0.0'
+
+Vwf g g_ 'wf_par'
+
+E_init_g_ init_g_ 0 VOL='V(fe_init_n)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_V2 en_V2 0 VOL='V(fe_en_V2)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb_app db_app 0 VOL='V(d)-V(b)'
+Eg_b_app g_b_app 0 VOL='V(g_)-V(b)'
+Esb_app sb_app 0 VOL='V(s)-V(b)'
+
+Edb db 0 VOL='V(en_V)*V(db_app)'
+Esb sb 0 VOL='V(en_V)*V(sb_app)'
+Eg_b g_b 0 VOL='V(en_V2)*V(g_b_app)'
+
+
+XFE g_b g_b_int FEcap_LK Wz='Tfe' Wy='nfin*(2*fin_height_fet+1*fin_width_fet)' Wx='l' alpha='alpha_FE' beta='beta_FE' gamma='gamma_FE' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+XM db_ g_b_int_ sb_ ngnd_ nfet nfin='nfin' l='l'
+
+Vdummy_Ig_ g_b_int g_b_int_ 0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+G_g_ g_ 0 CUR='V(en_I)*I(Vdummy_Ig_)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+.ends
+
+.subckt DnFinFETs d g g1 s b sw a_par=const_a b_par=const_b l=lg_dev Tfe='Toxfe_dev' Tfe1='Toxfe_dev'
+
+Cpar g g1 'cref'
+
+E_init_g_ init_g_ 0 VOL='V(fe_init_n)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_V2 en_V2 0 VOL='V(fe_en_V2)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb_app db_app 0 VOL='V(d)-V(b)'
+Eg_b_app g_b_app 0 VOL='V(g)-V(b)'
+Eg1_b_app g1_b_app 0 VOL='V(g1)-V(b)'
+Esb_app sb_app 0 VOL='V(s)-V(b)'
+
+Edb db 0 VOL='V(en_V)*V(db_app)'
+Esb sb 0 VOL='V(en_V)*V(sb_app)'
+Egb gb 0 VOL='V(en_V2)*V(g_b_app)'
+Eg1b g1b 0 VOL='V(en_V)*V(g1_b_app)'
+
+
+XFE gb gb_int FEcap_LK Wz='Tfe' Wy='a_par' Wx='l/1' alpha='1*alpha_FE' beta='1*beta_FE' gamma='gamma_FE/1' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+
+XFE1 g1b g1b_int FEcap_LK Wz='Tfe1' Wy='b_par' Wx='l/1' alpha='1*alpha_FE' beta='1*beta_FE' gamma='gamma_FE/1' rho='rho_FE*1' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE/1' Tm2='Tm2_FE/1'
+
+*************
+XM db_ gb_int_ sb_ ngnd_ nfet w='a_par+b_par+33n' l='l'
+
+Vdummy_Ig gb_int gb_int_ 0.0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+Vdummy_Ig1 g1b_int gb_int_ 0
+
+Gswitch gb_int 0 VCR PWL(1) sw 0 0v,1e17 1v,0.1m
+
+G_g g 0 CUR='V(en_I)*I(Vdummy_Ig)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+G_g1 g1 0 CUR='V(en_I)*I(Vdummy_Ig1)'
+
+
+.ends
+
+.subckt DnFinFET d g g1 s b nfin=no_of_fins_dev nfina=no_of_fins_dev nfinb=no_of_fins_dev l=lg_dev Tfe='Toxfe_dev' Tfe1='Toxfe_dev'
+
+E_init_g_ init_g_ 0 VOL='V(fe_init_n)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_V2 en_V2 0 VOL='V(fe_en_V2)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb_app db_app 0 VOL='V(d)-V(b)'
+Eg_b_app g_b_app 0 VOL='V(g)-V(b)'
+Eg1_b_app g1_b_app 0 VOL='V(g1)-V(b)'
+Esb_app sb_app 0 VOL='V(s)-V(b)'
+
+Edb db 0 VOL='V(en_V)*V(db_app)'
+Esb sb 0 VOL='V(en_V)*V(sb_app)'
+Egb gb 0 VOL='V(en_V2)*V(g_b_app)'
+Eg1b g1b 0 VOL='V(en_V)*V(g1_b_app)'
+
+
+XFE gb gb_int FEcap_LK Wz='Tfe' Wy='nfina*(2*fin_height_fet+1*fin_width_fet)' Wx='l/1' alpha='1*alpha_FE' beta='1*beta_FE' gamma='gamma_FE/1' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+
+XFE1 g1b g1b_int FEcap_LK Wz='Tfe1' Wy='nfinb*(2*fin_height_fet+1*fin_width_fet)' Wx='l/1' alpha='1*alpha_FE' beta='1*beta_FE' gamma='gamma_FE/1' rho='rho_FE*1' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE/1' Tm2='Tm2_FE/1'
+
+*************
+
+XM db_ gb_int_ sb_ ngnd_ nfet nfin='nfin' l='1*l'
+
+
+Vdummy_Ig gb_int gb_int_ 0.0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+Vdummy_Ig1 g1b_int gb_int_ 0
+
+G_g g 0 CUR='V(en_I)*I(Vdummy_Ig)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+G_g1 g1 0 CUR='V(en_I)*I(Vdummy_Ig1)'
+
+
+.ends
+
+.subckt DpFinFET d g g1 s b nfin=no_of_fins_dev l=lg_dev Tfe='Toxfe_dev' Tfe1='Toxfe_dev'
+
+E_init_g init_g 0 VOL='V(fe_init_n)'
+E_en_V en_V 0 VOL='V(fe_en_V)'
+E_en_I en_I 0 VOL='V(fe_en_I)'
+
+Edb db 0 VOL='V(d)-V(b)'
+Egb_app gb_app 0 VOL='V(g)-V(b)'
+Esb sb 0 VOL='V(s)-V(b)'
+
+Egb gb 0 VOL='(1-V(en_V))*V(init_g)+V(en_V)*V(gb_app)'
+
+E_init_g1 init_g1 0 VOL='V(fe_init_n)'
+
+Eg1b_app g1b_app 0 VOL='V(g1)-V(b)'
+
+Eg1b g1b 0 VOL='(1-V(en_V))*V(init_g1)+V(en_V)*V(g1b_app)'
+
+XFE gb gb_int FEcap_LK Wz='Tfe' Wy='(4*fin_height_fet+2*fin_width_fet)' Wx='l/1' alpha='1*alpha_FE' beta='1*beta_FE' gamma='gamma_FE/1' rho='rho_FE' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE' Tm2='Tm2_FE'
+
+XFE1 g1b gb1_int FEcap_LK Wz='Tfe1' Wy='(2*fin_height_fet+1*fin_width_fet)' Wx='l/1' alpha='1*alpha_FE' beta='1*beta_FE' gamma='gamma_FE/1' rho='rho_FE*1' 
++ epsm1='epsm1_FE' epsm2='epsm2_FE' lambda1='lambda1_FE' lambda2='lambda2_FE' Tm1='Tm1_FE/1' Tm2='Tm2_FE/1'
+
+
+XM db_ gb_int_ sb_ ngnd_ pfet nfin='nfin' lg='1*l'
+
+
+Vdummy_Ig gb_int gb_int_ 0.0
+Vdummy_Id db db_ 0
+Vdummy_Is sb sb_ 0
+Vdummy_Ib 0 ngnd_ 0
+
+Vdummy_Ig1 gb1_int gb_int_ 0
+
+
+G_g g 0 CUR='V(en_I)*I(Vdummy_Ig)'
+G_b b 0 CUR='V(en_I)*I(Vdummy_Ib)'
+G_s s 0 CUR='V(en_I)*I(Vdummy_Is)'
+G_d d 0 CUR='V(en_I)*I(Vdummy_Id)'
+
+G_g1 g1 0 CUR='V(en_I)*I(Vdummy_Ig1)'
+
+
+.ends
+
+
+.endl fefet
+
+
+

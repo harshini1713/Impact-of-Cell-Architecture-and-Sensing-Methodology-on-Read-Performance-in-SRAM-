@@ -1,0 +1,51 @@
+* "simulator" "PrimeSim HSPICE"
+* "version" "V-2023.12-SP2-1 linux64"
+* "format" "HSP"
+* "rundate" "02:51:15 11/27/2025 "
+* "netlist" "SRAM_read_latency_Single_Ended.sp "
+* "runtitle" "*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ bl_lft =   0.8000        
++ bl_pch_lft =   0.            
++ bl_pch_rgt =   0.            
++ bl_rgt =   0.8000        
++ blb_lft =   0.8000        
++ blb_rgt =   0.8000        
++ hac_wl_lftx =   0.            
++ hac_wl_rgtx =   0.            
++ har_bl_lftx =   0.8000        
++ har_bl_rgtx =   0.8000        
++ har_blb_lftx =   0.8000        
++ har_blb_rgtx =   0.8000        
++ out =   0.8000        
++ se_lft =   0.8000        
++ se_rgt =   0.8000        
++ sl_lft = 1.371e-09       
++ sl_rft =   0.            
++ sl_rgt = 1.371e-09       
++ vdd =   0.8000        
++ vdd_arr =   0.8000        
++ vss =   0.            
++ wl_enbl_lft =   0.8000        
++ wl_enbl_rgt =   0.8000        
++ wl_lft = 3.694e-09       
++ wl_rgt = 3.694e-09       
++ xsram1.q = 1.462e-14       
++ xsram1.qb =   0.8000        
++ xsram_har_lft.q = 3.726e-12       
++ xsram_har_lft.qb =   0.8000        
++ xsram_hac_lft.q = 3.726e-12       
++ xsram_hac_lft.qb =   0.8000        
++ xsram2.q = 1.462e-14       
++ xsram2.qb =   0.8000        
++ xsram_har_rgt.q = 3.726e-12       
++ xsram_har_rgt.qb =   0.8000        
++ xsram_hac_rgt.q = 3.726e-12       
++ xsram_hac_rgt.qb =   0.8000        
++ xnor1.net1 =   0.8000        
+***   END: Saved Operating Point ***                     

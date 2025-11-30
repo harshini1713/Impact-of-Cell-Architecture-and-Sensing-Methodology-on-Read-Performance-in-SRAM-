@@ -1,0 +1,151 @@
+proc Graph:LoadGraph2 {filename {graph {}}} {
+
+    global tk_status
+    global GrXY Graph sigs
+    set Graph(result) Passed
+
+    # Display feedback to user
+    set tk_status {Open Graph: Creating Graph}
+    # update idletasks
+
+    set graphpath [string trimright $filename graph.def]
+    if {$graph=={}} {
+        # Load needed plotfiles if absent
+
+        set pfwf [Graph:GetSigs3 $graphpath {{{{/home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_SNM_Single_Ended.sw0 v(v1)}} {} {} 0} {{{/home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_SNM_Single_Ended.sw0 v(v2)}} {} {} 0}}]
+
+        set pf [lindex $pfwf 0 ]
+
+        set wf [lindex $pfwf 1 ]
+
+        set missingWfIdx [lindex $pfwf 2 ]
+
+        set sigs(wfIdx,load) [lindex $pfwf 3 ]
+
+        # Create the new graph
+        set graph [GrXY:NewGraphConfig  {-type xy -font {-family {OF Helvetica} -size 10} -fg {white} -bg {black} -actfg {red} 	        -graphbg {black} -legend right -legendaxisdisplay 1 -grid no 		-sighi legend -maxforfb 10000 		-minwidth 2 -minheight 2 -gridtype - -gridlinestyle {-  } 		-gridlinewidth 1 -gridlinecolor white -subgridlinestyle {-  }                 -subgridlinewidth 1 -subgridlinecolor white -griddashlength 1                 -siglinewidth 1 -rainbow 0 -ptreduct 10000 -sigcolors {green magenta cyan yellow #FF8000 #89ffbb #edbfff #0080FF #ffd016 #ff74bd} -prezoom {0.000000e+00 0.000000e+00 1.000000e+00 0.000000e+00} -signames {leaf} -anatracehi 2 -digitracehi 1 -digisnap 0 -busdisp hex} {1524} {650}]
+    } else {
+        # Load needed plotfiles if absent
+
+        set pfwf [Graph:GetSigs3 $graphpath {{{{/home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_SNM_Single_Ended.sw0 v(v1)}} {} {} 0} {{{/home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_SNM_Single_Ended.sw0 v(v2)}} {} {} 0}} 0]
+
+        set pf [lindex $pfwf 0 ]
+
+        set wf [lindex $pfwf 1 ]
+
+        set missingWfIdx [lindex $pfwf 2 ]
+
+        set sigs(wfIdx,load) [lindex $pfwf 3 ]
+
+        # Reconfigure graph
+        Graph:Select $graph
+        Graph itemselect all add
+        Graph delsignal selected
+        Graph:ClearItems
+        $graph config -type xy -font {-family {OF Helvetica} -size 10} -fg {white} -bg {black} -actfg {red} 	        -graphbg {black} -legend right -legendaxisdisplay 1 -grid no 		-sighi legend -maxforfb 10000 		-minwidth 2 -minheight 2 -gridtype - -gridlinestyle {-  } 		-gridlinewidth 1 -gridlinecolor white -subgridlinestyle {-  }                 -subgridlinewidth 1 -subgridlinecolor white -griddashlength 1                 -siglinewidth 1 -rainbow 0 -ptreduct 10000 -sigcolors {green magenta cyan yellow #FF8000 #89ffbb #edbfff #0080FF #ffd016 #ff74bd} -prezoom {0.000000e+00 0.000000e+00 1.000000e+00 0.000000e+00} -signames {leaf} -anatracehi 2 -digitracehi 1 -digisnap 0 -busdisp hex
+    }
+    global $graph
+    set canvas [set $graph]
+    # Set graph colormap
+    set Graph($graph,cmap) 1
+
+    # Configure Graph Title
+    $graph itemconfig GraphTitle -text {Read SNM 6T SRAM Single Ended}
+
+    # Set draw item counter
+    set Graph($graph,items,total) 1
+
+    # Restore Mem Label variables
+    # Add the signals to the graph with appropriate attributes
+    set configs {-region {0 0} -yview {real(y) real(x)} -xview {real(x) real(y)} -rainbow {0 0} -rbcolors {{} {}} -fill {magenta green} -linestyle {- -} -width {1 1} -symbol {{} {}} -symwidth {10 10} -bar {{} {}} -barwidth {0 0} -baseline {0.0 0.0} -stipple {{} {}} -label {v(v1) v(v2)} -xaxis {1 0} -yaxis {1 0} -tracehi {2 2} -bus {{} {}} -segdisp {y y} -monotonicdisp {0 0} -index {1 0}}
+
+    if {$missingWfIdx != ""} {
+        set configs [Graph:ResetSigConfigs1 $configs $missingWfIdx]
+    }
+
+    set allsigs [eval $graph addsignal {$wf} $configs]
+
+    set s_i 0
+    foreach s $allsigs {
+        set w_i [lindex $sigs(wfIdx,load) $s_i]
+        # use to update axis
+        set sigs($s,savedIdx,load) $w_i
+        # use to update measurement
+        set sigs($w_i,signal,load) $s
+        incr s_i
+    }
+
+    # Configure the axes
+    set numSavedSigs 2
+    set ax(0,xaxis,saved) AxisX(1)
+    set ax(0,yaxis,saved) AxisY(0,1)
+    set ax(1,xaxis,saved) AxisX(0)
+    set ax(1,yaxis,saved) AxisY(0,0)
+    set ax(AxisX(0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {1 1} -subticks {0} -label {(V)} -digiview {} -lock {no} -slider {no} -range {0.0 0.8 exact} -unitscale {auto}}
+    set ax(AxisY(0,1),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(V)} -digiview {} -lock {no} -slider {no} -range {0.0 0.8 exact} -unitscale {auto}}
+    set ax(AxisX(1),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {1 1} -subticks {0} -label {VOLTS(V)} -digiview {} -lock {no} -slider {no} -range {0.0 0.8} -unitscale {auto}}
+    set ax(AxisY(0,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {VOLTS(V)} -digiview {} -lock {no} -slider {no} -range {0.0 0.8 exact} -unitscale {auto}}
+
+    set ax(list) ""
+    set items [$canvas find all]
+    foreach item $items {
+        set type [$canvas type $item]
+        if {($type == "xaxis")||($type == "yaxis")||($type == "polaraxis")} {
+            if {$type == "polaraxis"} {
+                set axis [lindex [lindex [$canvas itemconfig $item -tags] 4] 0]
+            } else {
+                set axis [lindex [lindex [$canvas itemconfig $item -tags] 4] 1]
+            }
+            lappend ax(list) $axis
+        }
+    }
+
+    foreach axis $ax(list) {
+        set siglist [Graph:GetAllSigsOnAxis1 $axis $allsigs]
+
+        set sig [lindex $siglist 0]
+        set savedIdx $sigs($sig,savedIdx,load)
+        if {[string match AxisX* $axis]} {
+            set savedXAxis $ax($savedIdx,xaxis,saved)
+            set savedXAxisConfigs $ax($savedXAxis,configs,saved)
+            eval $graph axisconfig $axis $savedXAxisConfigs
+        } elseif {[string match AxisY* $axis]} {
+            set savedYAxis $ax($savedIdx,yaxis,saved)
+            set savedYAxisConfigs $ax($savedYAxis,configs,saved)
+            eval $graph axisconfig $axis $savedYAxisConfigs
+        } else {
+            set savedAxisConfigs $ax($axis,configs,saved)
+            eval $graph axisconfig $axis $savedAxisConfigs
+        }
+    }
+
+
+    # Add non-managed items to graph
+    global tmp
+    catch {unset tmp}
+    set items {rectangle rectangle}
+    set coords {{513.0 75.0 684.0 227.0} {1150.0 318.0 1273.0 442.0}}
+    set configs {{ -activedash {} -activefill {} -activeoutline {} -activeoutlinestipple {} -activestipple {} -activewidth {1.0} -dash {} -dashoffset {0} -disableddash {} -disabledfill {} -disabledoutline {} -disabledoutlinestipple {} -disabledstipple {} -disabledwidth {0} -fill {} -offset {0,0} -outline {pink} -outlineoffset {0,0} -outlinestipple {} -state {} -stipple {} -tags {GrDraw0_rectangle} -width {1.0} -printadj {0} -linestyle {-} -dashlength {10}} { -activedash {} -activefill {} -activeoutline {} -activeoutlinestipple {} -activestipple {} -activewidth {1.0} -dash {} -dashoffset {0} -disableddash {} -disabledfill {} -disabledoutline {} -disabledoutlinestipple {} -disabledstipple {} -disabledwidth {0} -fill {} -offset {0,0} -outline {pink} -outlineoffset {0,0} -outlinestipple {} -state {} -stipple {} -tags {GrDraw1_rectangle} -width {1.0} -printadj {0} -linestyle {-} -dashlength {10}}}
+    Graph:AddItems $items $coords $configs $graph
+
+    # Restore Measurements
+    set sigs(Signal1,idx,saved) 0
+    set sigs(Signal0,idx,saved) 1
+
+    # Restore Markers
+
+
+    # Restore Mem Label positions
+    $graph raise MemLbl
+
+    # Clear feedback
+    set tk_status {}
+    #update idletasks
+}
+
+# Call the new procedure
+if [catch {AimBusy "Graph:LoadGraph2 $Graph(filename) $graph" . watch} msg] {
+    AimMessage $msg error "Cant Read Graph" modal
+}
+# Delete the new procedure
+rename Graph:LoadGraph2 {}

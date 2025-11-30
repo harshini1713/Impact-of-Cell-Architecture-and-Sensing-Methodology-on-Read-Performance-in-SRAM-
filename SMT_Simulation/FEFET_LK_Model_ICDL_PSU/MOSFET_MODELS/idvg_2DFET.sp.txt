@@ -1,0 +1,43 @@
+
+*.lib './MOSFET_LIB.lib' Std_FET_7n
+
+.hdl efet_ol_new.va
+*.include params_sc_2.inc
+
+.options post=1
+.OPTIONS DCCAP = 1
+.OPTION POST
+.option lis_new
+.option ingold
+.OPTION method=BDF
+.OPTION runlvl=6
+.OPTION CO=132
+.option measform=3
+.OPTION MEASFILE=1 
+
+.param pvdd = 0.7
+.param Vd_par='pvdd'
+.param Vg_par='pvdd'
+.param Vs_par=0
+
+.param n = 0.1;
+.param type = 1;
+.param type_FET = 1
+
+
+VCC Drain 0 Vd_par 
+VG1 Gate 0 Vg_par
+VS Source 0 Vs_par
+
+
+XEFET Drain Gate Source strain dEg pres efet_110 type_FET=1 type=1 n=0.1 
+*TOP=TTOP_par er_g=er_g_par er_s=er_s_par er_d=er_d_par Vgs0_e_2d=Vgs0_e_2d_par Nimp=Nimp_PAR Dtrap=Dtrap_par Rc_par=Rc_val 
+
+
+.dc Vg_par 0 'pvdd' 0.01 
+
+
+.end
+
+
+

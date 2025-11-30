@@ -1,0 +1,5 @@
+$DATA1 SOURCE='PrimeSim HSPICE' VERSION='V-2023.12-SP2-1 linux64' PARAM_COUNT=0
+$OPTION MEASFORM=3
+.TITLE '*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet'
+max_diff,read_snm,temper,alter#
+   1.6000,   1.1314,  25.0000,1

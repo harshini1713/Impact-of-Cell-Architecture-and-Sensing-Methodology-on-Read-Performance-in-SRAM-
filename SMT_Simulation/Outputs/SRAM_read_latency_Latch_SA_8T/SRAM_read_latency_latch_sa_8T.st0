@@ -1,0 +1,60 @@
+****** HSPICE -- Q-2020.03 linux64 (Mar  8 2020) ******
+Input File: SRAM_read_latency_latch_sa_8T.sp
+lic:
+lic: FLEXlm: SDK_12.6
+lic: USER:   hjaigane             HOSTNAME: ececomp2.ecn.purdue.edu
+lic: HOSTID: "ec2a720a9b5a"       PID:      1917189
+lic: Using FLEXlm license file:
+lic: 1718@marina.ecn.purdue.edu
+lic: Checkout 1 hspice
+lic: License/Maintenance for hspice will expire on 08-sep-2026/2025.06
+lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 1718@marina.ecn.purdue.edu
+lic:
+
+ init: begin read circuit files, cpu clock= 4.75E-02
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/ad
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/behave
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/bjt
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/burr_brn
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/comlinear
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/dio
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/fet
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/lin_tech
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/pci
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/signet
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/ti
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/tline
+       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/xilinx
+       option dccap =     1.00
+       option post
+       option lis_new
+       option ingold
+       option method = trap
+       option runlvl =     6.00
+       option co =     132.
+       option measform =     3.00
+ init: end read circuit files, cpu clock= 6.29E-02 peak memory=     417 mb
+ init: begin check errors, cpu clock= 6.29E-02
+  **warning**  No DC path to ground from node        0:
+ init: end check errors, cpu clock= 6.72E-02 peak memory=     419 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 6.72E-02
+       establish matrix -- done, cpu clock= 6.73E-02 peak memory=     419 mb
+       re-order matrix -- done, cpu clock= 6.77E-02 peak memory=     419 mb
+ init: end setup matrix, cpu clock= 7.15E-02 peak memory=     419 mb
+ dcop: begin dcop, cpu clock= 7.16E-02
+ dcop: end dcop, cpu clock= 7.63E-02 peak memory=     419 mb tot_iter=      10
+ output: Outputs/SRAM_read_latency_latch_sa_8T.mt0
+ sweep: tran tran0    begin, stop_t=  3.00E-08 #sweeps=**** cpu clock= 7.95E-02
+ tran: time= 3.0624E-09 tot_iter=      16 conv_iter=       8 cpu clock= 8.00E-02
+ tran: time= 6.0624E-09 tot_iter=      20 conv_iter=      10 cpu clock= 8.00E-02
+ tran: time= 9.0000E-09 tot_iter=      81 conv_iter=      32 cpu clock= 8.17E-02
+ tran: time= 1.2132E-08 tot_iter=     367 conv_iter=     130 cpu clock= 9.05E-02
+ tran: time= 1.5119E-08 tot_iter=     382 conv_iter=     136 cpu clock= 9.08E-02
+ tran: time= 1.8000E-08 tot_iter=     388 conv_iter=     139 cpu clock= 9.10E-02
+ tran: time= 2.1546E-08 tot_iter=     609 conv_iter=     217 cpu clock= 9.71E-02
+ tran: time= 2.4439E-08 tot_iter=     613 conv_iter=     219 cpu clock= 9.72E-02
+ tran: time= 2.7439E-08 tot_iter=     617 conv_iter=     221 cpu clock= 9.73E-02
+ tran: time= 3.0000E-08 tot_iter=     621 conv_iter=     223 cpu clock= 9.75E-02
+ sweep: tran tran0    end, cpu clock= 9.75E-02 peak memory=     419 mb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

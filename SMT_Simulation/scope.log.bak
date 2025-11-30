@@ -1,0 +1,4120 @@
+Mdi:ArrangeIcons
+wm geometry . 1536x774+0+31
+Mdi:ArrangeIcons
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_SNM_Single_Ended.sw0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 232x342+768+444
+pf:read PF:1 v(v1)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+Mdi:FullSize
+wm geometry .sigmgr 376x204+1133+175
+wm geometry .sigmgr 376x204+1123+214
+wm geometry .sigmgr 376x204+1120+253
+wm geometry .sigmgr 376x204+1120+298
+wm geometry .sigmgr 376x204+1120+333
+wm geometry .sigmgr 376x204+1120+374
+wm geometry .sigmgr 376x204+1120+418
+wm geometry .sigmgr 376x204+1124+460
+wm geometry .sigmgr 376x204+1124+498
+wm geometry .sigmgr 376x204+1133+539
+wm geometry .sigmgr 376x204+1137+582
+wm geometry .sigmgr 376x204+1150+630
+wm geometry .sigmgr 376x204+1150+665
+wm geometry .sigmgr 376x204+1150+699
+wm geometry .sigmgr 376x204+1150+715
+wm geometry .sigmgr 376x204+1150+724
+wm geometry .sigmgr 376x204+1150+726
+wm geometry .sigmgr._PF:1 232x342+748+467
+wm geometry .sigmgr._PF:1 232x342+708+499
+wm geometry .sigmgr._PF:1 232x342+676+528
+wm geometry .sigmgr._PF:1 232x342+656+553
+wm geometry .sigmgr._PF:1 232x342+633+583
+wm geometry .sigmgr._PF:1 232x342+616+612
+wm geometry .sigmgr._PF:1 232x342+597+646
+wm geometry .sigmgr._PF:1 232x342+589+667
+wm geometry .sigmgr._PF:1 232x342+588+686
+wm geometry .sigmgr._PF:1 232x342+588+700
+wm geometry .sigmgr._PF:1 232x342+588+716
+wm geometry .sigmgr._PF:1 232x342+586+730
+wm geometry .sigmgr._PF:1 232x342+593+742
+wm geometry .sigmgr._PF:1 232x342+599+753
+wm geometry .sigmgr._PF:1 232x342+610+767
+wm geometry .sigmgr._PF:1 232x342+624+775
+wm geometry .sigmgr._PF:1 232x342+628+776
+wm geometry .sigmgr._PF:1 232x342+632+777
+wm geometry .sigmgr._PF:1 232x342+637+780
+wm geometry .sigmgr._PF:1 232x342+644+781
+wm geometry .sigmgr._PF:1 232x342+651+784
+wm geometry .sigmgr._PF:1 232x342+667+792
+wm geometry .sigmgr._PF:1 232x342+680+799
+wm geometry .sigmgr._PF:1 232x342+684+802
+wm geometry .sigmgr._PF:1 232x342+685+803
+wm geometry .sigmgr 376x204+1117+739
+wm geometry .sigmgr 376x204+1100+750
+wm geometry .sigmgr 376x204+1088+761
+wm geometry .sigmgr 376x204+1082+769
+wm geometry .sigmgr 376x204+1079+782
+wm geometry .sigmgr 376x204+1079+790
+wm geometry .sigmgr 376x204+1079+797
+wm geometry .sigmgr 376x204+1081+804
+wm geometry .sigmgr 376x204+1082+807
+wm geometry .sigmgr 376x204+1085+808
+wm geometry .sigmgr 376x204+1098+812
+wm geometry .sigmgr 376x204+1107+812
+wm geometry .sigmgr 376x204+1117+813
+wm geometry .sigmgr 376x204+1128+813
+wm geometry .sigmgr 376x204+1133+813
+wm geometry .sigmgr 376x204+1137+813
+wm geometry .sigmgr 376x204+1138+813
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 add
+# Signal0
+wm geometry .sigmgr._PF:1 232x342+671+756
+wm geometry .sigmgr._PF:1 232x342+662+725
+wm geometry .sigmgr._PF:1 232x342+662+688
+wm geometry .sigmgr._PF:1 232x342+667+645
+wm geometry .sigmgr._PF:1 232x342+682+604
+wm geometry .sigmgr._PF:1 232x342+693+570
+wm geometry .sigmgr._PF:1 232x342+711+530
+wm geometry .sigmgr._PF:1 232x342+717+508
+wm geometry .sigmgr._PF:1 232x342+720+503
+wm geometry .sigmgr._PF:1 232x342+720+499
+wm geometry .sigmgr._PF:1 232x342+721+497
+Graph:DSel
+pf:read PF:1 v(v2)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+wm geometry .sigmgr._PF:1 232x342+699+516
+wm geometry .sigmgr._PF:1 232x342+692+529
+wm geometry .sigmgr._PF:1 232x342+683+548
+wm geometry .sigmgr._PF:1 232x342+676+575
+wm geometry .sigmgr._PF:1 232x342+675+600
+wm geometry .sigmgr._PF:1 232x342+675+624
+wm geometry .sigmgr._PF:1 232x342+681+652
+wm geometry .sigmgr._PF:1 232x342+690+673
+wm geometry .sigmgr._PF:1 232x342+698+691
+wm geometry .sigmgr._PF:1 232x342+702+712
+wm geometry .sigmgr._PF:1 232x342+707+723
+wm geometry .sigmgr._PF:1 232x342+717+739
+wm geometry .sigmgr._PF:1 232x342+723+749
+wm geometry .sigmgr._PF:1 232x342+728+759
+wm geometry .sigmgr._PF:1 232x342+733+766
+wm geometry .sigmgr._PF:1 232x342+738+771
+wm geometry .sigmgr._PF:1 232x342+739+773
+wm geometry .sigmgr._PF:1 232x342+744+775
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -xview real(x)
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -gridvis {yes yes yes}
+Graph config -grid yes
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -gridvis {no no no}
+Graph config -grid no
+Graph itemselect Signal1 add
+# Signal1
+Mdi:Tile
+Mdi:Tile
+Graph:DSel
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -yview real(x)
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -xview real(y)
+Graph:DSel
+Graph:DSel
+Graph axisconfig {AxisY(1,0) AxisX(1)} -range {{0.040553211941932 0.94133833306958} {0.13271 0.18447}}
+Graph:DSel
+Graph axisconfig {AxisY(1,0) AxisX(1)} -range {{0.99277502674474 0.015487291009781} {0.1353026 0.1390297}}
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -yview real(y)
+Mdi:FullSize
+Mdi:Move -431 91
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -xview real(y) -yview real(x)
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 rem
+Graph delsignal Signal1
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -yview db(y)
+Mdi:NormalSize
+Mdi:FullSize
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -yview real(x)
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -yview real(y)
+Mdi:Move -439 99
+Mdi:Move -452 99
+Mdi:Move -370 102
+Mdi:Move 13 12
+Mdi:Move -444 106
+Mdi:Move -363 6
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -yview real(x)
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -xview real(y)
+Mdi:NormalSize
+wm geometry .sigmgr._PF:1 232x342+684+769
+wm geometry .sigmgr._PF:1 232x342+646+760
+wm geometry .sigmgr._PF:1 232x342+618+748
+wm geometry .sigmgr._PF:1 232x342+596+732
+wm geometry .sigmgr._PF:1 232x342+578+717
+wm geometry .sigmgr._PF:1 232x342+564+689
+wm geometry .sigmgr._PF:1 232x342+547+639
+wm geometry .sigmgr._PF:1 232x342+543+587
+wm geometry .sigmgr._PF:1 232x342+535+513
+wm geometry .sigmgr._PF:1 232x342+535+441
+wm geometry .sigmgr._PF:1 232x342+541+357
+wm geometry .sigmgr._PF:1 232x342+567+278
+wm geometry .sigmgr._PF:1 232x342+584+230
+wm geometry .sigmgr._PF:1 232x342+596+192
+wm geometry .sigmgr._PF:1 232x342+600+180
+wm geometry .sigmgr._PF:1 232x342+600+175
+wm geometry .sigmgr._PF:1 232x342+600+180
+wm geometry .sigmgr._PF:1 232x342+600+189
+wm geometry .sigmgr._PF:1 232x342+600+193
+wm geometry .sigmgr._PF:1 232x342+600+199
+wm geometry .sigmgr._PF:1 232x342+600+210
+wm geometry .sigmgr._PF:1 232x342+600+216
+wm geometry .sigmgr._PF:1 232x342+600+217
+wm geometry .sigmgr._PF:1 232x342+601+220
+wm geometry .sigmgr._PF:1 232x342+601+222
+Graph:DSel
+pf:read PF:1 v(v2)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+wm geometry .sigmgr._PF:1 232x342+574+234
+wm geometry .sigmgr._PF:1 232x342+559+253
+wm geometry .sigmgr._PF:1 232x342+533+292
+wm geometry .sigmgr._PF:1 232x342+515+332
+wm geometry .sigmgr._PF:1 232x342+507+370
+wm geometry .sigmgr._PF:1 232x342+500+411
+wm geometry .sigmgr._PF:1 232x342+492+453
+wm geometry .sigmgr._PF:1 232x342+487+500
+wm geometry .sigmgr._PF:1 232x342+485+547
+wm geometry .sigmgr._PF:1 232x342+483+593
+wm geometry .sigmgr._PF:1 232x342+481+636
+wm geometry .sigmgr._PF:1 232x342+488+660
+wm geometry .sigmgr._PF:1 232x342+490+663
+wm geometry .sigmgr._PF:1 232x342+500+661
+wm geometry .sigmgr._PF:1 232x342+507+661
+wm geometry .sigmgr._PF:1 232x342+521+659
+wm geometry .sigmgr._PF:1 232x342+528+659
+wm geometry .sigmgr._PF:1 232x342+533+662
+wm geometry .sigmgr._PF:1 232x342+536+664
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+Graph sigconfig Signal2 -region 0 -rgnindex 1
+wm geometry .sigmgr._PF:1 232x342+535+692
+wm geometry .sigmgr._PF:1 232x342+535+713
+wm geometry .sigmgr._PF:1 232x342+542+730
+wm geometry .sigmgr._PF:1 232x342+550+749
+wm geometry .sigmgr._PF:1 232x342+560+764
+wm geometry .sigmgr._PF:1 232x342+567+773
+wm geometry .sigmgr._PF:1 232x342+577+782
+wm geometry .sigmgr._PF:1 232x342+586+787
+wm geometry .sigmgr._PF:1 232x342+596+794
+wm geometry .sigmgr._PF:1 232x342+604+797
+wm geometry .sigmgr._PF:1 232x342+615+798
+wm geometry .sigmgr._PF:1 232x342+631+798
+wm geometry .sigmgr._PF:1 232x342+671+796
+wm geometry .sigmgr._PF:1 232x342+691+792
+wm geometry .sigmgr._PF:1 232x342+700+792
+wm geometry .sigmgr._PF:1 232x342+704+791
+wm geometry .sigmgr._PF:1 232x342+706+790
+Mdi:FullSize
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 rem
+Graph delsignal Signal0
+Mdi:NormalSize
+GrXY:NewGraph
+# Graph1
+Graph:Select Graph0
+Mdi:Tile
+Graph:Select Graph0
+GrXY:NewGraph
+# Graph2
+wm geometry .sigmgr._PF:1 232x342+680+760
+wm geometry .sigmgr._PF:1 232x342+667+733
+wm geometry .sigmgr._PF:1 232x342+657+703
+wm geometry .sigmgr._PF:1 232x342+655+659
+wm geometry .sigmgr._PF:1 232x342+662+612
+wm geometry .sigmgr._PF:1 232x342+679+570
+wm geometry .sigmgr._PF:1 232x342+685+548
+wm geometry .sigmgr._PF:1 232x342+695+526
+wm geometry .sigmgr._PF:1 232x342+702+513
+wm geometry .sigmgr._PF:1 232x342+713+482
+wm geometry .sigmgr._PF:1 232x342+719+482
+wm geometry .sigmgr._PF:1 232x342+721+482
+wm geometry .sigmgr._PF:1 232x342+722+470
+wm geometry .sigmgr._PF:1 232x342+722+468
+pf:read PF:1 v(v2)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+wm geometry .sigmgr._PF:1 232x342+689+490
+wm geometry .sigmgr._PF:1 232x342+665+518
+wm geometry .sigmgr._PF:1 232x342+640+564
+wm geometry .sigmgr._PF:1 232x342+632+605
+wm geometry .sigmgr._PF:1 232x342+629+656
+wm geometry .sigmgr._PF:1 232x342+632+696
+wm geometry .sigmgr._PF:1 232x342+636+720
+wm geometry .sigmgr._PF:1 232x342+640+745
+wm geometry .sigmgr._PF:1 232x342+641+757
+wm geometry .sigmgr._PF:1 232x342+641+759
+wm geometry .sigmgr._PF:1 232x342+641+760
+wm geometry .sigmgr._PF:1 232x342+633+750
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -xview real(y)
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -yview real(x)
+wm geometry .sigmgr._PF:1 232x342+609+741
+wm geometry .sigmgr._PF:1 232x342+589+729
+wm geometry .sigmgr._PF:1 232x342+574+716
+wm geometry .sigmgr._PF:1 232x342+561+687
+wm geometry .sigmgr._PF:1 232x342+561+655
+wm geometry .sigmgr._PF:1 232x342+565+625
+wm geometry .sigmgr._PF:1 232x342+586+587
+wm geometry .sigmgr._PF:1 232x342+608+550
+wm geometry .sigmgr._PF:1 232x342+614+536
+wm geometry .sigmgr._PF:1 232x342+618+529
+wm geometry .sigmgr._PF:1 232x342+621+513
+wm geometry .sigmgr._PF:1 232x342+625+513
+wm geometry .sigmgr._PF:1 232x342+630+513
+wm geometry .sigmgr._PF:1 232x342+637+494
+wm geometry .sigmgr._PF:1 232x342+643+482
+wm geometry .sigmgr._PF:1 232x342+646+482
+Graph:DSel
+pf:read PF:1 v(v1)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+wm geometry .sigmgr._PF:1 232x342+607+536
+wm geometry .sigmgr._PF:1 232x342+603+560
+wm geometry .sigmgr._PF:1 232x342+610+614
+wm geometry .sigmgr._PF:1 232x342+619+656
+wm geometry .sigmgr._PF:1 232x342+633+701
+wm geometry .sigmgr._PF:1 232x342+641+756
+wm geometry .sigmgr._PF:1 232x342+645+778
+wm geometry .sigmgr._PF:1 232x342+647+793
+wm geometry .sigmgr._PF:1 232x342+647+800
+wm geometry .sigmgr._PF:1 232x342+647+804
+wm geometry .sigmgr._PF:1 232x342+648+806
+wm geometry .sigmgr._PF:1 232x342+642+800
+Mdi:FullSize
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+Graph itemselect Signal0 add
+# Signal0
+Graph sigconfig Signal0 -region 1 -rgnindex 1
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+Graph itemselect AxisY(0,0) add
+# AxisY(0,0)
+Graph itemselect AxisY(0,0) add
+Graph:DSel
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect AxisY(0,0) add
+# AxisY(0,0)
+Graph:DSel
+Graph axisconfig AxisY(0,1) -rang {0.0 0.8 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph axisconfig AxisY(0,0) -rang {0.0 0.84 exact} -gridvis n -label VOLTS(V) -scale lin -unitscale auto
+Graph axisconfig AxisY(0,0) -rang {0.0 0.8 exact} -gridvis n -label VOLTS(V) -scale lin -unitscale auto
+Graph axisconfig AxisX(0) -rang {0.0 0.8 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph:DSel
+Graph:Select Graph2
+Graph:DSel
+.frame1.mdi.mdi3.work.graph2 save -file /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/Read_SNM_Single_Ended_6T.png -format png  -x 0 -y 0 -w 1524 -h 650 -colormode color
+Graph:Select Graph2
+Graph itemcreate rectangle 478.0 50.0 620.0 209.0 -tags draw0_rectangle -fill {} -outline pink -width 0 -linestyle - -dashlen 10
+# GrDraw0_rectangle
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 5 8
+Graph:ManipulateItem move selSet 6 10
+Graph:ManipulateItem move selSet 2 8
+Graph:ManipulateItem move selSet 2 5
+Graph:ManipulateItem move selSet 3 2
+Graph:ManipulateItem move selSet 1 5
+Graph:ManipulateItem move selSet 5 0
+Graph:ManipulateItem move selSet 6 0
+Graph:ManipulateItem move selSet 4 -1
+Graph:ManipulateItem move selSet 2 -1
+Graph:ManipulateItem move selSet 5 -2
+Graph:ManipulateItem move selSet 3 -1
+Graph:ManipulateItem move selSet 3 -2
+Graph:ManipulateItem move selSet 1 -2
+Graph:ManipulateItem move selSet 2 -2
+Graph:ManipulateItem move selSet 3 -1
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet 5 -1
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 2 0
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:ManipulateItem coords GrDraw0_rectangle 544.0 75.0 684.0 234.0
+Graph:ManipulateItem coords GrDraw0_rectangle 546.0 75.0 684.0 230.0
+Graph:ManipulateItem coords GrDraw0_rectangle 547.0 75.0 684.0 225.0
+Graph:ManipulateItem coords GrDraw0_rectangle 548.0 75.0 684.0 222.0
+Graph:ManipulateItem coords GrDraw0_rectangle 550.0 75.0 684.0 218.0
+Graph:ManipulateItem coords GrDraw0_rectangle 551.0 75.0 684.0 218.0
+Graph:ManipulateItem coords GrDraw0_rectangle 552.0 75.0 684.0 217.0
+Graph:ManipulateItem coords GrDraw0_rectangle 552.0 75.0 684.0 216.0
+Graph:ManipulateItem coords GrDraw0_rectangle 554.0 75.0 684.0 216.0
+Graph:ManipulateItem coords GrDraw0_rectangle 556.0 75.0 684.0 212.0
+Graph:ManipulateItem coords GrDraw0_rectangle 544.0 75.0 684.0 209.0
+Graph:ManipulateItem coords GrDraw0_rectangle 529.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 524.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 521.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 518.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 516.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 513.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 512.0 75.0 684.0 203.0
+Graph:ManipulateItem coords GrDraw0_rectangle 509.0 75.0 684.0 206.0
+Graph:ManipulateItem coords GrDraw0_rectangle 509.0 75.0 684.0 208.0
+Graph:ManipulateItem coords GrDraw0_rectangle 509.0 75.0 684.0 209.0
+Graph:ManipulateItem coords GrDraw0_rectangle 511.0 75.0 684.0 212.0
+Graph:ManipulateItem coords GrDraw0_rectangle 512.0 75.0 684.0 213.0
+Graph:ManipulateItem coords GrDraw0_rectangle 513.0 75.0 684.0 213.0
+Graph:ManipulateItem coords GrDraw0_rectangle 514.0 75.0 684.0 215.0
+Graph:ManipulateItem coords GrDraw0_rectangle 517.0 75.0 684.0 216.0
+Graph:ManipulateItem coords GrDraw0_rectangle 520.0 75.0 684.0 218.0
+Graph:ManipulateItem coords GrDraw0_rectangle 522.0 75.0 684.0 219.0
+Graph:ManipulateItem coords GrDraw0_rectangle 524.0 75.0 684.0 220.0
+Graph:ManipulateItem coords GrDraw0_rectangle 525.0 75.0 684.0 222.0
+Graph:ManipulateItem coords GrDraw0_rectangle 527.0 75.0 684.0 223.0
+Graph:ManipulateItem coords GrDraw0_rectangle 528.0 75.0 684.0 224.0
+Graph:ManipulateItem coords GrDraw0_rectangle 528.0 75.0 684.0 225.0
+Graph:ManipulateItem coords GrDraw0_rectangle 527.0 75.0 684.0 226.0
+Graph:ManipulateItem coords GrDraw0_rectangle 525.0 75.0 684.0 228.0
+Graph:ManipulateItem coords GrDraw0_rectangle 524.0 75.0 684.0 229.0
+Graph:ManipulateItem coords GrDraw0_rectangle 521.0 75.0 684.0 229.0
+Graph:ManipulateItem coords GrDraw0_rectangle 518.0 75.0 684.0 227.0
+Graph:ManipulateItem coords GrDraw0_rectangle 515.0 75.0 684.0 227.0
+Graph:ManipulateItem coords GrDraw0_rectangle 513.0 75.0 684.0 227.0
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph itemcreate rectangle 1108.0 313.0 1248.0 436.0 -tags draw1_rectangle -fill {} -outline pink -width 0 -linestyle - -dashlen 10
+# GrDraw1_rectangle
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw1_rectangle
+Graph:ManipulateItem move selSet 6 3
+Graph:ManipulateItem move selSet 4 4
+Graph:ManipulateItem move selSet 4 6
+Graph:ManipulateItem move selSet 3 6
+Graph:ManipulateItem move selSet 3 4
+Graph:ManipulateItem move selSet 3 3
+Graph:ManipulateItem move selSet 0 1
+Graph:ManipulateItem move selSet 6 0
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 2 -1
+Graph:ManipulateItem move selSet 5 -1
+Graph:ManipulateItem move selSet 3 -1
+Graph:ManipulateItem move selSet 4 -3
+Graph:ManipulateItem move selSet 3 -2
+Graph:ManipulateItem move selSet 5 -2
+Graph:ManipulateItem move selSet 3 -1
+Graph:ManipulateItem move selSet 3 -3
+Graph:ManipulateItem move selSet 3 -1
+Graph:ManipulateItem move selSet 0 -3
+Graph:ManipulateItem move selSet 0 -1
+Graph:ManipulateItem move selSet -1 -2
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -2 0
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -1 1
+Graph:ManipulateItem move selSet 0 1
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 322.0 1303.0 445.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 322.0 1305.0 445.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 321.0 1306.0 445.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1308.0 445.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1310.0 445.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1311.0 445.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1299.0 449.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1289.0 449.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1288.0 449.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1286.0 449.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1288.0 447.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1288.0 440.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1287.0 440.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1285.0 443.0
+Graph:ManipulateItem coords GrDraw1_rectangle 1162.0 320.0 1285.0 444.0
+Graph:ManipulateItem move selSet -3 -1
+Graph:ManipulateItem move selSet -3 0
+Graph:ManipulateItem move selSet -3 0
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -1 -1
+Graph:ManipulateItem move selSet -1 0
+Graph:DSel
+Graph:DSel
+Graph:SaveGraph Graph2 /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/Read_SNM_6T_SingleEnded 0
+Graph:DSel
+Graph:Select Graph2
+Graph:DSel
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:Select Graph2
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph itemcreate freehand 515.0 140.0 521.0 140.0 535.0 141.0 556.0 141.0 566.0 141.0 580.0 141.0 585.0 140.0 590.0 140.0 592.0 140.0 598.0 139.0 606.0 139.0 621.0 137.0 639.0 134.0 649.0 132.0 658.0 131.0 667.0 131.0 672.0 129.0 678.0 129.0 680.0 129.0 682.0 133.0 682.0 137.0 682.0 140.0 682.0 144.0 678.0 144.0 673.0 141.0 663.0 134.0 643.0 118.0 632.0 108.0 618.0 97.0 599.0 82.0 577.0 69.0 556.0 59.0 532.0 43.0 502.0 23.0 482.0 13.0 459.0 3.0 449.0 2.0 447.0 2.0 441.0 10.0 432.0 36.0 423.0 69.0 415.0 118.0 413.0 145.0 413.0 170.0 414.0 187.0 421.0 202.0 421.0 203.0 422.0 204.0 425.0 204.0 -tags draw2_freehand -width 0 -fill pink -arrow none -capstyle butt -linestyle - -stipple {} -arrowshape {8 10 3} -smooth 0
+# GrDraw2_line
+Graph:ManipulateItem dtag GrDraw0_rectangle selSet
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw2_line
+Graph:ManipulateItem delete GrDraw2_line
+Graph:ManipulateItem dtag GrDraw2_line selSet
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph itemcreate line 515.0 157.0 687.0 157.0 -tags draw3_line -width 0 -fill pink -arrow none -capstyle butt -linestyle - -stipple {} -arrowshape {8 10 3} -smooth 0
+# GrDraw3_line
+Graph:ManipulateItem dtag GrDraw0_rectangle selSet
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw3_line
+Graph:ManipulateItem move selSet -7 0
+Graph:ManipulateItem move selSet -5 2
+Graph:ManipulateItem move selSet 4 0
+Graph:ManipulateItem move selSet 4 0
+Graph:ManipulateItem move selSet 1 -1
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -5 -1
+Graph:ManipulateItem move selSet 0 -1
+Graph:ManipulateItem move selSet 2 -1
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet -2 0
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -1 17
+Graph:ManipulateItem move selSet 6 28
+Graph:ManipulateItem move selSet 3 26
+Graph:ManipulateItem move selSet 3 26
+Graph:ManipulateItem move selSet 2 19
+Graph:ManipulateItem move selSet 3 23
+Graph:ManipulateItem move selSet 4 22
+Graph:ManipulateItem move selSet 5 13
+Graph:ManipulateItem move selSet 4 18
+Graph:ManipulateItem move selSet 6 25
+Graph:ManipulateItem move selSet 5 27
+Graph:ManipulateItem move selSet 4 22
+Graph:ManipulateItem move selSet 6 19
+Graph:ManipulateItem move selSet 0 17
+Graph:ManipulateItem move selSet 0 18
+Graph:ManipulateItem move selSet 1 10
+Graph:ManipulateItem move selSet 2 9
+Graph:ManipulateItem move selSet -2 7
+Graph:ManipulateItem move selSet -3 4
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -1 2
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -1 1
+Graph:ManipulateItem move selSet -5 2
+Graph:ManipulateItem move selSet -5 5
+Graph:ManipulateItem move selSet -4 4
+Graph:ManipulateItem move selSet -2 6
+Graph:ManipulateItem move selSet -3 4
+Graph:ManipulateItem move selSet -1 1
+Graph:ManipulateItem move selSet 0 3
+Graph:ManipulateItem move selSet -1 2
+Graph:ManipulateItem move selSet -2 2
+Graph:ManipulateItem move selSet 0 1
+Graph:ManipulateItem move selSet -23 0
+Graph:ManipulateItem move selSet -55 0
+Graph:ManipulateItem move selSet -54 0
+Graph:ManipulateItem move selSet -38 7
+Graph:ManipulateItem move selSet -41 6
+Graph:ManipulateItem move selSet -43 5
+Graph:ManipulateItem move selSet -22 1
+Graph:ManipulateItem move selSet -21 0
+Graph:ManipulateItem move selSet -25 6
+Graph:ManipulateItem move selSet -25 2
+Graph:ManipulateItem move selSet -8 2
+Graph:ManipulateItem move selSet -7 0
+Graph:ManipulateItem move selSet -10 0
+Graph:ManipulateItem move selSet -12 0
+Graph:ManipulateItem move selSet -10 0
+Graph:ManipulateItem move selSet -13 -2
+Graph:ManipulateItem move selSet -7 -3
+Graph:ManipulateItem move selSet -5 -1
+Graph:ManipulateItem move selSet -4 -2
+Graph:ManipulateItem move selSet -2 0
+Graph:ManipulateItem move selSet 0 -1
+Graph:ManipulateItem move selSet -1 -2
+Graph:ManipulateItem move selSet 0 -3
+Graph:ManipulateItem move selSet 0 -3
+Graph:ManipulateItem move selSet 0 -2
+Graph:ManipulateItem move selSet 0 -2
+Graph:ManipulateItem move selSet -3 -4
+Graph:ManipulateItem move selSet -5 -5
+Graph:ManipulateItem move selSet -2 -4
+Graph:ManipulateItem move selSet -1 -1
+Graph:ManipulateItem move selSet 0 -3
+Graph:ManipulateItem move selSet 0 -7
+Graph:ManipulateItem move selSet 3 -5
+Graph:ManipulateItem move selSet 13 -9
+Graph:ManipulateItem move selSet 10 -7
+Graph:ManipulateItem move selSet 13 -5
+Graph:ManipulateItem move selSet 18 -7
+Graph:ManipulateItem move selSet 5 -3
+Graph:ManipulateItem move selSet 6 -1
+Graph:ManipulateItem move selSet 2 -2
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 3 -1
+Graph:ManipulateItem move selSet 4 -1
+Graph:ManipulateItem move selSet -7 20
+Graph:ManipulateItem move selSet -13 19
+Graph:ManipulateItem move selSet -6 8
+Graph:ManipulateItem move selSet -7 8
+Graph:ManipulateItem move selSet -7 6
+Graph:ManipulateItem move selSet -4 2
+Graph:ManipulateItem move selSet -5 2
+Graph:ManipulateItem move selSet -6 4
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -2 0
+Graph:ManipulateItem move selSet 4 -1
+Graph:ManipulateItem move selSet 3 -2
+Graph:ManipulateItem move selSet 1 -1
+Graph:ManipulateItem move selSet 1 -1
+Graph:ManipulateItem move selSet 2 -1
+Graph:ManipulateItem move selSet 2 -3
+Graph:ManipulateItem move selSet 1 -1
+Graph:ManipulateItem move selSet 2 0
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw3_line
+Graph:Select Graph2
+Graph:ManipulateItem move selSet 22 -14
+Graph:ManipulateItem move selSet 29 -14
+Graph:ManipulateItem move selSet 25 -15
+Graph:ManipulateItem move selSet 22 -16
+Graph:ManipulateItem move selSet 16 -18
+Graph:ManipulateItem move selSet 19 -16
+Graph:ManipulateItem move selSet 23 -28
+Graph:ManipulateItem move selSet 12 -17
+Graph:ManipulateItem move selSet 3 -7
+Graph:ManipulateItem move selSet 4 -7
+Graph:ManipulateItem move selSet 19 -17
+Graph:ManipulateItem move selSet 11 -22
+Graph:ManipulateItem move selSet 20 -38
+Graph:ManipulateItem move selSet 30 -58
+Graph:ManipulateItem move selSet 26 -45
+Graph:ManipulateItem move selSet 23 -33
+Graph:ManipulateItem move selSet 19 -20
+Graph:ManipulateItem move selSet 10 -14
+Graph:ManipulateItem move selSet 14 -13
+Graph:ManipulateItem move selSet 15 -12
+Graph:ManipulateItem move selSet 8 -6
+Graph:ManipulateItem move selSet 4 -3
+Graph:ManipulateItem move selSet 3 -2
+Graph:ManipulateItem move selSet 1 -1
+Graph:ManipulateItem move selSet 3 -2
+Graph:ManipulateItem move selSet 5 0
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet 1 -1
+Graph:ManipulateItem move selSet -2 4
+Graph:ManipulateItem move selSet -4 2
+Graph:ManipulateItem move selSet -1 2
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -3 2
+Graph:ManipulateItem move selSet -3 0
+Graph:ManipulateItem move selSet 2 2
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 5 0
+Graph:ManipulateItem move selSet 1 1
+Graph:ManipulateItem move selSet -2 0
+Graph:ManipulateItem move selSet 0 1
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -7 16
+Graph:ManipulateItem move selSet -15 29
+Graph:ManipulateItem move selSet -10 23
+Graph:ManipulateItem move selSet -10 30
+Graph:ManipulateItem move selSet -15 37
+Graph:ManipulateItem move selSet -15 31
+Graph:ManipulateItem move selSet -17 29
+Graph:ManipulateItem move selSet -22 30
+Graph:ManipulateItem move selSet -6 12
+Graph:ManipulateItem move selSet -7 12
+Graph:ManipulateItem move selSet -5 7
+Graph:ManipulateItem move selSet -5 5
+Graph:ManipulateItem move selSet -2 3
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet 16 -6
+Graph:ManipulateItem move selSet 28 -8
+Graph:ManipulateItem move selSet 21 -5
+Graph:ManipulateItem move selSet 27 -9
+Graph:ManipulateItem move selSet 20 -6
+Graph:ManipulateItem move selSet 24 -11
+Graph:ManipulateItem move selSet 25 -11
+Graph:ManipulateItem move selSet 19 -11
+Graph:ManipulateItem move selSet 25 -17
+Graph:ManipulateItem move selSet 13 -7
+Graph:ManipulateItem move selSet 7 -8
+Graph:ManipulateItem move selSet 3 -5
+Graph:ManipulateItem move selSet 5 -11
+Graph:ManipulateItem move selSet 0 -5
+Graph:ManipulateItem move selSet 0 -7
+Graph:ManipulateItem move selSet -3 -5
+Graph:ManipulateItem move selSet -1 -3
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -2 -2
+Graph:ManipulateItem move selSet -7 -2
+Graph:ManipulateItem move selSet -7 0
+Graph:ManipulateItem move selSet -4 -3
+Graph:ManipulateItem move selSet -4 -3
+Graph:ManipulateItem move selSet -6 -1
+Graph:ManipulateItem move selSet -6 -3
+Graph:ManipulateItem move selSet -3 0
+Graph:ManipulateItem move selSet -6 -1
+Graph:ManipulateItem move selSet -7 0
+Graph:ManipulateItem move selSet -9 -2
+Graph:ManipulateItem move selSet -5 -1
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -3 0
+Graph:ManipulateItem move selSet -4 -1
+Graph:ManipulateItem move selSet -8 0
+Graph:ManipulateItem move selSet -8 0
+Graph:ManipulateItem move selSet -5 0
+Graph:ManipulateItem move selSet -3 0
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -11 16
+Graph:ManipulateItem move selSet -18 29
+Graph:ManipulateItem move selSet -21 30
+Graph:ManipulateItem move selSet -16 14
+Graph:ManipulateItem move selSet -5 6
+Graph:ManipulateItem move selSet -2 6
+Graph:ManipulateItem move selSet -4 8
+Graph:ManipulateItem move selSet -1 3
+Graph:ManipulateItem move selSet -3 4
+Graph:ManipulateItem move selSet -3 2
+Graph:ManipulateItem move selSet -4 4
+Graph:ManipulateItem delete GrDraw3_line
+Graph:ManipulateItem dtag GrDraw3_line selSet
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+GrMeas:Threshold Graph2 Signal0 {} either xyrangeVisible
+# M:0
+Graph:DSel
+GrMeas:Select Graph2 M:0 1
+GrMeas:HideResult Graph2 M:0 1
+GrMeas:ShowResult Graph2 M:0 9
+GrMeas:Select Graph2 M:0 9 1
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph2 M:0 9
+GrMeas:HideResult Graph2 M:0 9
+GrMeas:ShowResult Graph2 M:0 9
+GrMeas:Select Graph2 M:0 9 1
+GrMeas:HideResult Graph2 M:0 9
+GrMeas:ShowResult Graph2 M:0 9
+GrMeas:Select Graph2 M:0 9 1
+GrMeas:MoveText Graph2 M:0 9 92 40
+GrMeas:HideResult Graph2 M:0 9
+GrMeas:ShowResult Graph2 M:0 9
+GrMeas:Select Graph2 M:0 9 1
+GrMeas:DelMfromMenu Graph2 M:0
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal0 add
+# Signal0
+GrMeas:AtX Graph2 Signal0 {} xyrangeVisible
+# M:1
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 1
+GrMeas:MovePoint Graph2 M:1 0 0.24212818090737 0.50247790498136
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 1
+GrMeas:MovePoint Graph2 M:1 0 0.24077550219454 0.50405700424265
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+GrMeas:AtX Graph2 Signal1 {} xyrangeVisible
+# M:2
+Graph:DSel
+GrMeas:Select Graph2 M:2 0 1
+GrMeas:MovePoint Graph2 M:2 0 0.34734141477298 0.75372854305891
+GrMeas:MovePoint Graph2 M:2 0 0.34600054349254 0.75918128012987
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 1
+GrMeas:MovePoint Graph2 M:1 0 0.71274323624673 0.35313076787417
+Graph:DSel
+GrMeas:Select Graph2 M:2 0 1
+GrMeas:MovePoint Graph2 M:2 0 0.63291695314251 0.13947520592514
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 1
+GrMeas:MovePoint Graph2 M:1 0 0.71074456366408 0.35333814439712
+Graph:DSel
+Graph:DSel
+wm geometry .sigmgr._PF:1 232x342+628+771
+wm geometry .sigmgr._PF:1 232x342+620+736
+wm geometry .sigmgr._PF:1 232x342+615+656
+wm geometry .sigmgr._PF:1 232x342+606+556
+wm geometry .sigmgr._PF:1 232x342+603+506
+wm geometry .sigmgr._PF:1 232x342+601+458
+wm geometry .sigmgr._PF:1 232x342+599+428
+wm geometry .sigmgr._PF:1 232x342+599+414
+wm geometry .sigmgr._PF:1 232x342+599+405
+wm geometry .sigmgr._PF:1 232x342+600+395
+wm geometry .sigmgr._PF:1 232x342+605+379
+wm geometry .sigmgr._PF:1 232x342+608+370
+wm geometry .sigmgr._PF:1 232x342+609+366
+pf:read PF:1 v(v1)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+AimCalc
+AimBarItem:Hide .aimCalc
+wm withdraw .aimCalcConstForm
+AimBarItem:Show .aimCalc
+wm geometry .aimCalc 310x303+1216+319
+wm geometry .aimCalc 310x303+1137+303
+wm geometry .aimCalc 310x303+1071+295
+wm geometry .aimCalc 310x303+1038+291
+wm geometry .aimCalc 310x303+1011+287
+wm geometry .aimCalc 310x303+966+283
+wm geometry .aimCalc 310x303+936+278
+wm geometry .aimCalc 310x303+902+273
+wm geometry .aimCalc 310x303+862+270
+wm geometry .aimCalc 310x303+849+269
+wm geometry .aimCalc 310x303+837+269
+wm geometry .aimCalc 310x303+825+265
+wm geometry .aimCalc 310x303+816+264
+wm geometry .aimCalc 310x303+814+263
+wm geometry .sigmgr._PF:1 232x342+567+364
+wm geometry .sigmgr._PF:1 232x342+548+364
+wm geometry .sigmgr._PF:1 232x342+526+364
+wm geometry .sigmgr._PF:1 232x342+507+364
+wm geometry .sigmgr._PF:1 232x342+488+364
+wm geometry .sigmgr._PF:1 232x342+468+364
+wm geometry .sigmgr._PF:1 232x342+430+364
+wm geometry .sigmgr._PF:1 232x342+415+364
+wm geometry .sigmgr._PF:1 232x342+413+364
+wm geometry .sigmgr._PF:1 232x342+410+364
+wm geometry .sigmgr._PF:1 232x342+398+364
+wm geometry .sigmgr._PF:1 232x342+381+364
+wm geometry .sigmgr._PF:1 232x342+345+364
+wm geometry .sigmgr._PF:1 232x342+330+364
+wm geometry .sigmgr._PF:1 232x342+329+364
+AimBarItem:Hide .aimCalc
+wm withdraw .aimCalcConstForm
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 rem
+Graph delsignal Signal2
+AimBarItem:Show .aimCalc
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+wm geometry .sigmgr._PF:1 232x342+292+409
+wm geometry .sigmgr._PF:1 232x342+278+449
+wm geometry .sigmgr._PF:1 232x342+273+490
+wm geometry .sigmgr._PF:1 232x342+275+525
+wm geometry .sigmgr._PF:1 232x342+291+554
+wm geometry .sigmgr._PF:1 232x342+308+575
+wm geometry .sigmgr._PF:1 232x342+329+598
+wm geometry .sigmgr._PF:1 232x342+351+620
+wm geometry .sigmgr._PF:1 232x342+378+644
+wm geometry .sigmgr._PF:1 232x342+407+667
+wm geometry .sigmgr._PF:1 232x342+426+686
+wm geometry .sigmgr._PF:1 232x342+439+708
+wm geometry .sigmgr._PF:1 232x342+452+722
+wm geometry .sigmgr._PF:1 232x342+466+735
+wm geometry .sigmgr._PF:1 232x342+475+746
+wm geometry .sigmgr._PF:1 232x342+480+751
+wm geometry .sigmgr._PF:1 232x342+481+753
+wm geometry .sigmgr._PF:1 232x342+489+753
+wm geometry .sigmgr._PF:1 232x342+497+751
+wm geometry .sigmgr._PF:1 232x342+498+749
+AimCalc:Enter {}
+AimCalc:GraphWaveform
+wm geometry .aimCalc 310x307+814+263
+AimCalc:Enter {}
+AimCalc:Enter {}
+AimCalc:Enter {}
+AimCalc:Enter {}
+AimCalc:Enter {v(v1) }
+AimCalc:Enter v(v1)
+AimCalc:Enter v(v1)
+AimCalc:Enter {$v(v1)}
+wm geometry .aimCalc 354x307+814+263
+wm geometry .aimCalc 368x307+814+263
+wm geometry .aimCalc 383x307+814+263
+wm geometry .aimCalc 393x307+814+263
+wm geometry .aimCalc 400x307+814+263
+wm geometry .aimCalc 403x307+814+263
+wm geometry .aimCalc 407x307+814+263
+wm geometry .aimCalc 411x307+814+263
+wm geometry .aimCalc 419x307+814+263
+wm geometry .aimCalc 424x307+814+263
+wm geometry .aimCalc 432x307+814+263
+wm geometry .aimCalc 439x307+814+263
+wm geometry .aimCalc 443x307+814+263
+wm geometry .aimCalc 444x307+814+263
+Graph:DSel
+AimBarItem:Hide .aimCalc
+wm withdraw .aimCalcConstForm
+wm geometry .sigmgr._PF:1 232x342+498+735
+wm geometry .sigmgr._PF:1 232x342+498+717
+wm geometry .sigmgr._PF:1 232x342+500+704
+wm geometry .sigmgr._PF:1 232x342+506+680
+wm geometry .sigmgr._PF:1 232x342+518+658
+wm geometry .sigmgr._PF:1 232x342+526+630
+wm geometry .sigmgr._PF:1 232x342+540+601
+wm geometry .sigmgr._PF:1 232x342+557+570
+wm geometry .sigmgr._PF:1 232x342+569+548
+wm geometry .sigmgr._PF:1 232x342+576+533
+wm geometry .sigmgr._PF:1 232x342+580+513
+wm geometry .sigmgr._PF:1 232x342+587+513
+wm geometry .sigmgr._PF:1 232x342+596+482
+wm geometry .sigmgr._PF:1 232x342+598+482
+wm geometry .sigmgr._PF:1 232x342+599+482
+wm geometry .sigmgr._PF:1 232x342+600+482
+pf:read PF:1 v(u)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+wm geometry .sigmgr._PF:1 232x342+570+511
+wm geometry .sigmgr._PF:1 232x342+549+543
+wm geometry .sigmgr._PF:1 232x342+526+588
+wm geometry .sigmgr._PF:1 232x342+520+626
+wm geometry .sigmgr._PF:1 232x342+516+651
+wm geometry .sigmgr._PF:1 232x342+516+675
+wm geometry .sigmgr._PF:1 232x342+516+693
+wm geometry .sigmgr._PF:1 232x342+514+700
+wm geometry .sigmgr._PF:1 232x342+514+702
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig {Signal3 Signal0} -region {0 0} -rgnindex {1 2}
+Graph:DSel
+AimBarItem:Show .aimCalc
+AimCalc:Enter {v($v1)}
+AimCalc:ClearX
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+AimCalc:Enter {}
+AimCalc:Enter {v(v1) }
+AimCalc:Enter {$v(v1) }
+AimCalc:Enter {$v($v1) }
+AimCalc:ClearX
+GrMeas:HideResult Graph2 M:1 0
+wm geometry .aimCalc 444x307+845+321
+wm geometry .aimCalc 444x307+861+352
+wm geometry .aimCalc 444x307+877+387
+wm geometry .aimCalc 444x307+885+416
+wm geometry .aimCalc 444x307+885+434
+wm geometry .aimCalc 444x307+885+462
+wm geometry .aimCalc 444x307+880+475
+wm geometry .aimCalc 444x307+874+485
+wm geometry .aimCalc 444x307+858+500
+wm geometry .aimCalc 444x307+830+530
+wm geometry .aimCalc 444x307+800+548
+wm geometry .aimCalc 444x307+741+599
+wm geometry .aimCalc 444x307+687+618
+wm geometry .aimCalc 444x307+646+624
+wm geometry .aimCalc 444x307+618+624
+wm geometry .aimCalc 444x307+585+620
+wm geometry .aimCalc 444x307+552+610
+wm geometry .aimCalc 444x307+513+599
+wm geometry .aimCalc 444x307+479+590
+wm geometry .aimCalc 444x307+449+583
+wm geometry .aimCalc 444x307+413+570
+wm geometry .aimCalc 444x307+376+548
+wm geometry .aimCalc 444x307+358+548
+wm geometry .aimCalc 444x307+342+548
+wm geometry .aimCalc 444x307+329+532
+wm geometry .aimCalc 444x307+318+517
+wm geometry .aimCalc 444x307+307+517
+wm geometry .aimCalc 444x307+300+503
+wm geometry .aimCalc 444x307+294+496
+wm geometry .aimCalc 444x307+290+491
+wm geometry .aimCalc 444x307+285+483
+wm geometry .aimCalc 444x307+282+476
+wm geometry .aimCalc 444x307+275+468
+wm geometry .aimCalc 444x307+268+456
+wm geometry .aimCalc 444x307+259+446
+wm geometry .aimCalc 444x307+252+438
+wm geometry .aimCalc 444x307+239+426
+wm geometry .aimCalc 444x307+219+414
+wm geometry .aimCalc 444x307+204+405
+wm geometry .aimCalc 444x307+187+398
+wm geometry .aimCalc 444x307+173+391
+wm geometry .aimCalc 444x307+163+387
+wm geometry .aimCalc 444x307+156+379
+wm geometry .aimCalc 444x307+150+375
+wm geometry .aimCalc 444x307+146+372
+wm geometry .aimCalc 444x307+143+370
+wm geometry .aimCalc 444x307+142+369
+GrMeas:ShowResult Graph2 M:1 0
+GrMeas:HideResult Graph2 M:1 0
+GrMeas:ShowResult Graph2 M:1 0
+GrMeas:HideResult Graph2 M:2 0
+GrMeas:ShowResult Graph2 M:2 0
+AimBarItem:Hide .aimCalc
+wm withdraw .aimCalcConstForm
+Graph:Select Graph2
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal0 add
+# Signal0
+GrMeas:P2P Graph2 Signal1 Signal0 1 {{} {} {} {}} xyrangeVisible {X1,Y1 X2,Y2 DeltaX DeltaY Length Slope}
+# M:3
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc2 Graph2 M:3 0 0.71119717197297 0.35329118305979
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.50997354858786 0.2356910615356
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 2
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 1
+Graph:DSel
+GrMeas:Select Graph2 M:1 0 2
+Graph delsignal selected
+Graph:DSel
+GrMeas:Select Graph2 M:2 0 2
+Graph:DSel
+GrMeas:Select Graph2 M:2 0 1
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw1_rectangle
+Graph:DSel
+GrMeas:Select Graph2 M:2 0 1
+Graph delsignal selected
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.63323339281518 0.13932502397171
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw1_rectangle
+Graph:ManipulateItem delete GrDraw1_rectangle
+Graph:ManipulateItem dtag GrDraw1_rectangle selSet
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.6913057646673 0.12163207469394
+GrMeas:MoveDiffAnc2 Graph2 M:3 0 0.23950499149422 0.50553812972212
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.34628889681524 0.75800867327704
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:ManipulateItem move selSet 0 -4
+Graph:ManipulateItem move selSet -2 -4
+Graph:ManipulateItem move selSet -2 -1
+Graph:ManipulateItem move selSet -13 0
+Graph:ManipulateItem move selSet -25 0
+Graph:ManipulateItem move selSet -17 3
+Graph:ManipulateItem move selSet -22 9
+Graph:ManipulateItem move selSet -21 8
+Graph:ManipulateItem move selSet -24 10
+Graph:ManipulateItem move selSet -26 12
+Graph:ManipulateItem move selSet -24 14
+Graph:ManipulateItem move selSet -28 17
+Graph:ManipulateItem move selSet -29 15
+Graph:ManipulateItem move selSet -40 24
+Graph:ManipulateItem move selSet -29 22
+Graph:ManipulateItem move selSet -21 23
+Graph:ManipulateItem move selSet -6 14
+Graph:ManipulateItem move selSet -6 18
+Graph:ManipulateItem move selSet 0 11
+Graph:ManipulateItem move selSet 0 11
+Graph:ManipulateItem move selSet 1 13
+Graph:ManipulateItem move selSet 2 8
+Graph:ManipulateItem move selSet 2 4
+Graph:ManipulateItem move selSet 0 1
+Graph:ManipulateItem move selSet 1 1
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.32338180632444 0.79053246769379
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.34192263112614 0.77007171984712
+GrMeas:MoveDiffAnc2 Graph2 M:3 0 0.14992958200507 0.61384672477124
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.35765117913261 0.64920497823187
+Graph:DSel
+Graph itemselect AxisY(0,0) add
+# AxisY(0,0)
+Graph:DSel
+Graph itemselect AxisX(1) add
+# AxisX(1)
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph2 Signal0 0.31128
+# M:4
+Graph:DSel
+GrMeas:Select Graph2 M:4 0
+GrMeas:MoveXLevel Graph2 M:4 0 0.13876702256487
+# M:4
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.34420818737211 0.7650052802775
+GrMeas:MoveDiffAnc2 Graph2 M:3 0 0.21322863394117 0.53582695642291
+Graph:DSel
+GrMeas:Select Graph2 M:4 0 1
+GrMeas:MoveXLevel Graph2 M:4 0 0.13814735810072
+# M:4
+GrMeas:MoveXLevel Graph2 M:4 0 0.21374642272757
+# M:4
+GrMeas:MoveXLevel Graph2 M:4 0 0.21374642272757
+# M:4
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.63928957822579 0.13661136903874
+GrMeas:MoveDiffAnc2 Graph2 M:3 0 0.78145946226157 0.33495005505494
+GrMeas:MoveDiffAnc1 Graph2 M:3 0 0.71410491332601 0.1178603434052
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:ManipulateItem move selSet 0 2
+Graph:ManipulateItem move selSet 5 3
+Graph:ManipulateItem move selSet 7 2
+Graph:ManipulateItem move selSet 8 4
+Graph:ManipulateItem move selSet 11 3
+Graph:ManipulateItem move selSet 16 3
+Graph:ManipulateItem move selSet 11 2
+Graph:ManipulateItem move selSet 6 0
+Graph:ManipulateItem move selSet 9 1
+Graph:ManipulateItem move selSet 12 2
+Graph:ManipulateItem move selSet 22 2
+Graph:ManipulateItem move selSet 43 0
+Graph:ManipulateItem move selSet 56 0
+Graph:ManipulateItem move selSet 45 0
+Graph:ManipulateItem move selSet 42 0
+Graph:ManipulateItem move selSet 40 0
+Graph:ManipulateItem move selSet 20 0
+Graph:ManipulateItem move selSet 44 0
+Graph:ManipulateItem move selSet 50 0
+Graph:ManipulateItem move selSet 56 0
+Graph:ManipulateItem move selSet 51 -3
+Graph:ManipulateItem move selSet 57 -7
+Graph:ManipulateItem move selSet 45 -8
+Graph:ManipulateItem move selSet 41 -7
+Graph:ManipulateItem move selSet 22 -8
+Graph:ManipulateItem move selSet 18 -5
+Graph:ManipulateItem move selSet 21 -7
+Graph:ManipulateItem move selSet 20 -9
+Graph:ManipulateItem move selSet 26 -5
+Graph:ManipulateItem move selSet 28 -6
+Graph:ManipulateItem move selSet 17 -1
+Graph:ManipulateItem move selSet 22 0
+Graph:ManipulateItem move selSet 16 0
+Graph:ManipulateItem move selSet 11 1
+Graph:ManipulateItem move selSet 10 3
+Graph:ManipulateItem move selSet 9 2
+Graph:ManipulateItem move selSet 8 4
+Graph:ManipulateItem move selSet 5 2
+Graph:ManipulateItem move selSet 4 2
+Graph:ManipulateItem move selSet 3 3
+Graph:ManipulateItem move selSet 3 2
+Graph:ManipulateItem move selSet 2 3
+Graph:ManipulateItem move selSet 2 3
+Graph:ManipulateItem move selSet 3 4
+Graph:ManipulateItem move selSet 3 2
+Graph:ManipulateItem move selSet 3 3
+Graph:ManipulateItem move selSet 1 0
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 1 1
+Graph:ManipulateItem move selSet 0 2
+Graph:ManipulateItem move selSet -2 4
+Graph:ManipulateItem move selSet -6 4
+Graph:ManipulateItem move selSet -4 1
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet 1 -6
+Graph:ManipulateItem move selSet 10 -9
+Graph:ManipulateItem move selSet 11 -6
+Graph:ManipulateItem move selSet 11 -4
+Graph:ManipulateItem move selSet 9 0
+Graph:ManipulateItem move selSet 10 0
+Graph:ManipulateItem move selSet 7 1
+Graph:ManipulateItem move selSet 6 3
+Graph:ManipulateItem move selSet 7 2
+Graph:ManipulateItem move selSet 2 1
+Graph:ManipulateItem move selSet 3 1
+Graph:ManipulateItem move selSet 3 2
+Graph:ManipulateItem move selSet 3 2
+Graph:ManipulateItem move selSet 3 2
+Graph:ManipulateItem move selSet 2 1
+Graph:ManipulateItem move selSet 2 3
+Graph:ManipulateItem move selSet 1 2
+Graph:ManipulateItem move selSet 1 1
+Graph:ManipulateItem move selSet 2 2
+Graph:ManipulateItem move selSet 2 1
+Graph:ManipulateItem move selSet 0 2
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet 8 0
+Graph:ManipulateItem move selSet 9 0
+Graph:ManipulateItem move selSet 4 0
+Graph:ManipulateItem move selSet -2 2
+Graph:ManipulateItem move selSet -5 2
+Graph:ManipulateItem move selSet -7 4
+Graph:ManipulateItem move selSet -15 3
+Graph:ManipulateItem move selSet -14 5
+Graph:ManipulateItem move selSet -11 3
+Graph:ManipulateItem move selSet -11 2
+Graph:ManipulateItem move selSet -11 3
+Graph:ManipulateItem move selSet -7 1
+Graph:ManipulateItem move selSet -6 1
+Graph:ManipulateItem move selSet -1 1
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -1 -3
+Graph:ManipulateItem move selSet 5 -5
+Graph:ManipulateItem move selSet 12 -7
+Graph:ManipulateItem move selSet 8 -1
+Graph:ManipulateItem move selSet 7 0
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 5 1
+Graph:ManipulateItem move selSet 4 2
+Graph:ManipulateItem move selSet 4 0
+Graph:ManipulateItem move selSet 4 1
+Graph:ManipulateItem move selSet 3 0
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet 3 1
+Graph:ManipulateItem move selSet 2 2
+Graph:ManipulateItem move selSet 1 2
+Graph:ManipulateItem move selSet 0 2
+Graph:ManipulateItem move selSet 0 1
+Graph:ManipulateItem move selSet -2 1
+Graph:ManipulateItem move selSet -1 0
+Graph:ManipulateItem move selSet -2 -1
+Graph:ManipulateItem move selSet -1 -1
+Graph:ManipulateItem move selSet -1 -1
+Graph:ManipulateItem move selSet 0 -1
+Graph:ManipulateItem move selSet -2 -1
+Graph:ManipulateItem move selSet 0 -1
+Graph:ManipulateItem move selSet 0 -1
+Graph:ManipulateItem move selSet 2 0
+Graph:ManipulateItem move selSet 1 0
+Graph:DSel
+Graph:DSel 0
+Graph:ManipulateItem addtag selSet withtag GrDraw0_rectangle
+Graph:ManipulateItem coords GrDraw0_rectangle 1216.0 326.0 1386.0 474.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1217.0 326.0 1386.0 471.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1220.0 326.0 1386.0 469.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1221.0 326.0 1386.0 467.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1223.0 326.0 1386.0 466.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1226.0 326.0 1386.0 464.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1229.0 326.0 1386.0 462.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1229.0 326.0 1386.0 461.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1231.0 326.0 1386.0 460.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1233.0 326.0 1386.0 459.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1236.0 326.0 1386.0 458.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1240.0 326.0 1386.0 456.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1242.0 326.0 1386.0 454.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1243.0 326.0 1386.0 454.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1247.0 326.0 1386.0 454.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1251.0 326.0 1386.0 452.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1255.0 326.0 1386.0 452.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1257.0 326.0 1386.0 452.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1258.0 326.0 1386.0 453.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1262.0 326.0 1386.0 453.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1265.0 326.0 1386.0 453.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1269.0 326.0 1386.0 455.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1272.0 326.0 1386.0 455.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1273.0 326.0 1386.0 455.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1274.0 326.0 1386.0 457.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1276.0 326.0 1386.0 457.0
+Graph:ManipulateItem coords GrDraw0_rectangle 1278.0 326.0 1386.0 457.0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph2 M:4 0 1
+GrMeas:MoveXLevel Graph2 M:4 0 0.71381564530028
+# M:4
+GrMeas:MoveText Graph2 M:4 0 w
+Graph:DSel
+GrMeas:Select Graph2 M:4 0 2
+GrMeas:MoveText Graph2 M:4 0 w
+GrMeas:MoveXLevel Graph2 M:4 0 0.63697725174512
+# M:4
+GrMeas:MoveXLevel Graph2 M:4 0 0.57501080532967
+# M:4
+Graph:DSel
+GrMeas:Select Graph2 M:3 0 1
+Graph:DSel
+GrMeas:Select Graph2 M:4 0 1
+GrMeas:MoveXLevel Graph2 M:4 0 0.57563046979382
+# M:4
+Graph:DSel
+wm geometry .sigmgr._PF:1 232x342+514+482
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_SNM_Single_Ended.sw0}}
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_SNM_Single_Ended.sw0}}
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_differential_SA/SRAM_read_latency.tr0 1 openonly
+# PF:3
+wm geometry .sigmgr._PF:3 232x342+768+444
+GrXY:NewGraph
+# Graph3
+pf:read PF:3 v(bl) v(saen)
+# WF:3:1 WF:3:2
+Graph addsignal {WF:3:1 WF:3:2} -region {new new} -yview {real(y) real(y)} -xview {real(x) real(x)} -tracehi {2 2}
+# Signal0 Signal1
+pf:read PF:3 v(out)
+# WF:3:3
+Graph addsignal WF:3:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:3 v(blb)
+# WF:3:4
+Graph addsignal WF:3:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+Mdi:Resize 615 545
+Mdi:Move 5 5
+pf:read PF:3 {xsa;v(node_y)}
+# WF:3:5
+Graph addsignal WF:3:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+Mdi:Resize 678 545
+Mdi:Move 5 5
+Mdi:Iconify
+Graph:Select Graph3
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency.tr0}}
+Graph3 delsignal Signal0
+Graph3 delsignal Signal1
+Graph3 delsignal Signal2
+Graph3 delsignal Signal3
+Graph3 delsignal Signal4
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_differential_SA/SRAM_read_latency.tr0 1 openonly
+# PF:4
+wm geometry .sigmgr._PF:4 232x342+768+444
+Graph:Select Graph3
+Mdi:Deiconify
+pf:read PF:4 v(out)
+# WF:4:1
+Graph addsignal WF:4:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:4 v(saen)
+# WF:4:2
+Graph addsignal WF:4:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:4 v(bl)
+# WF:4:3
+Graph addsignal WF:4:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:4 v(blb)
+# WF:4:4
+Graph addsignal WF:4:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:4 {xsa;v(node_y)}
+# WF:4:5
+Graph addsignal WF:4:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+Mdi:Resize 835 545
+Mdi:Move 5 5
+pf:read PF:4 {xsa;v(n_common)}
+# WF:4:6
+Graph addsignal WF:4:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr._PF:4 232x342+794+444
+wm geometry .sigmgr._PF:4 232x342+821+444
+wm geometry .sigmgr._PF:4 232x342+861+444
+wm geometry .sigmgr._PF:4 232x342+909+444
+wm geometry .sigmgr._PF:4 232x342+967+444
+wm geometry .sigmgr._PF:4 232x342+991+444
+wm geometry .sigmgr._PF:4 232x342+1005+444
+wm geometry .sigmgr._PF:4 232x342+1023+444
+wm geometry .sigmgr._PF:4 232x342+1046+444
+wm geometry .sigmgr._PF:4 232x342+1082+444
+wm geometry .sigmgr._PF:4 232x342+1092+444
+Mdi:FullSize
+wm geometry .sigmgr._PF:4 232x342+188+626
+wm geometry .sigmgr._PF:4 232x342+124+636
+wm geometry .sigmgr._PF:4 232x342+76+673
+wm geometry .sigmgr._PF:4 232x342+60+690
+wm geometry .sigmgr._PF:4 232x342+22+697
+wm geometry .sigmgr._PF:4 232x342+0+702
+wm geometry .sigmgr._PF:4 232x342+0+706
+wm geometry .sigmgr._PF:4 232x342+0+736
+wm geometry .sigmgr._PF:4 232x342+0+740
+wm geometry .sigmgr._PF:4 232x342+0+745
+wm geometry .sigmgr._PF:4 232x342+0+747
+wm geometry .sigmgr 376x204+1032+406
+wm geometry .sigmgr 376x204+1001+593
+wm geometry .sigmgr 376x204+962+808
+wm geometry .sigmgr 376x204+958+820
+Graph:DSel
+Graph:Select Graph3
+Graph:DSel
+wm geometry .sigmgr._PF:4 232x342+43+709
+wm geometry .sigmgr._PF:4 232x342+82+684
+wm geometry .sigmgr._PF:4 232x342+114+663
+wm geometry .sigmgr._PF:4 232x342+205+586
+wm geometry .sigmgr._PF:4 232x342+213+453
+wm geometry .sigmgr._PF:4 232x342+211+393
+wm geometry .sigmgr._PF:4 232x342+211+392
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:4 232x342+185+430
+wm geometry .sigmgr._PF:4 232x342+170+452
+wm geometry .sigmgr._PF:4 232x342+156+472
+wm geometry .sigmgr._PF:4 232x342+137+508
+wm geometry .sigmgr._PF:4 232x342+102+672
+wm geometry .sigmgr._PF:4 232x342+112+724
+wm geometry .sigmgr._PF:4 232x342+120+752
+wm geometry .sigmgr._PF:4 232x342+127+767
+wm geometry .sigmgr._PF:4 232x342+128+776
+wm geometry .sigmgr._PF:4 232x342+129+778
+wm geometry .sigmgr._PF:4 232x342+127+768
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph delsignal selected
+wm geometry .sigmgr._PF:4 232x342+141+742
+wm geometry .sigmgr._PF:4 232x342+171+705
+wm geometry .sigmgr._PF:4 232x342+176+698
+wm geometry .sigmgr._PF:4 232x342+272+607
+wm geometry .sigmgr._PF:4 232x342+318+553
+wm geometry .sigmgr._PF:4 232x342+350+513
+wm geometry .sigmgr._PF:4 232x342+383+466
+wm geometry .sigmgr._PF:4 232x342+394+452
+Graph:DSel
+pf:read PF:4 {xsa;v(se)}
+# WF:4:7
+Graph addsignal WF:4:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+wm geometry .sigmgr._PF:4 232x342+382+464
+wm geometry .sigmgr._PF:4 232x342+366+483
+wm geometry .sigmgr._PF:4 232x342+324+560
+wm geometry .sigmgr._PF:4 232x342+314+601
+wm geometry .sigmgr._PF:4 232x342+309+644
+wm geometry .sigmgr._PF:4 232x342+305+681
+wm geometry .sigmgr._PF:4 232x342+300+722
+wm geometry .sigmgr._PF:4 232x342+296+744
+wm geometry .sigmgr._PF:4 232x342+294+762
+wm geometry .sigmgr._PF:4 232x342+285+817
+wm geometry .sigmgr._PF:4 232x342+284+817
+wm geometry .sigmgr._PF:4 232x342+279+815
+wm geometry .sigmgr._PF:4 232x342+278+814
+wm geometry .sigmgr._PF:4 232x342+274+811
+wm geometry .sigmgr._PF:4 232x342+270+801
+wm geometry .sigmgr._PF:4 232x342+268+797
+wm geometry .sigmgr._PF:4 232x342+268+796
+wm geometry .sigmgr._PF:4 232x342+268+763
+wm geometry .sigmgr._PF:4 232x342+279+735
+wm geometry .sigmgr._PF:4 232x342+288+718
+wm geometry .sigmgr._PF:4 232x342+293+710
+wm geometry .sigmgr._PF:4 232x342+297+705
+wm geometry .sigmgr._PF:4 232x342+313+689
+wm geometry .sigmgr._PF:4 232x342+330+670
+wm geometry .sigmgr._PF:4 232x342+373+553
+wm geometry .sigmgr._PF:4 232x342+373+531
+wm geometry .sigmgr._PF:4 232x342+354+482
+wm geometry .sigmgr._PF:4 232x342+354+477
+wm geometry .sigmgr._PF:4 232x342+353+477
+wm geometry .sigmgr._PF:4 232x342+351+476
+wm geometry .sigmgr._PF:4 232x342+350+476
+wm geometry .sigmgr._PF:4 232x342+346+484
+wm geometry .sigmgr._PF:4 232x342+344+487
+wm geometry .sigmgr._PF:4 232x342+338+497
+wm geometry .sigmgr._PF:4 232x342+335+513
+wm geometry .sigmgr._PF:4 232x342+318+601
+wm geometry .sigmgr._PF:4 232x342+316+606
+wm geometry .sigmgr._PF:4 232x342+314+615
+wm geometry .sigmgr._PF:4 232x342+332+525
+wm geometry .sigmgr._PF:4 232x342+339+513
+wm geometry .sigmgr._PF:4 232x342+348+470
+wm geometry .sigmgr._PF:4 232x342+352+459
+wm geometry .sigmgr._PF:4 232x342+356+446
+wm geometry .sigmgr._PF:4 232x342+364+419
+wm geometry .sigmgr._PF:4 232x342+364+417
+wm geometry .sigmgr._PF:4 232x342+364+416
+wm geometry .sigmgr._PF:4 232x342+366+418
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency.tr0}}
+Graph3 delsignal Signal0
+Graph3 delsignal Signal2
+Graph3 delsignal Signal3
+Graph3 delsignal Signal4
+Graph3 delsignal Signal5
+Graph3 delsignal Signal6
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_differential_SA/SRAM_read_latency.tr0 1 openonly
+# PF:5
+wm geometry .sigmgr._PF:5 232x342+768+444
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_differential_SA/SRAM_read_latency.tr0 1 replace
+# PF:5
+pf:read PF:5 {xsa;v(se)}
+# WF:5:1
+Graph addsignal WF:5:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:5 v(saen)
+# WF:5:2
+Graph addsignal WF:5:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph itemselect Signal1 add
+# Signal1
+Graph:DSel
+wm geometry .sigmgr 376x204+958+651
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+pf:read PF:6 v(se)
+# WF:6:1
+Graph addsignal WF:6:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:6 {xsa;v(node_y)}
+# WF:6:2
+Graph addsignal WF:6:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:6 v(out)
+# WF:6:3
+Graph addsignal WF:6:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+wm geometry .sigmgr._PF:5 232x342+758+457
+wm geometry .sigmgr._PF:5 232x342+735+472
+wm geometry .sigmgr._PF:5 232x342+710+487
+wm geometry .sigmgr._PF:5 232x342+684+504
+wm geometry .sigmgr._PF:5 232x342+654+522
+wm geometry .sigmgr._PF:5 232x342+630+538
+wm geometry .sigmgr._PF:5 232x342+620+550
+wm geometry .sigmgr._PF:5 232x342+603+570
+wm geometry .sigmgr._PF:5 232x342+589+597
+wm geometry .sigmgr._PF:5 232x342+581+625
+wm geometry .sigmgr._PF:5 232x342+579+652
+wm geometry .sigmgr._PF:5 232x342+579+671
+wm geometry .sigmgr._PF:5 232x342+596+722
+wm geometry .sigmgr._PF:5 232x342+623+756
+wm geometry .sigmgr._PF:5 232x342+646+784
+wm geometry .sigmgr._PF:5 232x342+662+803
+wm geometry .sigmgr._PF:5 232x342+664+807
+wm geometry .sigmgr._PF:5 232x342+659+801
+wm geometry .sigmgr._PF:5 232x342+658+801
+wm geometry .sigmgr 376x204+933+667
+wm geometry .sigmgr 376x204+909+692
+wm geometry .sigmgr 376x204+897+716
+wm geometry .sigmgr 376x204+904+776
+wm geometry .sigmgr 376x204+907+781
+wm geometry .sigmgr 376x204+913+793
+wm geometry .sigmgr 376x204+921+811
+wm geometry .sigmgr 376x204+922+813
+wm geometry .sigmgr 376x204+922+816
+wm geometry .sigmgr 376x204+932+803
+wm geometry .sigmgr._PF:5 232x342+585+766
+wm geometry .sigmgr._PF:5 232x342+545+740
+wm geometry .sigmgr._PF:5 232x342+524+719
+wm geometry .sigmgr._PF:5 232x342+514+706
+wm geometry .sigmgr._PF:5 232x342+509+686
+wm geometry .sigmgr._PF:5 232x342+507+669
+wm geometry .sigmgr._PF:5 232x342+507+649
+wm geometry .sigmgr._PF:5 232x342+507+628
+wm geometry .sigmgr._PF:5 232x342+518+589
+wm geometry .sigmgr._PF:5 232x342+527+552
+wm geometry .sigmgr._PF:5 232x342+541+513
+wm geometry .sigmgr._PF:5 232x342+551+496
+wm geometry .sigmgr._PF:5 232x342+556+482
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+pf:read PF:7 v(bl)
+# WF:7:5
+Graph addsignal WF:7:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+pf:read PF:7 v(blb)
+# WF:7:4
+Graph addsignal WF:7:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal7
+wm geometry .sigmgr._PF:5 232x342+537+504
+wm geometry .sigmgr._PF:5 232x342+522+524
+wm geometry .sigmgr._PF:5 232x342+501+551
+wm geometry .sigmgr._PF:5 232x342+487+571
+wm geometry .sigmgr._PF:5 232x342+475+603
+wm geometry .sigmgr._PF:5 232x342+471+632
+wm geometry .sigmgr._PF:5 232x342+469+664
+wm geometry .sigmgr._PF:5 232x342+469+690
+wm geometry .sigmgr._PF:5 232x342+471+707
+wm geometry .sigmgr._PF:5 232x342+476+724
+wm geometry .sigmgr._PF:5 232x342+483+739
+wm geometry .sigmgr._PF:5 232x342+490+750
+wm geometry .sigmgr._PF:5 232x342+521+760
+wm geometry .sigmgr._PF:5 232x342+647+762
+wm geometry .sigmgr._PF:5 232x342+662+762
+wm geometry .sigmgr._PF:5 232x342+666+762
+wm geometry .sigmgr._PF:5 232x342+669+762
+wm geometry .sigmgr._PF:5 232x342+688+761
+wm geometry .sigmgr._PF:5 232x342+719+761
+wm geometry .sigmgr._PF:5 232x342+721+761
+wm geometry .sigmgr._PF:5 232x342+742+759
+wm geometry .sigmgr._PF:5 232x342+746+757
+wm geometry .sigmgr._PF:5 232x342+776+747
+wm geometry .sigmgr._PF:5 232x342+784+745
+wm geometry .sigmgr._PF:5 232x342+792+743
+wm geometry .sigmgr._PF:5 232x342+813+741
+wm geometry .sigmgr._PF:5 232x342+828+741
+wm geometry .sigmgr._PF:5 232x342+829+741
+wm geometry .sigmgr._PF:5 232x342+835+744
+wm geometry .sigmgr._PF:5 232x342+842+746
+wm geometry .sigmgr._PF:5 232x342+846+747
+wm geometry .sigmgr._PF:5 232x342+848+747
+wm geometry .sigmgr._PF:5 232x342+809+747
+wm geometry .sigmgr._PF:5 232x342+736+744
+wm geometry .sigmgr._PF:5 232x342+671+737
+wm geometry .sigmgr._PF:5 232x342+628+735
+wm geometry .sigmgr._PF:5 232x342+582+735
+wm geometry .sigmgr._PF:5 232x342+537+739
+wm geometry .sigmgr._PF:5 232x342+497+745
+wm geometry .sigmgr._PF:5 232x342+452+752
+wm geometry .sigmgr._PF:5 232x342+431+758
+wm geometry .sigmgr._PF:5 232x342+416+763
+wm geometry .sigmgr._PF:5 232x342+401+770
+wm geometry .sigmgr._PF:5 232x342+382+779
+wm geometry .sigmgr._PF:5 232x342+366+786
+wm geometry .sigmgr._PF:5 232x342+362+787
+Graph:DSel
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+Graph:DSel
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph3 {Signal7 Signal6 Signal5 Signal4 Signal3} 12.79n
+# M:0
+Graph:DSel
+GrMeas:Select Graph3 M:0 2
+GrMeas:MoveXLevel Graph3 M:0 2 9.1467752269488n
+# M:0
+Graph:DSel
+GrMeas:Select Graph3 M:0 8 1
+GrMeas:MoveXLevel Graph3 M:0 8 9.1467752269488n
+# M:0
+wm geometry .sigmgr._PF:5 232x342+373+726
+wm geometry .sigmgr._PF:5 232x342+462+646
+wm geometry .sigmgr._PF:5 232x342+478+627
+wm geometry .sigmgr._PF:5 232x342+492+606
+wm geometry .sigmgr._PF:5 232x342+512+573
+wm geometry .sigmgr._PF:5 232x342+527+538
+wm geometry .sigmgr._PF:5 232x342+534+513
+wm geometry .sigmgr._PF:5 232x342+561+435
+wm geometry .sigmgr._PF:5 232x342+581+377
+wm geometry .sigmgr._PF:5 232x342+585+367
+wm geometry .sigmgr._PF:5 232x342+586+365
+pf:read PF:7 v(wl)
+# WF:7:6
+Graph addsignal WF:7:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal8
+wm geometry .sigmgr._PF:5 232x342+565+383
+wm geometry .sigmgr._PF:5 232x342+456+493
+wm geometry .sigmgr._PF:5 232x342+430+565
+wm geometry .sigmgr._PF:5 232x342+392+780
+wm geometry .sigmgr._PF:5 232x342+391+791
+wm geometry .sigmgr._PF:5 232x342+391+802
+wm geometry .sigmgr._PF:5 232x342+391+803
+wm geometry .sigmgr._PF:5 232x342+391+798
+wm geometry .sigmgr._PF:5 232x342+391+784
+wm geometry .sigmgr._PF:5 232x342+391+770
+wm geometry .sigmgr._PF:5 232x342+391+761
+Graph:DSel
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph3 {Signal8 Signal7 Signal6 Signal5 Signal4 Signal3} 12.79n
+# M:1
+Graph:DSel
+GrMeas:Select Graph3 M:0 0 1
+GrMeas:MoveXLevel Graph3 M:0 0 9.1467752269488n
+# M:0
+GrMeas:MoveXLevel Graph3 M:0 0 9.1467752269488n
+# M:0
+GrMeas:MoveXLevel Graph3 M:0 0 9.1467752269488n
+# M:0
+Graph:DSel
+GrMeas:Select Graph3 M:0 1
+Graph:DSel
+GrMeas:Select Graph3 M:0 0 1
+GrMeas:MoveXLevel Graph3 M:0 0 9.0764494932421n
+# M:0
+GrMeas:MoveXLevel Graph3 M:0 0 9.0764494932421n
+# M:0
+GrMeas:MoveXLevel Graph3 M:0 0 9.0764494932421n
+# M:0
+GrMeas:MoveXLevel Graph3 M:0 0 9.0764494932421n
+# M:0
+GrMeas:DelMfromMenu Graph3 M:0
+Graph:DSel
+GrMeas:Select Graph3 M:1 0
+GrMeas:MoveXLevel Graph3 M:1 0 9.5218458067182n
+# M:1
+wm geometry .sigmgr._PF:5 232x342+384+544
+wm geometry .sigmgr._PF:5 232x342+388+513
+wm geometry .sigmgr._PF:5 232x342+394+468
+wm geometry .sigmgr._PF:5 232x342+395+456
+wm geometry .sigmgr._PF:5 232x342+397+442
+wm geometry .sigmgr._PF:5 232x342+402+417
+wm geometry .sigmgr._PF:5 232x342+406+397
+wm geometry .sigmgr._PF:5 232x342+407+389
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+435+447
+wm geometry .sigmgr._PF:5 232x342+449+479
+wm geometry .sigmgr._PF:5 232x342+473+547
+wm geometry .sigmgr._PF:5 232x342+499+645
+wm geometry .sigmgr._PF:5 232x342+502+719
+wm geometry .sigmgr._PF:5 232x342+494+744
+wm geometry .sigmgr._PF:5 232x342+491+748
+wm geometry .sigmgr._PF:5 232x342+490+750
+wm geometry .sigmgr._PF:5 232x342+488+752
+wm geometry .sigmgr._PF:5 232x342+487+754
+wm geometry .sigmgr._PF:5 232x342+476+763
+wm geometry .sigmgr._PF:5 232x342+471+769
+wm geometry .sigmgr._PF:5 232x342+468+771
+wm geometry .sigmgr._PF:5 232x342+467+771
+wm geometry .sigmgr._PF:5 232x342+425+739
+wm geometry .sigmgr._PF:5 232x342+406+727
+wm geometry .sigmgr._PF:5 232x342+387+713
+wm geometry .sigmgr._PF:5 232x342+386+711
+wm geometry .sigmgr._PF:5 232x342+384+702
+wm geometry .sigmgr._PF:5 232x342+384+697
+wm geometry .sigmgr._PF:5 232x342+384+685
+wm geometry .sigmgr._PF:5 232x342+384+679
+wm geometry .sigmgr._PF:5 232x342+392+662
+wm geometry .sigmgr._PF:5 232x342+400+645
+wm geometry .sigmgr._PF:5 232x342+415+620
+wm geometry .sigmgr._PF:5 232x342+421+611
+wm geometry .sigmgr._PF:5 232x342+424+608
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+422+673
+wm geometry .sigmgr._PF:5 232x342+444+754
+wm geometry .sigmgr._PF:5 232x342+447+759
+wm geometry .sigmgr._PF:5 232x342+451+769
+wm geometry .sigmgr._PF:5 232x342+451+772
+wm geometry .sigmgr._PF:5 232x342+453+780
+wm geometry .sigmgr._PF:5 232x342+459+796
+wm geometry .sigmgr._PF:5 232x342+461+798
+wm geometry .sigmgr._PF:5 232x342+462+796
+wm geometry .sigmgr._PF:5 232x342+464+792
+wm geometry .sigmgr._PF:5 232x342+465+787
+wm geometry .sigmgr._PF:5 232x342+475+766
+wm geometry .sigmgr._PF:5 232x342+479+763
+wm geometry .sigmgr._PF:5 232x342+484+756
+Graph:DSel
+GrMeas:Select Graph3 M:3 6
+GrMeas:MoveXLevel Graph3 M:3 6 12.194223687575n
+# M:3
+Graph:DSel
+GrMeas:Select Graph3 M:3 8 1
+GrMeas:MoveXLevel Graph3 M:3 8 8.912356114593n
+# M:3
+Graph:DSel
+GrMeas:Select Graph3 M:3 4 1
+GrMeas:MoveXLevel Graph3 M:3 4 9.756264919074n
+# M:3
+wm geometry .sigmgr._PF:5 232x342+473+668
+wm geometry .sigmgr._PF:5 232x342+526+482
+wm geometry .sigmgr._PF:5 232x342+538+450
+wm geometry .sigmgr._PF:5 232x342+566+401
+wm geometry .sigmgr._PF:5 232x342+577+374
+wm geometry .sigmgr._PF:5 232x342+580+370
+wm geometry .sigmgr._PF:5 232x342+585+349
+pf:read PF:9 {xsram;v(q)}
+# WF:9:7
+Graph addsignal WF:9:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal21
+wm geometry .sigmgr._PF:5 232x342+569+371
+wm geometry .sigmgr._PF:5 232x342+553+392
+wm geometry .sigmgr._PF:5 232x342+535+419
+wm geometry .sigmgr._PF:5 232x342+514+452
+wm geometry .sigmgr._PF:5 232x342+510+465
+wm geometry .sigmgr._PF:5 232x342+506+481
+wm geometry .sigmgr._PF:5 232x342+504+506
+wm geometry .sigmgr._PF:5 232x342+504+515
+wm geometry .sigmgr._PF:5 232x342+513+553
+wm geometry .sigmgr._PF:5 232x342+526+585
+wm geometry .sigmgr._PF:5 232x342+541+615
+wm geometry .sigmgr._PF:5 232x342+559+639
+wm geometry .sigmgr._PF:5 232x342+581+657
+wm geometry .sigmgr._PF:5 232x342+644+684
+wm geometry .sigmgr._PF:5 232x342+693+699
+wm geometry .sigmgr._PF:5 232x342+752+709
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect Signal21 add
+# Signal21
+Graph delsignal selected
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph3 M:3 8 1
+GrMeas:MoveXLevel Graph3 M:3 8 15.358881704378n
+# M:3
+Graph:DSel
+GrMeas:Select Graph3 M:3 6 1
+GrMeas:MoveXLevel Graph3 M:3 6 9.4984038954826n
+# M:3
+wm geometry .sigmgr._PF:5 232x342+645+700
+wm geometry .sigmgr._PF:5 232x342+616+691
+wm geometry .sigmgr._PF:5 232x342+559+626
+wm geometry .sigmgr._PF:5 232x342+573+482
+wm geometry .sigmgr._PF:5 232x342+590+452
+wm geometry .sigmgr._PF:5 232x342+597+443
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+580+481
+wm geometry .sigmgr._PF:5 232x342+562+607
+wm geometry .sigmgr._PF:5 232x342+562+643
+wm geometry .sigmgr._PF:5 232x342+576+735
+wm geometry .sigmgr._PF:5 232x342+579+764
+wm geometry .sigmgr._PF:5 232x342+579+796
+wm geometry .sigmgr._PF:5 232x342+579+800
+wm geometry .sigmgr._PF:5 232x342+579+804
+wm geometry .sigmgr._PF:5 232x342+532+806
+wm geometry .sigmgr._PF:5 232x342+444+809
+wm geometry .sigmgr._PF:5 232x342+403+812
+wm geometry .sigmgr._PF:5 232x342+379+810
+wm geometry .sigmgr._PF:5 232x342+368+813
+wm geometry .sigmgr._PF:5 232x342+358+820
+wm geometry .sigmgr._PF:5 232x342+350+805
+wm geometry .sigmgr._PF:5 232x342+349+801
+wm geometry .sigmgr._PF:5 232x342+337+648
+wm geometry .sigmgr._PF:5 232x342+403+548
+wm geometry .sigmgr._PF:5 232x342+465+467
+wm geometry .sigmgr._PF:5 232x342+506+397
+wm geometry .sigmgr._PF:5 232x342+519+370
+wm geometry .sigmgr._PF:5 232x342+525+357
+pf:read PF:10 v(se)
+# WF:10:4
+Graph addsignal WF:10:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal28
+pf:read PF:10 v(se_enbl)
+# WF:10:7
+Graph addsignal WF:10:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal29
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+503+383
+wm geometry .sigmgr._PF:5 232x342+486+405
+wm geometry .sigmgr._PF:5 232x342+473+425
+wm geometry .sigmgr._PF:5 232x342+464+448
+wm geometry .sigmgr._PF:5 232x342+454+473
+wm geometry .sigmgr._PF:5 232x342+448+504
+wm geometry .sigmgr._PF:5 232x342+448+542
+wm geometry .sigmgr._PF:5 232x342+448+576
+wm geometry .sigmgr._PF:5 232x342+448+622
+wm geometry .sigmgr._PF:5 232x342+451+644
+wm geometry .sigmgr._PF:5 232x342+453+671
+wm geometry .sigmgr._PF:5 232x342+469+726
+wm geometry .sigmgr._PF:5 232x342+483+758
+wm geometry .sigmgr._PF:5 232x342+491+766
+wm geometry .sigmgr._PF:5 232x342+496+769
+wm geometry .sigmgr._PF:5 232x342+499+770
+wm geometry .sigmgr._PF:5 232x342+507+774
+wm geometry .sigmgr._PF:5 232x342+513+778
+wm geometry .sigmgr._PF:5 232x342+523+786
+wm geometry .sigmgr._PF:5 232x342+527+788
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect AxisY(6,0) add
+# AxisY(6,0)
+Graph itemselect AxisY(6,0) add
+Graph:DSel
+Graph:DSel
+Graph:DSel
+wm geometry .sigmgr 376x204+932+651
+wm geometry .sigmgr._PF:5 232x342+527+482
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+Graph:DSel
+GrMeas:Select Graph3 M:6 7
+GrMeas:MoveText Graph3 M:6 7 14 27
+GrMeas:MoveText Graph3 M:6 7 70 15
+Graph:DSel
+GrMeas:Select Graph3 M:6 6
+GrMeas:MoveXLevel Graph3 M:6 6 9.4984038954826n
+# M:6
+GrMeas:MoveXLevel Graph3 M:6 6 9.1467752269488n
+# M:6
+wm geometry .sigmgr 376x204+862+704
+wm geometry .sigmgr 376x204+878+770
+wm geometry .sigmgr 376x204+890+783
+wm geometry .sigmgr 376x204+930+799
+wm geometry .sigmgr 376x204+947+803
+wm geometry .sigmgr 376x204+996+808
+wm geometry .sigmgr 376x204+1001+808
+wm geometry .sigmgr 376x204+1003+808
+wm geometry .sigmgr._PF:5 232x342+514+541
+wm geometry .sigmgr._PF:5 232x342+527+630
+wm geometry .sigmgr._PF:5 232x342+535+645
+wm geometry .sigmgr._PF:5 232x342+551+672
+wm geometry .sigmgr._PF:5 232x342+569+695
+wm geometry .sigmgr._PF:5 232x342+734+803
+wm geometry .sigmgr._PF:5 232x342+738+803
+wm geometry .sigmgr._PF:5 232x342+748+809
+wm geometry .sigmgr._PF:5 232x342+750+811
+Graph:DSel
+GrMeas:Select Graph3 M:6 5
+Graph:DSel
+GrMeas:Select Graph3 M:6 4 1
+GrMeas:MoveXLevel Graph3 M:6 4 9.1702171381844n
+# M:6
+GrMeas:MoveXLevel Graph3 M:6 4 9.1702171381844n
+# M:6
+GrMeas:DelMfromMenu Graph3 M:6
+Graph:DSel
+Graph itemselect Signal38 add
+# Signal38
+Graph delsignal selected
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph3 {Signal45 Signal44 Signal43 Signal42 Signal41 Signal40 Signal39} 12.79n
+# M:7
+Graph:DSel
+GrMeas:Select Graph3 M:7 0
+GrMeas:MoveXLevel Graph3 M:7 0 9.6859391853672n
+# M:7
+Graph:DSel
+GrMeas:Select Graph3 M:7 7
+GrMeas:MoveText Graph3 M:7 7 38 28
+Graph:DSel
+GrMeas:Select Graph3 M:7 4 1
+GrMeas:MoveXLevel Graph3 M:7 4 9.9438002089587n
+# M:7
+GrMeas:MoveXLevel Graph3 M:7 4 9.8031487415452n
+# M:7
+Graph:DSel
+GrMeas:Select Graph3 M:7 9
+GrMeas:MoveText Graph3 M:7 9 18 21
+GrMeas:MoveText Graph3 M:7 9 74 45
+Graph:DSel
+GrMeas:Select Graph3 M:7 8 1
+GrMeas:MoveXLevel Graph3 M:7 8 9.8265906527807n
+# M:7
+GrMeas:MoveXLevel Graph3 M:7 8 9.5218458067182n
+# M:7
+Graph:DSel
+GrMeas:Select Graph3 M:7 6 1
+GrMeas:MoveXLevel Graph3 M:7 6 9.5452877179537n
+# M:7
+Graph:DSel
+GrMeas:Select Graph3 M:7 4 1
+GrMeas:MoveXLevel Graph3 M:7 4 9.474961984247n
+# M:7
+wm geometry .sigmgr._PF:5 232x342+641+767
+wm geometry .sigmgr._PF:5 232x342+589+671
+wm geometry .sigmgr._PF:5 232x342+587+600
+wm geometry .sigmgr._PF:5 232x342+625+513
+wm geometry .sigmgr._PF:5 232x342+661+460
+wm geometry .sigmgr._PF:5 232x342+679+440
+wm geometry .sigmgr._PF:5 232x342+682+437
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+614+563
+wm geometry .sigmgr._PF:5 232x342+613+577
+wm geometry .sigmgr._PF:5 232x342+612+595
+wm geometry .sigmgr._PF:5 232x342+615+653
+wm geometry .sigmgr._PF:5 232x342+618+681
+wm geometry .sigmgr._PF:5 232x342+627+724
+wm geometry .sigmgr._PF:5 232x342+632+742
+wm geometry .sigmgr._PF:5 232x342+637+766
+wm geometry .sigmgr._PF:5 232x342+641+779
+wm geometry .sigmgr._PF:5 232x342+643+783
+wm geometry .sigmgr._PF:5 232x342+644+785
+wm geometry .sigmgr._PF:5 232x342+645+786
+wm geometry .sigmgr._PF:5 232x342+652+791
+wm geometry .sigmgr._PF:5 232x342+575+763
+wm geometry .sigmgr._PF:5 232x342+545+749
+wm geometry .sigmgr._PF:5 232x342+543+748
+wm geometry .sigmgr._PF:5 232x342+538+744
+wm geometry .sigmgr._PF:5 232x342+537+742
+wm geometry .sigmgr._PF:5 232x342+535+732
+wm geometry .sigmgr._PF:5 232x342+535+711
+wm geometry .sigmgr._PF:5 232x342+535+686
+wm geometry .sigmgr._PF:5 232x342+538+676
+wm geometry .sigmgr._PF:5 232x342+550+654
+wm geometry .sigmgr._PF:5 232x342+568+633
+wm geometry .sigmgr._PF:5 232x342+583+613
+wm geometry .sigmgr._PF:5 232x342+604+590
+wm geometry .sigmgr._PF:5 232x342+623+574
+wm geometry .sigmgr._PF:5 232x342+628+570
+wm geometry .sigmgr._PF:5 232x342+634+562
+wm geometry .sigmgr._PF:5 232x342+639+556
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+610+588
+wm geometry .sigmgr._PF:5 232x342+599+605
+wm geometry .sigmgr._PF:5 232x342+589+623
+wm geometry .sigmgr._PF:5 232x342+578+647
+wm geometry .sigmgr._PF:5 232x342+570+672
+wm geometry .sigmgr._PF:5 232x342+566+690
+wm geometry .sigmgr._PF:5 232x342+561+713
+wm geometry .sigmgr._PF:5 232x342+559+730
+wm geometry .sigmgr._PF:5 232x342+559+757
+wm geometry .sigmgr._PF:5 232x342+559+771
+wm geometry .sigmgr._PF:5 232x342+562+783
+wm geometry .sigmgr._PF:5 232x342+565+789
+wm geometry .sigmgr._PF:5 232x342+568+792
+wm geometry .sigmgr._PF:5 232x342+571+799
+wm geometry .sigmgr._PF:5 232x342+574+801
+wm geometry .sigmgr._PF:5 232x342+599+809
+wm geometry .sigmgr._PF:5 232x342+646+824
+wm geometry .sigmgr._PF:5 232x342+650+824
+Graph:DSel
+GrMeas:Select Graph3 M:9 7
+GrMeas:MoveText Graph3 M:9 7 104 30
+Graph:DSel
+Graph itemselect AxisY(3,0) add
+# AxisY(3,0)
+Graph axisconfig AxisY(3,0) -rang {0 0.8 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph:Select Graph3
+Graph:DSel
+Graph axisconfig AxisY(3,0) -rang {0.0 1 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect AxisY(4,0) add
+# AxisY(4,0)
+Graph:DSel
+GrMeas:Select Graph3 M:9 6
+GrMeas:MoveXLevel Graph3 M:9 6 9.6446704126157n
+# M:9
+GrMeas:MoveXLevel Graph3 M:9 6 10.180888283907n
+# M:9
+Graph:Select Graph3
+Graph:DSel
+Graph itemselect Signal59 add
+# Signal59
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal57 add
+# Signal57
+Graph sigconfig Signal57 -regswap 7
+wm geometry .sigmgr._PF:5 232x342+632+796
+wm geometry .sigmgr._PF:5 232x342+557+695
+wm geometry .sigmgr._PF:5 232x342+534+447
+wm geometry .sigmgr._PF:5 232x342+606+358
+wm geometry .sigmgr._PF:5 232x342+617+344
+wm geometry .sigmgr._PF:5 232x342+624+332
+wm geometry .sigmgr._PF:5 232x342+640+318
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+GrXY:NewGraph
+# Graph4
+pf:read PF:15 v(wl)
+# WF:15:1
+Graph addsignal WF:15:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:15 v(bl)
+# WF:15:2
+Graph addsignal WF:15:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:15 v(blb)
+# WF:15:3
+Graph addsignal WF:15:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:15 v(se)
+# WF:15:4
+Graph addsignal WF:15:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:15 v(bl_enbl)
+# WF:15:5
+Graph addsignal WF:15:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:15 v(out)
+# WF:15:6
+Graph addsignal WF:15:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr._PF:5 232x342+616+351
+wm geometry .sigmgr._PF:5 232x342+579+428
+wm geometry .sigmgr._PF:5 232x342+558+492
+wm geometry .sigmgr._PF:5 232x342+554+506
+wm geometry .sigmgr._PF:5 232x342+549+549
+wm geometry .sigmgr._PF:5 232x342+544+578
+wm geometry .sigmgr._PF:5 232x342+542+615
+wm geometry .sigmgr._PF:5 232x342+542+657
+wm geometry .sigmgr._PF:5 232x342+542+693
+wm geometry .sigmgr._PF:5 232x342+597+796
+wm geometry .sigmgr._PF:5 232x342+616+807
+wm geometry .sigmgr._PF:5 232x342+632+810
+wm geometry .sigmgr._PF:5 232x342+644+812
+wm geometry .sigmgr._PF:5 232x342+651+812
+wm geometry .sigmgr._PF:5 232x342+661+824
+Mdi:FullSize
+Graph:Select Graph4
+Graph:DSel
+Graph itemselect AxisY(0,0) add
+# AxisY(0,0)
+Graph itemselect AxisY(5,0) add
+# AxisY(0,0) AxisY(5,0)
+Graph itemselect AxisY(4,0) add
+# AxisY(0,0) AxisY(5,0) AxisY(4,0)
+Graph itemselect AxisY(0,0) add
+Graph itemselect AxisY(1,0) add
+# AxisY(0,0) AxisY(5,0) AxisY(4,0) AxisY(1,0)
+Graph itemselect AxisY(0,0) rem
+# AxisY(5,0) AxisY(4,0) AxisY(1,0)
+Graph:DSel
+Graph itemselect AxisY(0,0) add
+# AxisY(0,0)
+Graph itemselect AxisY(1,0) add
+# AxisY(0,0) AxisY(1,0)
+Graph:DSel
+Graph axisconfig AxisY(0,0) -rang {0 1.0 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph axisconfig AxisY(1,0) -rang {0 1.0 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph axisconfig AxisY(2,0) -rang {0 1 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph axisconfig AxisY(3,0) -rang {0 1.0 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph axisconfig AxisY(4,0) -rang {0 1.0 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph axisconfig AxisY(5,0) -rang {0 1.0 exact} -gridvis n -label (V) -scale lin -unitscale auto
+Graph:Select Graph4
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+Graph itemselect Signal2 add
+# Signal2
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal2 add
+# Signal2
+Graph delsignal selected
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0)} -range {{0.33 0.66 } {10.56n 21.12n } {0.33 0.66 } {0.33 0.66 } {0.33 0.66 } {0.33 0.66 }}
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0)} -range {{0.1 0.9 } {4n 28n } {0.1 0.9 } {0.1 0.9 } {0.1 0.9 } {0.1 0.9 }}
+Graph:DSel
+Graph:DSel
+Graph axisconfig {AxisY(4,0) AxisX(0)} -range {{-0.017401953196549 1.0386393220389} {11.13332628n 7.53352559n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0)} -range {all all all all all all} -zoomed {0 0 0 0 0 0}
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph4 {Signal5 Signal4 Signal3 Signal1 Signal0} 12.797n
+# M:0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph4 M:0 2
+GrMeas:MoveXLevel Graph4 M:0 2 12.792036178892n
+# M:0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph4 M:0 2
+GrMeas:MoveXLevel Graph4 M:0 2 9.7612395150704n
+# M:0
+Graph:DSel
+GrMeas:Select Graph4 M:0 4 1
+GrMeas:MoveXLevel Graph4 M:0 4 9.4581598486883n
+# M:0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph4 M:0 6 1
+GrMeas:MoveXLevel Graph4 M:0 6 9.4581598486883n
+# M:0
+GrMeas:MoveXLevel Graph4 M:0 6 9.8311809765432n
+# M:0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph4 M:0 4 1
+GrMeas:MoveXLevel Graph4 M:0 4 9.7379256945795n
+# M:0
+Graph:DSel
+GrMeas:Select Graph4 M:0 9
+Graph:DSel
+GrMeas:Select Graph4 M:0 8 1
+GrMeas:MoveXLevel Graph4 M:0 8 9.5747289511429n
+# M:0
+wm geometry .sigmgr._PF:5 232x342+570+793
+wm geometry .sigmgr._PF:5 232x342+559+788
+wm geometry .sigmgr._PF:5 232x342+538+781
+wm geometry .sigmgr._PF:5 232x342+534+778
+wm geometry .sigmgr._PF:5 232x342+483+699
+wm geometry .sigmgr._PF:5 232x342+468+633
+wm geometry .sigmgr._PF:5 232x342+443+467
+wm geometry .sigmgr._PF:5 232x342+443+448
+wm geometry .sigmgr._PF:5 232x342+460+388
+wm geometry .sigmgr._PF:5 232x342+472+370
+wm geometry .sigmgr._PF:5 232x342+474+368
+pf:read PF:15 v(se_enbl)
+# WF:15:7
+Graph addsignal WF:15:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+Graph:Select Graph4
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph:DSel
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph itemselect Signal6 rem
+Graph delsignal Signal6
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph4 M:0 6 1
+GrMeas:MoveXLevel Graph4 M:0 6 9.551415130652n
+# M:0
+GrMeas:MoveXLevel Graph4 M:0 6 9.5281013101611n
+# M:0
+GrMeas:MoveXLevel Graph4 M:0 6 9.4348460281974n
+# M:0
+GrMeas:MoveXLevel Graph4 M:0 6 9.5047874896702n
+# M:0
+wm geometry .sigmgr._PF:5 232x342+629+557
+wm geometry .sigmgr._PF:5 232x342+629+564
+wm geometry .sigmgr._PF:5 232x342+630+565
+wm geometry .sigmgr._PF:5 232x342+688+630
+wm geometry .sigmgr._PF:5 232x342+696+640
+wm geometry .sigmgr._PF:5 232x342+701+650
+wm geometry .sigmgr._PF:5 232x342+705+656
+wm geometry .sigmgr._PF:5 232x342+718+689
+wm geometry .sigmgr._PF:5 232x342+721+698
+wm geometry .sigmgr._PF:5 232x342+724+712
+wm geometry .sigmgr._PF:5 232x342+726+720
+wm geometry .sigmgr._PF:5 232x342+727+727
+wm geometry .sigmgr._PF:5 232x342+728+740
+wm geometry .sigmgr._PF:5 232x342+730+749
+wm geometry .sigmgr._PF:5 232x342+731+757
+wm geometry .sigmgr._PF:5 232x342+732+774
+wm geometry .sigmgr._PF:5 232x342+732+778
+wm geometry .sigmgr._PF:5 232x342+732+785
+wm geometry .sigmgr._PF:5 232x342+732+787
+wm geometry .sigmgr._PF:5 232x342+733+788
+wm geometry .sigmgr._PF:5 232x342+733+790
+wm geometry .sigmgr._PF:5 232x342+733+791
+wm geometry .sigmgr._PF:5 232x342+733+792
+wm geometry .sigmgr._PF:5 232x342+733+794
+wm geometry .sigmgr._PF:5 232x342+733+796
+wm geometry .sigmgr._PF:5 232x342+733+797
+wm geometry .sigmgr._PF:5 232x342+703+788
+wm geometry .sigmgr._PF:5 232x342+671+783
+wm geometry .sigmgr._PF:5 232x342+635+778
+wm geometry .sigmgr._PF:5 232x342+601+746
+wm geometry .sigmgr._PF:5 232x342+596+725
+wm geometry .sigmgr._PF:5 232x342+642+639
+wm geometry .sigmgr._PF:5 232x342+657+629
+wm geometry .sigmgr._PF:5 232x342+670+621
+wm geometry .sigmgr._PF:5 232x342+680+616
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr._PF:5 232x342+655+738
+wm geometry .sigmgr._PF:5 232x342+657+740
+wm geometry .sigmgr._PF:5 232x342+661+745
+wm geometry .sigmgr._PF:5 232x342+661+747
+wm geometry .sigmgr._PF:5 232x342+665+755
+wm geometry .sigmgr._PF:5 232x342+665+760
+wm geometry .sigmgr._PF:5 232x342+666+764
+wm geometry .sigmgr._PF:5 232x342+666+766
+wm geometry .sigmgr._PF:5 232x342+666+768
+wm geometry .sigmgr._PF:5 232x342+604+735
+wm geometry .sigmgr._PF:5 232x342+583+696
+wm geometry .sigmgr._PF:5 232x342+583+684
+wm geometry .sigmgr._PF:5 232x342+589+664
+wm geometry .sigmgr._PF:5 232x342+599+642
+wm geometry .sigmgr._PF:5 232x342+608+619
+wm geometry .sigmgr._PF:5 232x342+615+606
+wm geometry .sigmgr._PF:5 232x342+621+581
+wm geometry .sigmgr._PF:5 232x342+628+544
+wm geometry .sigmgr._PF:5 232x342+636+452
+wm geometry .sigmgr._PF:5 232x342+641+386
+wm geometry .sigmgr._PF:5 232x342+644+378
+pf:read PF:16 v(bl_pch)
+# WF:16:5
+Graph addsignal WF:16:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal11
+wm geometry .sigmgr._PF:5 232x342+579+471
+wm geometry .sigmgr._PF:5 232x342+575+514
+wm geometry .sigmgr._PF:5 232x342+589+637
+wm geometry .sigmgr._PF:5 232x342+621+691
+wm geometry .sigmgr._PF:5 232x342+628+701
+wm geometry .sigmgr._PF:5 232x342+632+708
+wm geometry .sigmgr._PF:5 232x342+635+715
+wm geometry .sigmgr._PF:5 232x342+637+724
+wm geometry .sigmgr._PF:5 232x342+646+739
+wm geometry .sigmgr._PF:5 232x342+652+754
+wm geometry .sigmgr._PF:5 232x342+655+760
+wm geometry .sigmgr._PF:5 232x342+658+764
+wm geometry .sigmgr._PF:5 232x342+659+767
+wm geometry .sigmgr._PF:5 232x342+661+770
+wm geometry .sigmgr._PF:5 232x342+672+780
+wm geometry .sigmgr._PF:5 232x342+674+783
+Graph:Select Graph4
+Graph:DSel
+Graph itemselect Signal11 add
+# Signal11
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal11 add
+# Signal11
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal11 add
+# Signal11
+Graph sigconfig {Signal11 Signal7 Signal8 Signal9 Signal10} -regswap {0 1 2 3 4}
+Graph:DSel
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph4 {Signal10 Signal9 Signal8 Signal7 Signal11} 12.797n
+# M:2
+Graph:DSel
+GrMeas:Select Graph4 M:2 6
+GrMeas:MoveXLevel Graph4 M:2 6 9.5047874896702n
+# M:2
+Graph:DSel
+GrMeas:Select Graph4 M:2 8 1
+GrMeas:MoveXLevel Graph4 M:2 8 9.5281013101611n
+# M:2
+GrMeas:MoveXLevel Graph4 M:2 8 9.5747289511429n
+# M:2
+Graph:DSel
+GrMeas:Select Graph4 M:2 6 1
+GrMeas:MoveXLevel Graph4 M:2 6 20.625479863845n
+# M:2
+GrMeas:MoveXLevel Graph4 M:2 6 9.8311809765432n
+# M:2
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph4 {Signal10 Signal9 Signal8 Signal7 Signal11} 12.797n
+# M:3
+Graph:DSel
+GrMeas:Select Graph4 M:2 6 1
+GrMeas:MoveXLevel Graph4 M:2 6 8.5022932085601n
+# M:2
+Graph:DSel
+GrMeas:Select Graph4 M:3 6
+GrMeas:MoveXLevel Graph4 M:3 6 10.017691540471n
+# M:3
+Graph:DSel
+GrMeas:Select Graph4 M:3 8 2
+GrMeas:MoveText Graph4 M:3 8 ne
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency.tr0}}
+wm geometry .sigmgr 376x204+932+798
+wm geometry .sigmgr 376x204+915+796
+wm geometry .sigmgr 376x204+901+794
+wm geometry .sigmgr 376x204+886+791
+wm geometry .sigmgr 376x204+872+788
+wm geometry .sigmgr 376x204+839+770
+wm geometry .sigmgr 376x204+791+710
+wm geometry .sigmgr 376x204+769+504
+wm geometry .sigmgr 376x204+760+395
+wm geometry .sigmgr 376x204+746+264
+wm geometry .sigmgr 376x204+741+215
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_Single_Ended/SRAM_read_latency_Single_Ended.tr0 1 openonly
+# PF:17
+wm geometry .sigmgr._PF:17 232x342+768+444
+wm geometry .sigmgr 376x204+787+222
+wm geometry .sigmgr 376x204+804+226
+wm geometry .sigmgr 376x204+830+233
+wm geometry .sigmgr 376x204+870+267
+wm geometry .sigmgr 376x204+893+297
+wm geometry .sigmgr 376x204+1008+440
+wm geometry .sigmgr 376x204+1022+468
+wm geometry .sigmgr 376x204+1031+490
+wm geometry .sigmgr 376x204+1040+515
+wm geometry .sigmgr 376x204+1051+563
+wm geometry .sigmgr 376x204+1052+570
+wm geometry .sigmgr 376x204+1054+581
+wm geometry .sigmgr 376x204+1061+609
+wm geometry .sigmgr 376x204+1073+687
+wm geometry .sigmgr 376x204+1076+701
+GrXY:NewGraph
+# Graph5
+pf:read PF:17 v(out)
+# WF:17:1
+Graph addsignal WF:17:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:17 v(sl_rgt)
+# WF:17:2
+Graph addsignal WF:17:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:17 v(se_rgt)
+# WF:17:4
+Graph addsignal WF:17:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:17 v(bl_rgt)
+# WF:17:5
+Graph addsignal WF:17:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:17 v(bl_pch_rgt)
+# WF:17:7
+Graph addsignal WF:17:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:17 v(wl_rgt)
+# WF:17:8
+Graph addsignal WF:17:8 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr._PF:17 232x342+762+482
+wm geometry .sigmgr._PF:17 232x342+766+512
+wm geometry .sigmgr._PF:17 232x342+775+546
+wm geometry .sigmgr._PF:17 232x342+793+593
+wm geometry .sigmgr._PF:17 232x342+806+624
+wm geometry .sigmgr._PF:17 232x342+848+732
+wm geometry .sigmgr._PF:17 232x342+853+753
+wm geometry .sigmgr._PF:17 232x342+858+772
+wm geometry .sigmgr._PF:17 232x342+865+799
+wm geometry .sigmgr._PF:17 232x342+865+804
+wm geometry .sigmgr._PF:17 232x342+866+808
+Mdi:FullSize
+wm geometry .sigmgr 376x204+1118+751
+wm geometry .sigmgr 376x204+1128+772
+wm geometry .sigmgr 376x204+1136+792
+wm geometry .sigmgr 376x204+1150+820
+wm geometry .sigmgr 376x204+1150+828
+wm geometry .sigmgr 376x204+1165+855
+wm geometry .sigmgr 376x204+1163+842
+wm geometry .sigmgr 376x204+1150+837
+wm geometry .sigmgr 376x204+1150+836
+wm geometry .sigmgr 376x204+1150+835
+Graph:Select Graph5
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph5 {Signal5 Signal4 Signal3 Signal2 Signal1 Signal0} 12.802n
+# M:0
+Graph:DSel
+GrMeas:Select Graph5 M:0 2
+GrMeas:MoveXLevel Graph5 M:0 2 9.3072922828858n
+# M:0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph5 M:0 2 1
+GrMeas:MoveXLevel Graph5 M:0 2 14.63667366836n
+# M:0
+Graph:Select Graph5
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph5 {Signal5 Signal4 Signal3 Signal2 Signal1 Signal0} 12.802n
+# M:1
+Graph:DSel
+GrMeas:Select Graph5 M:1 2
+GrMeas:MoveXLevel Graph5 M:1 2 8.2225509389398n
+# M:1
+Graph:DSel
+GrMeas:Select Graph5 M:0 0 1
+GrMeas:MoveXLevel Graph5 M:0 0 10.745753630293n
+# M:0
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph5 M:0 10 1
+GrMeas:MoveXLevel Graph5 M:0 10 10.580684295344n
+# M:0
+wm geometry .sigmgr._PF:17 232x342+825+806
+wm geometry .sigmgr._PF:17 232x342+795+802
+wm geometry .sigmgr._PF:17 232x342+666+745
+wm geometry .sigmgr._PF:17 232x342+629+713
+wm geometry .sigmgr._PF:17 232x342+604+691
+wm geometry .sigmgr._PF:17 232x342+589+665
+wm geometry .sigmgr._PF:17 232x342+551+524
+wm geometry .sigmgr._PF:17 232x342+551+513
+wm geometry .sigmgr._PF:17 232x342+554+482
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_Single_Ended.tr0}}
+wm geometry .sigmgr._PF:17 232x342+551+503
+wm geometry .sigmgr._PF:17 232x342+551+526
+wm geometry .sigmgr._PF:17 232x342+561+575
+wm geometry .sigmgr._PF:17 232x342+607+682
+wm geometry .sigmgr._PF:17 232x342+647+756
+wm geometry .sigmgr._PF:17 232x342+657+766
+wm geometry .sigmgr._PF:17 232x342+682+796
+wm geometry .sigmgr._PF:17 232x342+694+824
+wm geometry .sigmgr._PF:17 232x342+699+824
+wm geometry .sigmgr._PF:17 232x342+706+824
+wm geometry .sigmgr._PF:17 232x342+716+824
+wm geometry .sigmgr._PF:17 232x342+718+824
+Graph:DSel
+GrMeas:Select Graph5 M:3 6
+GrMeas:MoveXLevel Graph5 M:3 6 8.7177589437847n
+# M:3
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph:DSel
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal10 add
+# Signal10
+Graph itemselect Signal10 rem
+Graph delsignal Signal10
+Graph:DSel
+Graph itemselect Signal8 add
+# Signal8
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig {Signal7 Signal9 Signal11} -regswap {3 4 5}
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph sigconfig {Signal6 Signal7 Signal9 Signal11} -regswap {2 3 4 5}
+wm geometry .sigmgr._PF:17 232x342+692+824
+wm geometry .sigmgr._PF:17 232x342+673+822
+wm geometry .sigmgr._PF:17 232x342+654+814
+wm geometry .sigmgr._PF:17 232x342+641+803
+wm geometry .sigmgr._PF:17 232x342+633+797
+wm geometry .sigmgr._PF:17 232x342+629+791
+wm geometry .sigmgr._PF:17 232x342+614+748
+wm geometry .sigmgr._PF:17 232x342+606+618
+wm geometry .sigmgr._PF:17 232x342+604+395
+wm geometry .sigmgr._PF:17 232x342+605+348
+wm geometry .sigmgr._PF:17 232x342+607+336
+wm geometry .sigmgr._PF:17 232x342+607+324
+wm geometry .sigmgr._PF:17 232x342+609+322
+wm geometry .sigmgr._PF:17 232x342+612+322
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_Single_Ended.tr0}}
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_Single_Ended.tr0}}
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_Single_Ended.tr0}}
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_Latch_SA/SRAM_read_latency_latch_sa.tr0 1 openonly
+# PF:20
+wm geometry .sigmgr._PF:20 232x342+768+444
+GrXY:NewGraph
+# Graph6
+pf:read PF:20 v(bl)
+# WF:20:1
+Graph addsignal WF:20:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+Mdi:FullSize
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:20 232x342+742+459
+wm geometry .sigmgr._PF:20 232x342+719+476
+wm geometry .sigmgr._PF:20 232x342+710+485
+wm geometry .sigmgr._PF:20 232x342+694+501
+wm geometry .sigmgr._PF:20 232x342+673+534
+wm geometry .sigmgr._PF:20 232x342+662+553
+wm geometry .sigmgr._PF:20 232x342+643+574
+wm geometry .sigmgr._PF:20 232x342+632+592
+wm geometry .sigmgr._PF:20 232x342+625+607
+wm geometry .sigmgr._PF:20 232x342+618+623
+wm geometry .sigmgr._PF:20 232x342+611+639
+wm geometry .sigmgr._PF:20 232x342+609+658
+wm geometry .sigmgr._PF:20 232x342+607+670
+wm geometry .sigmgr._PF:20 232x342+607+675
+wm geometry .sigmgr._PF:20 232x342+609+682
+wm geometry .sigmgr._PF:20 232x342+609+689
+wm geometry .sigmgr._PF:20 232x342+609+696
+wm geometry .sigmgr._PF:20 232x342+609+705
+wm geometry .sigmgr._PF:20 232x342+608+708
+wm geometry .sigmgr._PF:20 232x342+607+712
+wm geometry .sigmgr._PF:20 232x342+605+713
+wm geometry .sigmgr._PF:20 232x342+604+717
+wm geometry .sigmgr._PF:20 232x342+604+718
+wm geometry .sigmgr._PF:20 232x342+603+719
+wm geometry .sigmgr._PF:20 232x342+564+713
+wm geometry .sigmgr._PF:20 232x342+534+705
+wm geometry .sigmgr._PF:20 232x342+520+697
+wm geometry .sigmgr._PF:20 232x342+508+687
+wm geometry .sigmgr._PF:20 232x342+496+672
+wm geometry .sigmgr._PF:20 232x342+484+648
+wm geometry .sigmgr._PF:20 232x342+478+629
+wm geometry .sigmgr._PF:20 232x342+466+594
+wm geometry .sigmgr._PF:20 232x342+462+556
+wm geometry .sigmgr._PF:20 232x342+459+513
+wm geometry .sigmgr._PF:20 232x342+455+465
+wm geometry .sigmgr._PF:20 232x342+455+429
+wm geometry .sigmgr._PF:20 232x342+457+405
+wm geometry .sigmgr._PF:20 232x342+461+384
+wm geometry .sigmgr._PF:20 232x342+467+372
+wm geometry .sigmgr._PF:20 232x342+468+369
+wm geometry .sigmgr._PF:20 232x342+469+369
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+pf:read PF:21 v(out)
+# WF:21:2
+Graph addsignal WF:21:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+wm geometry .sigmgr._PF:20 232x342+443+386
+wm geometry .sigmgr._PF:20 232x342+437+400
+wm geometry .sigmgr._PF:20 232x342+433+422
+wm geometry .sigmgr._PF:20 232x342+431+445
+wm geometry .sigmgr._PF:20 232x342+431+463
+wm geometry .sigmgr._PF:20 232x342+431+480
+wm geometry .sigmgr._PF:20 232x342+433+496
+wm geometry .sigmgr._PF:20 232x342+436+505
+wm geometry .sigmgr._PF:20 232x342+437+512
+wm geometry .sigmgr._PF:20 232x342+439+525
+wm geometry .sigmgr._PF:20 232x342+442+539
+wm geometry .sigmgr._PF:20 232x342+446+556
+wm geometry .sigmgr._PF:20 232x342+451+580
+wm geometry .sigmgr._PF:20 232x342+457+604
+wm geometry .sigmgr._PF:20 232x342+462+624
+wm geometry .sigmgr._PF:20 232x342+468+636
+wm geometry .sigmgr._PF:20 232x342+473+643
+wm geometry .sigmgr._PF:20 232x342+477+649
+wm geometry .sigmgr._PF:20 232x342+496+590
+wm geometry .sigmgr._PF:20 232x342+554+415
+wm geometry .sigmgr._PF:20 232x342+564+378
+wm geometry .sigmgr._PF:20 232x342+590+326
+wm geometry .sigmgr._PF:20 232x342+594+316
+wm geometry .sigmgr._PF:20 232x342+595+312
+pf:read PF:21 v(wl)
+# WF:21:4
+Graph addsignal WF:21:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:21 v(se)
+# WF:21:5
+Graph addsignal WF:21:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:21 v(seb)
+# WF:21:6
+Graph addsignal WF:21:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+wm geometry .sigmgr 376x204+1150+651
+pf:read PF:21 {xsa;v(com_n)}
+# WF:21:3
+Graph addsignal WF:21:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:20 232x342+567+352
+wm geometry .sigmgr._PF:20 232x342+559+386
+wm geometry .sigmgr._PF:20 232x342+554+417
+wm geometry .sigmgr._PF:20 232x342+552+452
+wm geometry .sigmgr._PF:20 232x342+550+491
+wm geometry .sigmgr._PF:20 232x342+548+528
+wm geometry .sigmgr._PF:20 232x342+548+564
+wm geometry .sigmgr._PF:20 232x342+550+580
+wm geometry .sigmgr._PF:20 232x342+551+589
+wm geometry .sigmgr._PF:20 232x342+556+602
+wm geometry .sigmgr._PF:20 232x342+561+619
+wm geometry .sigmgr._PF:20 232x342+571+642
+wm geometry .sigmgr._PF:20 232x342+584+659
+wm geometry .sigmgr._PF:20 232x342+596+671
+wm geometry .sigmgr._PF:20 232x342+609+674
+wm geometry .sigmgr._PF:20 232x342+620+677
+wm geometry .sigmgr._PF:20 232x342+627+677
+wm geometry .sigmgr._PF:20 232x342+628+678
+wm geometry .sigmgr._PF:20 232x342+627+673
+wm geometry .sigmgr 376x204+1104+688
+wm geometry .sigmgr 376x204+1088+709
+wm geometry .sigmgr 376x204+1083+727
+wm geometry .sigmgr 376x204+1083+742
+wm geometry .sigmgr 376x204+1083+763
+wm geometry .sigmgr 376x204+1083+779
+wm geometry .sigmgr 376x204+1087+798
+wm geometry .sigmgr 376x204+1092+810
+wm geometry .sigmgr 376x204+1092+813
+wm geometry .sigmgr._PF:20 232x342+597+657
+wm geometry .sigmgr._PF:20 232x342+537+630
+wm geometry .sigmgr._PF:20 232x342+486+605
+wm geometry .sigmgr._PF:20 232x342+465+588
+wm geometry .sigmgr._PF:20 232x342+461+577
+wm geometry .sigmgr._PF:20 232x342+460+558
+wm geometry .sigmgr._PF:20 232x342+460+539
+wm geometry .sigmgr._PF:20 232x342+458+513
+wm geometry .sigmgr._PF:20 232x342+458+502
+wm geometry .sigmgr._PF:20 232x342+460+482
+wm geometry .sigmgr._PF:20 232x342+473+443
+wm geometry .sigmgr._PF:20 232x342+484+419
+wm geometry .sigmgr._PF:20 232x342+496+391
+wm geometry .sigmgr._PF:20 232x342+500+375
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:20 232x342+488+429
+wm geometry .sigmgr._PF:20 232x342+488+460
+wm geometry .sigmgr._PF:20 232x342+490+497
+wm geometry .sigmgr._PF:20 232x342+500+530
+wm geometry .sigmgr._PF:20 232x342+510+554
+wm geometry .sigmgr._PF:20 232x342+522+580
+wm geometry .sigmgr._PF:20 232x342+535+605
+wm geometry .sigmgr._PF:20 232x342+557+633
+wm geometry .sigmgr._PF:20 232x342+582+660
+wm geometry .sigmgr._PF:20 232x342+600+676
+wm geometry .sigmgr._PF:20 232x342+627+695
+wm geometry .sigmgr._PF:20 232x342+663+710
+wm geometry .sigmgr._PF:20 232x342+693+723
+wm geometry .sigmgr._PF:20 232x342+735+736
+wm geometry .sigmgr._PF:20 232x342+781+753
+wm geometry .sigmgr._PF:20 232x342+833+768
+wm geometry .sigmgr._PF:20 232x342+857+774
+wm geometry .sigmgr._PF:20 232x342+881+780
+wm geometry .sigmgr._PF:20 232x342+889+780
+wm geometry .sigmgr._PF:20 232x342+890+782
+Graph:Select Graph6
+Graph:DSel
+Graph itemselect Signal14 add
+# Signal14
+Graph delsignal selected
+wm geometry .sigmgr._PF:20 232x342+827+736
+wm geometry .sigmgr._PF:20 232x342+777+706
+wm geometry .sigmgr._PF:20 232x342+760+689
+wm geometry .sigmgr._PF:20 232x342+746+665
+wm geometry .sigmgr._PF:20 232x342+734+639
+wm geometry .sigmgr._PF:20 232x342+733+627
+wm geometry .sigmgr._PF:20 232x342+731+617
+wm geometry .sigmgr._PF:20 232x342+731+596
+wm geometry .sigmgr._PF:20 232x342+733+568
+wm geometry .sigmgr._PF:20 232x342+737+549
+wm geometry .sigmgr._PF:20 232x342+741+529
+wm geometry .sigmgr._PF:20 232x342+742+513
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+Graph6 delsignal Signal13
+Graph6 delsignal Signal15
+Graph6 delsignal Signal16
+Graph6 delsignal Signal17
+Graph6 delsignal Signal18
+wm geometry .sigmgr 376x204+1039+787
+wm geometry .sigmgr 376x204+971+756
+wm geometry .sigmgr 376x204+929+732
+wm geometry .sigmgr 376x204+909+710
+wm geometry .sigmgr 376x204+903+696
+wm geometry .sigmgr 376x204+900+683
+wm geometry .sigmgr 376x204+896+668
+wm geometry .sigmgr 376x204+894+643
+wm geometry .sigmgr 376x204+894+623
+wm geometry .sigmgr 376x204+894+595
+wm geometry .sigmgr 376x204+901+565
+wm geometry .sigmgr 376x204+907+534
+wm geometry .sigmgr 376x204+912+513
+wm geometry .sigmgr 376x204+912+511
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_Latch_SA/SRAM_read_latency_latch_sa.tr0 1 openonly
+# PF:24
+wm geometry .sigmgr._PF:24 232x342+768+444
+GrXY:NewGraph
+# Graph7
+pf:read PF:24 v(bl)
+# WF:24:1
+Graph addsignal WF:24:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:24 v(se)
+# WF:24:2
+Graph addsignal WF:24:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:24 v(wl)
+# WF:24:3
+Graph addsignal WF:24:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+wm geometry .sigmgr._PF:24 232x342+771+469
+wm geometry .sigmgr._PF:24 232x342+786+496
+wm geometry .sigmgr._PF:24 232x342+800+520
+wm geometry .sigmgr._PF:24 232x342+813+541
+wm geometry .sigmgr._PF:24 232x342+831+563
+wm geometry .sigmgr._PF:24 232x342+852+584
+wm geometry .sigmgr._PF:24 232x342+873+601
+wm geometry .sigmgr._PF:24 232x342+888+620
+wm geometry .sigmgr._PF:24 232x342+910+648
+wm geometry .sigmgr._PF:24 232x342+938+685
+wm geometry .sigmgr._PF:24 232x342+961+721
+wm geometry .sigmgr._PF:24 232x342+977+752
+wm geometry .sigmgr._PF:24 232x342+987+767
+wm geometry .sigmgr._PF:24 232x342+991+774
+wm geometry .sigmgr._PF:24 232x342+994+781
+wm geometry .sigmgr._PF:24 232x342+997+785
+wm geometry .sigmgr._PF:24 232x342+999+786
+wm geometry .sigmgr._PF:24 232x342+1002+791
+wm geometry .sigmgr._PF:24 232x342+1006+795
+wm geometry .sigmgr._PF:24 232x342+1011+801
+wm geometry .sigmgr._PF:24 232x342+1016+808
+wm geometry .sigmgr._PF:24 232x342+1019+809
+wm geometry .sigmgr._PF:24 232x342+1019+811
+wm geometry .sigmgr._PF:24 232x342+1020+811
+wm geometry .sigmgr._PF:24 232x342+1023+811
+wm geometry .sigmgr._PF:24 232x342+1026+812
+wm geometry .sigmgr._PF:24 232x342+1026+797
+wm geometry .sigmgr 376x204+946+538
+wm geometry .sigmgr 376x204+988+572
+wm geometry .sigmgr 376x204+1029+607
+wm geometry .sigmgr 376x204+1066+641
+wm geometry .sigmgr 376x204+1093+667
+wm geometry .sigmgr 376x204+1112+690
+wm geometry .sigmgr 376x204+1130+712
+wm geometry .sigmgr 376x204+1150+726
+wm geometry .sigmgr 376x204+1150+730
+wm geometry .sigmgr 376x204+1150+738
+wm geometry .sigmgr 376x204+1161+759
+wm geometry .sigmgr 376x204+1173+783
+wm geometry .sigmgr 376x204+1189+804
+wm geometry .sigmgr 376x204+1196+814
+wm geometry .sigmgr 376x204+1195+806
+wm geometry .sigmgr 376x204+1191+797
+Mdi:FullSize
+Graph:Select Graph7
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph7 {Signal2 Signal1 Signal0} 12.797n
+# M:0
+Graph:DSel
+GrMeas:Select Graph7 M:0 2
+GrMeas:MoveXLevel Graph7 M:0 2 9.4814736691792n
+# M:0
+wm geometry .sigmgr._PF:24 232x342+879+741
+wm geometry .sigmgr._PF:24 232x342+825+719
+wm geometry .sigmgr._PF:24 232x342+812+710
+wm geometry .sigmgr._PF:24 232x342+811+709
+wm geometry .sigmgr._PF:24 232x342+788+695
+wm geometry .sigmgr._PF:24 232x342+745+668
+wm geometry .sigmgr._PF:24 232x342+707+646
+wm geometry .sigmgr._PF:24 232x342+702+642
+wm geometry .sigmgr._PF:24 232x342+689+627
+wm geometry .sigmgr._PF:24 232x342+647+583
+wm geometry .sigmgr._PF:24 232x342+614+549
+wm geometry .sigmgr._PF:24 232x342+606+541
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:24 232x342+605+564
+wm geometry .sigmgr._PF:24 232x342+607+575
+wm geometry .sigmgr._PF:24 232x342+611+587
+wm geometry .sigmgr._PF:24 232x342+614+602
+wm geometry .sigmgr._PF:24 232x342+621+621
+wm geometry .sigmgr._PF:24 232x342+630+639
+wm geometry .sigmgr._PF:24 232x342+634+646
+wm geometry .sigmgr._PF:24 232x342+641+657
+wm geometry .sigmgr._PF:24 232x342+654+674
+wm geometry .sigmgr._PF:24 232x342+668+689
+wm geometry .sigmgr._PF:24 232x342+687+709
+wm geometry .sigmgr._PF:24 232x342+718+731
+wm geometry .sigmgr._PF:24 232x342+751+752
+wm geometry .sigmgr._PF:24 232x342+772+762
+wm geometry .sigmgr._PF:24 232x342+786+767
+wm geometry .sigmgr._PF:24 232x342+797+769
+wm geometry .sigmgr._PF:24 232x342+819+773
+wm geometry .sigmgr._PF:24 232x342+844+773
+wm geometry .sigmgr._PF:24 232x342+851+773
+wm geometry .sigmgr._PF:24 232x342+738+710
+wm geometry .sigmgr._PF:24 232x342+651+653
+wm geometry .sigmgr._PF:24 232x342+637+634
+wm geometry .sigmgr._PF:24 232x342+632+620
+wm geometry .sigmgr._PF:24 232x342+628+593
+wm geometry .sigmgr._PF:24 232x342+625+558
+wm geometry .sigmgr._PF:24 232x342+625+534
+wm geometry .sigmgr._PF:24 232x342+625+501
+wm geometry .sigmgr._PF:24 232x342+632+467
+wm geometry .sigmgr._PF:24 232x342+635+449
+wm geometry .sigmgr._PF:24 232x342+637+444
+wm geometry .sigmgr._PF:24 232x342+638+441
+wm geometry .sigmgr._PF:24 232x342+638+442
+pf:read PF:25 v(out)
+# WF:25:4
+Graph addsignal WF:25:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+wm geometry .sigmgr._PF:24 232x342+650+482
+wm geometry .sigmgr._PF:24 232x342+666+529
+wm geometry .sigmgr._PF:24 232x342+681+564
+wm geometry .sigmgr._PF:24 232x342+693+595
+wm geometry .sigmgr._PF:24 232x342+704+620
+wm geometry .sigmgr._PF:24 232x342+720+642
+wm geometry .sigmgr._PF:24 232x342+739+671
+wm geometry .sigmgr._PF:24 232x342+758+696
+wm geometry .sigmgr._PF:24 232x342+777+720
+wm geometry .sigmgr._PF:24 232x342+799+743
+wm geometry .sigmgr._PF:24 232x342+821+765
+wm geometry .sigmgr._PF:24 232x342+836+781
+wm geometry .sigmgr._PF:24 232x342+851+798
+wm geometry .sigmgr._PF:24 232x342+868+824
+wm geometry .sigmgr._PF:24 232x342+879+824
+wm geometry .sigmgr._PF:24 232x342+886+829
+wm geometry .sigmgr._PF:24 232x342+891+829
+wm geometry .sigmgr._PF:24 232x342+893+829
+Graph:Select Graph7
+Graph:DSel
+Graph itemselect Signal6 add
+# Signal6
+Graph sigconfig {Signal6 Signal3 Signal4 Signal5} -regswap {0 1 2 3}
+wm geometry .sigmgr._PF:24 232x342+795+784
+wm geometry .sigmgr._PF:24 232x342+708+745
+wm geometry .sigmgr._PF:24 232x342+650+719
+wm geometry .sigmgr._PF:24 232x342+618+698
+wm geometry .sigmgr._PF:24 232x342+593+678
+wm geometry .sigmgr._PF:24 232x342+572+651
+wm geometry .sigmgr._PF:24 232x342+549+610
+wm geometry .sigmgr._PF:24 232x342+527+555
+wm geometry .sigmgr._PF:24 232x342+521+527
+wm geometry .sigmgr._PF:24 232x342+521+513
+wm geometry .sigmgr._PF:24 232x342+525+482
+wm geometry .sigmgr._PF:24 232x342+540+453
+wm geometry .sigmgr._PF:24 232x342+558+420
+wm geometry .sigmgr._PF:24 232x342+575+394
+wm geometry .sigmgr._PF:24 232x342+590+375
+wm geometry .sigmgr._PF:24 232x342+600+364
+wm geometry .sigmgr._PF:24 232x342+603+362
+wm geometry .sigmgr._PF:24 232x342+604+370
+wm geometry .sigmgr._PF:24 232x342+612+389
+wm geometry .sigmgr._PF:24 232x342+615+398
+wm geometry .sigmgr._PF:24 232x342+618+402
+Graph:DSel
+pf:read PF:25 v(bl_pch)
+# WF:25:5
+Graph addsignal WF:25:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal7
+Graph:Select Graph7
+Graph:DSel
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig Signal7 -region 3 -rgnindex 1
+Graph itemselect Signal7 add
+# Signal7
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig Signal7 -region 3 -rgnindex 2
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig {Signal7 Signal5} -regswap {3 4}
+Graph itemselect Signal7 add
+# Signal7
+Graph sigconfig Signal7 -regswap 6
+wm geometry .sigmgr._PF:24 232x342+615+455
+wm geometry .sigmgr._PF:24 232x342+619+485
+wm geometry .sigmgr._PF:24 232x342+628+514
+wm geometry .sigmgr._PF:24 232x342+641+534
+wm geometry .sigmgr._PF:24 232x342+655+554
+wm geometry .sigmgr._PF:24 232x342+671+574
+wm geometry .sigmgr._PF:24 232x342+682+590
+wm geometry .sigmgr._PF:24 232x342+698+608
+wm geometry .sigmgr._PF:24 232x342+721+638
+wm geometry .sigmgr._PF:24 232x342+743+662
+wm geometry .sigmgr._PF:24 232x342+777+687
+wm geometry .sigmgr._PF:24 232x342+821+715
+wm geometry .sigmgr._PF:24 232x342+851+729
+wm geometry .sigmgr._PF:24 232x342+877+741
+wm geometry .sigmgr._PF:24 232x342+915+753
+wm geometry .sigmgr._PF:24 232x342+929+758
+wm geometry .sigmgr._PF:24 232x342+944+772
+wm geometry .sigmgr._PF:24 232x342+971+801
+wm geometry .sigmgr._PF:24 232x342+987+814
+wm geometry .sigmgr._PF:24 232x342+976+812
+wm geometry .sigmgr._PF:24 232x342+966+810
+wm geometry .sigmgr._PF:24 232x342+960+810
+wm geometry .sigmgr._PF:24 232x342+954+810
+wm geometry .sigmgr._PF:24 232x342+948+812
+wm geometry .sigmgr._PF:24 232x342+941+812
+wm geometry .sigmgr._PF:24 232x342+927+813
+wm geometry .sigmgr._PF:24 232x342+917+813
+wm geometry .sigmgr._PF:24 232x342+915+813
+wm geometry .sigmgr._PF:24 232x342+908+813
+wm geometry .sigmgr._PF:24 232x342+898+824
+wm geometry .sigmgr._PF:24 232x342+891+824
+wm geometry .sigmgr._PF:24 232x342+880+824
+wm geometry .sigmgr._PF:24 232x342+853+824
+wm geometry .sigmgr._PF:24 232x342+845+813
+wm geometry .sigmgr._PF:24 232x342+841+812
+wm geometry .sigmgr._PF:24 232x342+838+811
+wm geometry .sigmgr._PF:24 232x342+836+809
+wm geometry .sigmgr._PF:24 232x342+832+809
+wm geometry .sigmgr._PF:24 232x342+832+808
+Graph:DSel
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig Signal3 -region 3 -rgnindex 1
+Graph itemselect Signal3 add
+# Signal3
+Graph sigconfig {Signal3 Signal5 Signal7} -regswap {2 3 4}
+wm geometry .sigmgr._PF:24 232x342+749+785
+wm geometry .sigmgr._PF:24 232x342+729+779
+wm geometry .sigmgr._PF:24 232x342+728+779
+wm geometry .sigmgr._PF:24 232x342+688+754
+wm geometry .sigmgr._PF:24 232x342+662+742
+wm geometry .sigmgr._PF:24 232x342+646+731
+wm geometry .sigmgr._PF:24 232x342+635+709
+wm geometry .sigmgr._PF:24 232x342+630+672
+wm geometry .sigmgr._PF:24 232x342+630+610
+wm geometry .sigmgr._PF:24 232x342+641+558
+wm geometry .sigmgr._PF:24 232x342+659+513
+wm geometry .sigmgr._PF:24 232x342+678+482
+wm geometry .sigmgr._PF:24 232x342+698+454
+wm geometry .sigmgr._PF:24 232x342+718+437
+wm geometry .sigmgr._PF:24 232x342+740+414
+wm geometry .sigmgr._PF:24 232x342+757+397
+wm geometry .sigmgr._PF:24 232x342+761+395
+wm geometry .sigmgr._PF:24 232x342+761+398
+wm geometry .sigmgr._PF:24 232x342+762+400
+wm geometry .sigmgr._PF:24 232x342+762+409
+wm geometry .sigmgr._PF:24 232x342+763+416
+wm geometry .sigmgr._PF:24 232x342+765+423
+wm geometry .sigmgr._PF:24 232x342+765+428
+wm geometry .sigmgr._PF:24 232x342+765+430
+wm geometry .sigmgr._PF:24 232x342+766+434
+Graph:DSel
+pf:read PF:25 {xsa;v(int_lft)}
+# WF:25:6
+Graph addsignal WF:25:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal8
+wm geometry .sigmgr._PF:24 232x342+753+492
+wm geometry .sigmgr._PF:24 232x342+749+540
+wm geometry .sigmgr._PF:24 232x342+749+593
+wm geometry .sigmgr._PF:24 232x342+757+639
+wm geometry .sigmgr._PF:24 232x342+778+672
+wm geometry .sigmgr._PF:24 232x342+797+698
+wm geometry .sigmgr._PF:24 232x342+823+719
+wm geometry .sigmgr._PF:24 232x342+835+729
+wm geometry .sigmgr._PF:24 232x342+845+736
+wm geometry .sigmgr._PF:24 232x342+862+751
+wm geometry .sigmgr._PF:24 232x342+873+767
+wm geometry .sigmgr._PF:24 232x342+885+777
+wm geometry .sigmgr._PF:24 232x342+891+784
+wm geometry .sigmgr._PF:24 232x342+897+790
+wm geometry .sigmgr._PF:24 232x342+898+794
+wm geometry .sigmgr._PF:24 232x342+900+799
+wm geometry .sigmgr._PF:24 232x342+902+802
+Graph:DSel
+GrMeas:Select Graph7 M:1 4
+GrMeas:MoveXLevel Graph7 M:1 4 9.5980427716339n
+# M:1
+GrMeas:MoveXLevel Graph7 M:1 4 9.6912980535976n
+# M:1
+wm geometry .sigmgr._PF:24 232x342+948+810
+wm geometry .sigmgr._PF:24 232x342+952+810
+wm geometry .sigmgr._PF:24 232x342+848+762
+wm geometry .sigmgr._PF:24 232x342+791+737
+wm geometry .sigmgr._PF:24 232x342+778+728
+wm geometry .sigmgr._PF:24 232x342+749+688
+wm geometry .sigmgr._PF:24 232x342+734+656
+wm geometry .sigmgr._PF:24 232x342+723+621
+wm geometry .sigmgr._PF:24 232x342+718+606
+wm geometry .sigmgr._PF:24 232x342+716+596
+wm geometry .sigmgr._PF:24 232x342+714+548
+wm geometry .sigmgr._PF:24 232x342+714+447
+wm geometry .sigmgr._PF:24 232x342+714+399
+wm geometry .sigmgr._PF:24 232x342+714+351
+wm geometry .sigmgr._PF:24 232x342+714+331
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+pf:read PF:26 {xsa;v(int_lft)}
+# WF:26:6
+Graph addsignal WF:26:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal15
+pf:read PF:26 {xsa;v(int_rgt)}
+# WF:26:7
+Graph addsignal WF:26:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal16
+wm geometry .sigmgr._PF:24 232x342+697+350
+wm geometry .sigmgr._PF:24 232x342+686+368
+wm geometry .sigmgr._PF:24 232x342+679+386
+wm geometry .sigmgr._PF:24 232x342+671+409
+wm geometry .sigmgr._PF:24 232x342+666+432
+wm geometry .sigmgr._PF:24 232x342+662+460
+wm geometry .sigmgr._PF:24 232x342+660+487
+wm geometry .sigmgr._PF:24 232x342+660+511
+wm geometry .sigmgr._PF:24 232x342+660+533
+wm geometry .sigmgr._PF:24 232x342+662+557
+wm geometry .sigmgr._PF:24 232x342+672+586
+wm geometry .sigmgr._PF:24 232x342+684+617
+wm geometry .sigmgr._PF:24 232x342+693+633
+wm geometry .sigmgr._PF:24 232x342+703+645
+wm geometry .sigmgr._PF:24 232x342+716+661
+wm geometry .sigmgr._PF:24 232x342+728+679
+wm geometry .sigmgr._PF:24 232x342+736+693
+wm geometry .sigmgr._PF:24 232x342+742+702
+wm geometry .sigmgr._PF:24 232x342+747+713
+wm geometry .sigmgr._PF:24 232x342+754+723
+wm geometry .sigmgr._PF:24 232x342+756+731
+wm geometry .sigmgr._PF:24 232x342+757+731
+wm geometry .sigmgr 376x204+1150+651
+wm geometry .sigmgr._PF:24 232x342+757+482
+wm geometry .sigmgr 376x204+1051+637
+wm geometry .sigmgr 376x204+1004+622
+wm geometry .sigmgr 376x204+993+615
+wm geometry .sigmgr 376x204+992+615
+wm geometry .sigmgr 376x204+983+603
+wm geometry .sigmgr 376x204+967+586
+wm geometry .sigmgr 376x204+957+577
+wm geometry .sigmgr 376x204+953+568
+wm geometry .sigmgr 376x204+947+545
+wm geometry .sigmgr 376x204+943+527
+wm geometry .sigmgr 376x204+942+514
+wm geometry .sigmgr 376x204+942+501
+wm geometry .sigmgr 376x204+944+497
+wm geometry .sigmgr 376x204+947+493
+wm geometry .sigmgr 376x204+949+488
+wm geometry .sigmgr 376x204+966+478
+wm geometry .sigmgr 376x204+977+473
+wm geometry .sigmgr 376x204+1004+537
+wm geometry .sigmgr 376x204+1022+593
+wm geometry .sigmgr 376x204+1039+637
+wm geometry .sigmgr 376x204+1045+651
+wm geometry .sigmgr 376x204+1048+666
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+Graph7 delsignal Signal9
+Graph7 delsignal Signal10
+Graph7 delsignal Signal11
+Graph7 delsignal Signal12
+Graph7 delsignal Signal13
+Graph7 delsignal Signal14
+Graph7 delsignal Signal15
+Graph7 delsignal Signal16
+Graph:Select Graph7
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_Latch_SA/SRAM_read_latency_latch_sa.tr0 1 openonly
+# PF:27
+wm geometry .sigmgr._PF:27 232x342+768+444
+GrXY:NewGraph
+# Graph8
+pf:read PF:27 v(wl)
+# WF:27:1
+Graph addsignal WF:27:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:27 v(bl_pch)
+# WF:27:2
+Graph addsignal WF:27:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:27 v(bl)
+# WF:27:3
+Graph addsignal WF:27:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:27 v(se)
+# WF:27:4
+Graph addsignal WF:27:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:27 v(out)
+# WF:27:5
+Graph addsignal WF:27:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:27 {xsa;v(n_output_)}
+# WF:27:6
+Graph addsignal WF:27:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+pf:read PF:27 {xsa;v(com_n)}
+# WF:27:7
+Graph addsignal WF:27:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal6
+pf:read PF:27 {xsa;v(com_p)}
+# WF:27:8
+Graph addsignal WF:27:8 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal7
+wm geometry .sigmgr._PF:27 232x342+767+520
+wm geometry .sigmgr._PF:27 232x342+767+567
+wm geometry .sigmgr._PF:27 232x342+767+605
+wm geometry .sigmgr._PF:27 232x342+767+642
+wm geometry .sigmgr._PF:27 232x342+771+662
+wm geometry .sigmgr._PF:27 232x342+771+663
+Mdi:FullSize
+wm geometry .sigmgr._PF:27 232x342+776+703
+wm geometry .sigmgr._PF:27 232x342+776+727
+wm geometry .sigmgr._PF:27 232x342+778+749
+wm geometry .sigmgr._PF:27 232x342+779+758
+wm geometry .sigmgr._PF:27 232x342+779+764
+wm geometry .sigmgr._PF:27 232x342+781+773
+wm geometry .sigmgr._PF:27 232x342+783+787
+wm geometry .sigmgr 376x204+1052+685
+wm geometry .sigmgr 376x204+1052+704
+wm geometry .sigmgr 376x204+1052+720
+wm geometry .sigmgr 376x204+1052+732
+wm geometry .sigmgr 376x204+1052+742
+wm geometry .sigmgr 376x204+1052+754
+wm geometry .sigmgr 376x204+1053+765
+wm geometry .sigmgr 376x204+1053+775
+wm geometry .sigmgr 376x204+1053+777
+wm geometry .sigmgr 376x204+1053+783
+wm geometry .sigmgr 376x204+1055+788
+wm geometry .sigmgr 376x204+1055+790
+wm geometry .sigmgr 376x204+1056+791
+Graph:Select Graph8
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph8 {Signal7 Signal6 Signal5 Signal4 Signal3 Signal2 Signal1 Signal0} 12.799n
+# M:0
+Graph:DSel
+GrMeas:Select Graph8 M:0 10
+GrMeas:MoveXLevel Graph8 M:0 10 9.3079870547843n
+# M:0
+GrMeas:MoveXLevel Graph8 M:0 10 9.4961750050844n
+# M:0
+wm geometry .sigmgr._PF:27 232x342+706+769
+wm geometry .sigmgr._PF:27 232x342+655+751
+wm geometry .sigmgr._PF:27 232x342+645+746
+wm geometry .sigmgr._PF:27 232x342+643+746
+wm geometry .sigmgr._PF:27 232x342+634+730
+wm geometry .sigmgr._PF:27 232x342+626+699
+wm geometry .sigmgr._PF:27 232x342+624+667
+wm geometry .sigmgr._PF:27 232x342+636+623
+wm geometry .sigmgr._PF:27 232x342+661+572
+wm geometry .sigmgr._PF:27 232x342+673+542
+wm geometry .sigmgr._PF:27 232x342+685+513
+wm geometry .sigmgr._PF:27 232x342+702+482
+wm geometry .sigmgr._PF:27 232x342+713+470
+wm geometry .sigmgr._PF:27 232x342+716+466
+wm geometry .sigmgr._PF:27 232x342+720+460
+wm geometry .sigmgr._PF:27 232x342+721+458
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:27 232x342+714+506
+wm geometry .sigmgr._PF:27 232x342+713+554
+wm geometry .sigmgr._PF:27 232x342+713+604
+wm geometry .sigmgr._PF:27 232x342+713+635
+wm geometry .sigmgr._PF:27 232x342+717+667
+wm geometry .sigmgr._PF:27 232x342+724+696
+wm geometry .sigmgr._PF:27 232x342+731+715
+wm geometry .sigmgr._PF:27 232x342+738+741
+wm geometry .sigmgr._PF:27 232x342+744+757
+wm geometry .sigmgr._PF:27 232x342+749+769
+wm geometry .sigmgr._PF:27 232x342+753+777
+wm geometry .sigmgr._PF:27 232x342+756+785
+wm geometry .sigmgr._PF:27 232x342+757+787
+wm geometry .sigmgr._PF:27 232x342+759+790
+wm geometry .sigmgr._PF:27 232x342+761+794
+wm geometry .sigmgr._PF:27 232x342+766+803
+wm geometry .sigmgr._PF:27 232x342+767+804
+Graph:Select Graph8
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph8 {Signal15 Signal14 Signal13 Signal12 Signal11 Signal10 Signal9 Signal8} 12.799n
+# M:2
+Graph:DSel
+GrMeas:Select Graph8 M:1 8
+GrMeas:MoveXLevel Graph8 M:1 8 8.0612418840458n
+# M:1
+Graph:DSel
+GrMeas:Select Graph8 M:2 8
+GrMeas:MoveXLevel Graph8 M:2 8 9.9431213870473n
+# M:2
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph8 M:2 6 1
+GrMeas:MoveXLevel Graph8 M:2 6 20.858022504456n
+# M:2
+GrXY:NewGraph
+# Graph9
+Graph:Select Graph8
+Graph:DSel
+GrMeas:Select Graph8 M:1 10 1
+GrMeas:MoveXLevel Graph8 M:1 10 7.5437250207204n
+# M:1
+wm geometry .sigmgr._PF:27 232x342+702+758
+wm geometry .sigmgr._PF:27 232x342+666+731
+wm geometry .sigmgr._PF:27 232x342+647+716
+wm geometry .sigmgr._PF:27 232x342+631+687
+wm geometry .sigmgr._PF:27 232x342+619+646
+wm geometry .sigmgr._PF:27 232x342+615+620
+wm geometry .sigmgr._PF:27 232x342+615+588
+wm geometry .sigmgr._PF:27 232x342+623+534
+wm geometry .sigmgr._PF:27 232x342+647+482
+wm geometry .sigmgr._PF:27 232x342+661+422
+wm geometry .sigmgr._PF:27 232x342+675+392
+wm geometry .sigmgr._PF:27 232x342+683+368
+wm geometry .sigmgr._PF:27 232x342+688+356
+wm geometry .sigmgr._PF:27 232x342+689+356
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:27 232x342+686+372
+wm geometry .sigmgr._PF:27 232x342+684+391
+wm geometry .sigmgr._PF:27 232x342+682+423
+wm geometry .sigmgr._PF:27 232x342+678+450
+wm geometry .sigmgr._PF:27 232x342+678+475
+wm geometry .sigmgr._PF:27 232x342+678+504
+wm geometry .sigmgr._PF:27 232x342+678+521
+wm geometry .sigmgr._PF:27 232x342+680+538
+wm geometry .sigmgr._PF:27 232x342+686+566
+wm geometry .sigmgr._PF:27 232x342+700+608
+wm geometry .sigmgr._PF:27 232x342+708+634
+wm geometry .sigmgr._PF:27 232x342+716+656
+wm geometry .sigmgr._PF:27 232x342+725+674
+wm geometry .sigmgr._PF:27 232x342+733+691
+wm geometry .sigmgr._PF:27 232x342+741+709
+wm geometry .sigmgr._PF:27 232x342+749+726
+wm geometry .sigmgr._PF:27 232x342+757+737
+wm geometry .sigmgr._PF:27 232x342+767+750
+wm geometry .sigmgr._PF:27 232x342+774+755
+wm geometry .sigmgr._PF:27 232x342+774+757
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+Graph8 delsignal Signal16
+Graph8 delsignal Signal17
+Graph8 delsignal Signal18
+Graph8 delsignal Signal19
+Graph8 delsignal Signal20
+Graph8 delsignal Signal21
+Graph8 delsignal Signal22
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_Latch_SA/SRAM_read_latency_latch_sa.tr0 1 openonly
+# PF:30
+wm geometry .sigmgr._PF:30 232x342+768+444
+GrXY:NewGraph
+# Graph10
+pf:read PF:30 v(bl_pch)
+# WF:30:1
+Graph addsignal WF:30:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:30 v(wl)
+# WF:30:2
+Graph addsignal WF:30:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:30 v(bl)
+# WF:30:3
+Graph addsignal WF:30:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:30 v(se)
+# WF:30:4
+Graph addsignal WF:30:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+pf:read PF:30 {xsa;v(int_lft)}
+# WF:30:5
+Graph addsignal WF:30:5 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal4
+pf:read PF:30 v(out)
+# WF:30:6
+Graph addsignal WF:30:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal5
+Mdi:FullSize
+wm geometry .sigmgr._PF:30 232x342+759+468
+wm geometry .sigmgr._PF:30 232x342+748+489
+wm geometry .sigmgr._PF:30 232x342+734+513
+wm geometry .sigmgr._PF:30 232x342+726+541
+wm geometry .sigmgr._PF:30 232x342+722+561
+wm geometry .sigmgr._PF:30 232x342+720+588
+wm geometry .sigmgr._PF:30 232x342+720+618
+wm geometry .sigmgr._PF:30 232x342+731+654
+wm geometry .sigmgr._PF:30 232x342+736+669
+wm geometry .sigmgr._PF:30 232x342+745+688
+wm geometry .sigmgr._PF:30 232x342+751+700
+wm geometry .sigmgr._PF:30 232x342+755+708
+wm geometry .sigmgr._PF:30 232x342+758+716
+wm geometry .sigmgr._PF:30 232x342+761+722
+wm geometry .sigmgr._PF:30 232x342+764+731
+wm geometry .sigmgr._PF:30 232x342+767+737
+wm geometry .sigmgr._PF:30 232x342+771+746
+wm geometry .sigmgr._PF:30 232x342+775+754
+wm geometry .sigmgr._PF:30 232x342+776+755
+wm geometry .sigmgr._PF:30 232x342+778+759
+wm geometry .sigmgr._PF:30 232x342+783+766
+wm geometry .sigmgr._PF:30 232x342+784+769
+wm geometry .sigmgr 376x204+1057+679
+wm geometry .sigmgr 376x204+1057+691
+wm geometry .sigmgr 376x204+1057+710
+wm geometry .sigmgr 376x204+1060+725
+wm geometry .sigmgr 376x204+1062+738
+wm geometry .sigmgr 376x204+1064+752
+wm geometry .sigmgr 376x204+1065+759
+wm geometry .sigmgr 376x204+1067+766
+wm geometry .sigmgr 376x204+1067+770
+wm geometry .sigmgr 376x204+1067+772
+wm geometry .sigmgr 376x204+1068+780
+wm geometry .sigmgr 376x204+1068+788
+wm geometry .sigmgr 376x204+1069+791
+wm geometry .sigmgr 376x204+1069+794
+Graph:Select Graph10
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph10 {Signal5 Signal4 Signal3 Signal2 Signal1 Signal0} 12.797n
+# M:0
+Graph:DSel
+GrMeas:Select Graph10 M:0 2
+GrMeas:MoveXLevel Graph10 M:0 2 9.5047874896702n
+# M:0
+Graph:DSel
+Graph axisconfig {AxisY(3,0) AxisX(0)} -range {{-6.7228825913035 3.7029030452148} {12.1626n 14.9369n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0) AxisY(5,0)} -range {all all all all all all all} -zoomed {0 0 0 0 0 0 0}
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0) AxisY(5,0)} -range {{0.2965 0.643 } {10.56n 21.12n } {-0.005 0.49 } {-0.005 0.49 } {-0.005 0.49 } {-0.005 0.49 } {-0.005 0.49 }}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0) AxisY(2,0) AxisY(3,0) AxisY(4,0) AxisY(5,0)} -range {all all all all all all all} -zoomed {0 0 0 0 0 0 0}
+Graph:DSel
+GrMeas:Select Graph10 M:0 0 1
+GrMeas:MoveText Graph10 M:0 0 nw
+wm geometry .sigmgr._PF:30 232x342+732+757
+wm geometry .sigmgr._PF:30 232x342+700+749
+wm geometry .sigmgr._PF:30 232x342+666+741
+wm geometry .sigmgr._PF:30 232x342+648+735
+wm geometry .sigmgr._PF:30 232x342+633+711
+wm geometry .sigmgr._PF:30 232x342+621+694
+wm geometry .sigmgr._PF:30 232x342+619+687
+wm geometry .sigmgr._PF:30 232x342+616+656
+wm geometry .sigmgr._PF:30 232x342+616+603
+wm geometry .sigmgr._PF:30 232x342+618+540
+wm geometry .sigmgr._PF:30 232x342+630+482
+wm geometry .sigmgr._PF:30 232x342+646+435
+wm geometry .sigmgr._PF:30 232x342+658+412
+wm geometry .sigmgr._PF:30 232x342+669+390
+wm geometry .sigmgr._PF:30 232x342+673+382
+wm geometry .sigmgr._PF:30 232x342+673+381
+wm geometry .sigmgr._PF:30 232x342+673+385
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:30 232x342+655+425
+wm geometry .sigmgr._PF:30 232x342+646+456
+wm geometry .sigmgr._PF:30 232x342+641+483
+wm geometry .sigmgr._PF:30 232x342+637+529
+wm geometry .sigmgr._PF:30 232x342+637+573
+wm geometry .sigmgr._PF:30 232x342+639+611
+wm geometry .sigmgr._PF:30 232x342+645+644
+wm geometry .sigmgr._PF:30 232x342+653+675
+wm geometry .sigmgr._PF:30 232x342+665+705
+wm geometry .sigmgr._PF:30 232x342+675+722
+wm geometry .sigmgr._PF:30 232x342+679+729
+wm geometry .sigmgr._PF:30 232x342+681+732
+wm geometry .sigmgr._PF:30 232x342+681+733
+wm geometry .sigmgr._PF:30 232x342+587+733
+wm geometry .sigmgr._PF:30 232x342+572+733
+wm geometry .sigmgr._PF:30 232x342+543+720
+wm geometry .sigmgr._PF:30 232x342+509+701
+wm geometry .sigmgr._PF:30 232x342+505+699
+wm geometry .sigmgr._PF:30 232x342+503+683
+wm geometry .sigmgr._PF:30 232x342+494+636
+wm geometry .sigmgr._PF:30 232x342+494+568
+wm geometry .sigmgr._PF:30 232x342+494+513
+wm geometry .sigmgr._PF:30 232x342+503+455
+wm geometry .sigmgr._PF:30 232x342+523+388
+wm geometry .sigmgr._PF:30 232x342+540+339
+wm geometry .sigmgr._PF:30 232x342+545+318
+wm geometry .sigmgr._PF:30 232x342+548+312
+pf:read PF:31 {xsa;v(outb)}
+# WF:31:7
+Graph addsignal WF:31:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal11
+wm geometry .sigmgr 376x204+1069+651
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:30 232x342+532+345
+wm geometry .sigmgr._PF:30 232x342+524+359
+wm geometry .sigmgr._PF:30 232x342+514+377
+wm geometry .sigmgr._PF:30 232x342+502+398
+wm geometry .sigmgr._PF:30 232x342+495+421
+wm geometry .sigmgr._PF:30 232x342+487+439
+wm geometry .sigmgr._PF:30 232x342+487+453
+wm geometry .sigmgr._PF:30 232x342+485+473
+wm geometry .sigmgr._PF:30 232x342+485+491
+wm geometry .sigmgr._PF:30 232x342+485+503
+wm geometry .sigmgr._PF:30 232x342+488+518
+wm geometry .sigmgr._PF:30 232x342+492+533
+wm geometry .sigmgr._PF:30 232x342+497+553
+wm geometry .sigmgr._PF:30 232x342+506+571
+wm geometry .sigmgr._PF:30 232x342+513+587
+wm geometry .sigmgr._PF:30 232x342+526+601
+wm geometry .sigmgr._PF:30 232x342+531+611
+wm geometry .sigmgr._PF:30 232x342+534+614
+wm geometry .sigmgr._PF:30 232x342+540+623
+wm geometry .sigmgr._PF:30 232x342+541+628
+wm geometry .sigmgr._PF:30 232x342+545+635
+wm geometry .sigmgr._PF:30 232x342+490+622
+wm geometry .sigmgr._PF:30 232x342+450+608
+wm geometry .sigmgr._PF:30 232x342+438+601
+wm geometry .sigmgr._PF:30 232x342+430+576
+wm geometry .sigmgr._PF:30 232x342+423+542
+wm geometry .sigmgr._PF:30 232x342+421+501
+wm geometry .sigmgr._PF:30 232x342+428+456
+wm geometry .sigmgr._PF:30 232x342+445+415
+wm geometry .sigmgr._PF:30 232x342+454+393
+wm geometry .sigmgr._PF:30 232x342+462+381
+wm geometry .sigmgr._PF:30 232x342+465+376
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+pf:read PF:33 v(out)
+# WF:33:3
+Graph addsignal WF:33:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal23
+pf:read PF:33 v(outb)
+# WF:33:6
+Graph addsignal WF:33:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal24
+wm geometry .sigmgr._PF:30 232x342+462+423
+wm geometry .sigmgr._PF:30 232x342+462+452
+wm geometry .sigmgr._PF:30 232x342+462+474
+wm geometry .sigmgr._PF:30 232x342+466+494
+wm geometry .sigmgr._PF:30 232x342+473+514
+wm geometry .sigmgr._PF:30 232x342+486+541
+wm geometry .sigmgr._PF:30 232x342+498+562
+wm geometry .sigmgr._PF:30 232x342+512+583
+wm geometry .sigmgr._PF:30 232x342+527+594
+wm geometry .sigmgr._PF:30 232x342+539+602
+wm geometry .sigmgr._PF:30 232x342+548+607
+wm geometry .sigmgr._PF:30 232x342+550+607
+wm geometry .sigmgr._PF:30 232x342+519+540
+wm geometry .sigmgr._PF:30 232x342+505+513
+wm geometry .sigmgr._PF:30 232x342+496+482
+wm geometry .sigmgr._PF:30 232x342+492+441
+wm geometry .sigmgr._PF:30 232x342+492+395
+wm geometry .sigmgr._PF:30 232x342+499+366
+wm geometry .sigmgr._PF:30 232x342+506+342
+wm geometry .sigmgr._PF:30 232x342+518+322
+wm geometry .sigmgr._PF:30 232x342+528+309
+wm geometry .sigmgr._PF:30 232x342+531+299
+wm geometry .sigmgr._PF:30 232x342+536+293
+wm geometry .sigmgr._PF:30 232x342+538+290
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:30 232x342+531+342
+wm geometry .sigmgr._PF:30 232x342+527+379
+wm geometry .sigmgr._PF:30 232x342+525+414
+wm geometry .sigmgr._PF:30 232x342+525+444
+wm geometry .sigmgr._PF:30 232x342+525+473
+wm geometry .sigmgr._PF:30 232x342+525+500
+wm geometry .sigmgr._PF:30 232x342+525+522
+wm geometry .sigmgr._PF:30 232x342+525+532
+wm geometry .sigmgr._PF:30 232x342+527+544
+wm geometry .sigmgr._PF:30 232x342+527+570
+wm geometry .sigmgr._PF:30 232x342+529+603
+wm geometry .sigmgr._PF:30 232x342+531+640
+wm geometry .sigmgr._PF:30 232x342+533+673
+wm geometry .sigmgr._PF:30 232x342+537+698
+wm geometry .sigmgr._PF:30 232x342+543+720
+wm geometry .sigmgr._PF:30 232x342+547+728
+wm geometry .sigmgr._PF:30 232x342+550+737
+wm geometry .sigmgr._PF:30 232x342+554+747
+wm geometry .sigmgr._PF:30 232x342+557+754
+wm geometry .sigmgr._PF:30 232x342+557+755
+wm geometry .sigmgr._PF:30 232x342+567+748
+wm geometry .sigmgr._PF:30 232x342+569+743
+wm geometry .sigmgr._PF:30 232x342+571+734
+wm geometry .sigmgr._PF:30 232x342+575+722
+wm geometry .sigmgr._PF:30 232x342+577+713
+wm geometry .sigmgr._PF:30 232x342+582+705
+wm geometry .sigmgr._PF:30 232x342+585+691
+wm geometry .sigmgr._PF:30 232x342+592+677
+wm geometry .sigmgr._PF:30 232x342+598+665
+wm geometry .sigmgr._PF:30 232x342+602+652
+wm geometry .sigmgr._PF:30 232x342+606+645
+wm geometry .sigmgr._PF:30 232x342+609+636
+wm geometry .sigmgr._PF:30 232x342+611+632
+wm geometry .sigmgr._PF:30 232x342+613+629
+wm geometry .sigmgr._PF:30 232x342+615+623
+wm geometry .sigmgr._PF:30 232x342+617+619
+wm geometry .sigmgr._PF:30 232x342+618+615
+wm geometry .sigmgr._PF:30 232x342+619+617
+wm geometry .sigmgr._PF:30 232x342+619+619
+wm geometry .sigmgr._PF:30 232x342+619+622
+wm geometry .sigmgr._PF:30 232x342+614+635
+wm geometry .sigmgr._PF:30 232x342+611+642
+wm geometry .sigmgr._PF:30 232x342+611+643
+wm geometry .sigmgr._PF:30 232x342+610+647
+wm geometry .sigmgr._PF:30 232x342+608+653
+wm geometry .sigmgr._PF:30 232x342+608+654
+wm geometry .sigmgr._PF:30 232x342+608+647
+wm geometry .sigmgr._PF:30 232x342+609+627
+wm geometry .sigmgr._PF:30 232x342+617+601
+wm geometry .sigmgr._PF:30 232x342+631+559
+wm geometry .sigmgr._PF:30 232x342+655+505
+wm geometry .sigmgr._PF:30 232x342+677+466
+wm geometry .sigmgr._PF:30 232x342+684+452
+wm geometry .sigmgr._PF:30 232x342+686+451
+wm geometry .sigmgr._PF:30 232x342+646+473
+wm geometry .sigmgr._PF:30 232x342+622+493
+wm geometry .sigmgr._PF:30 232x342+597+518
+wm geometry .sigmgr._PF:30 232x342+572+549
+wm geometry .sigmgr._PF:30 232x342+554+578
+wm geometry .sigmgr._PF:30 232x342+548+604
+wm geometry .sigmgr._PF:30 232x342+538+630
+wm geometry .sigmgr._PF:30 232x342+538+651
+wm geometry .sigmgr._PF:30 232x342+539+667
+wm geometry .sigmgr._PF:30 232x342+546+677
+wm geometry .sigmgr._PF:30 232x342+563+690
+wm geometry .sigmgr._PF:30 232x342+590+709
+wm geometry .sigmgr._PF:30 232x342+625+729
+wm geometry .sigmgr._PF:30 232x342+649+743
+wm geometry .sigmgr._PF:30 232x342+654+746
+wm geometry .sigmgr._PF:30 232x342+660+750
+wm geometry .sigmgr._PF:30 232x342+663+752
+wm geometry .sigmgr._PF:30 232x342+668+756
+wm geometry .sigmgr._PF:30 232x342+680+767
+wm geometry .sigmgr._PF:30 232x342+681+768
+wm geometry .sigmgr 376x204+1013+628
+wm geometry .sigmgr 376x204+975+616
+wm geometry .sigmgr 376x204+959+612
+wm geometry .sigmgr 376x204+951+607
+wm geometry .sigmgr 376x204+937+598
+wm geometry .sigmgr 376x204+931+592
+wm geometry .sigmgr 376x204+927+582
+wm geometry .sigmgr 376x204+927+570
+wm geometry .sigmgr 376x204+937+541
+wm geometry .sigmgr 376x204+974+493
+wm geometry .sigmgr 376x204+1000+465
+wm geometry .sigmgr 376x204+1004+461
+ScopeSigMgr:Unload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+ScopeSigMgr:loadpffile /home/min/a/chakr151/Desktop/SMT_Simulation/Outputs/SRAM_read_latency_Latch_SA/SRAM_read_latency_latch_sa.tr0 1 openonly
+# PF:35
+wm geometry .sigmgr._PF:35 232x342+768+444
+GrXY:NewGraph
+# Graph11
+pf:read PF:35 v(wl)
+# WF:35:1
+Graph addsignal WF:35:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+wm geometry .sigmgr._PF:35 282x342+768+444
+wm geometry .sigmgr._PF:35 283x342+768+444
+wm geometry .sigmgr._PF:35 320x342+768+444
+wm geometry .sigmgr._PF:35 348x342+768+444
+wm geometry .sigmgr._PF:35 377x342+768+444
+wm geometry .sigmgr._PF:35 453x342+768+444
+wm geometry .sigmgr._PF:35 457x342+768+444
+pf:read PF:35 v(bl)
+# WF:35:2
+Graph addsignal WF:35:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:35 v(sa_q)
+# WF:35:3
+Graph addsignal WF:35:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+pf:read PF:35 v(sa_qb)
+# WF:35:4
+Graph addsignal WF:35:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal3
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+Mdi:FullSize
+wm geometry .sigmgr._PF:35 457x342+791+447
+wm geometry .sigmgr._PF:35 457x342+810+453
+wm geometry .sigmgr._PF:35 457x342+839+465
+wm geometry .sigmgr._PF:35 457x342+870+482
+wm geometry .sigmgr._PF:35 457x342+896+482
+wm geometry .sigmgr._PF:35 457x342+921+482
+wm geometry .sigmgr._PF:35 457x342+949+498
+wm geometry .sigmgr._PF:35 457x342+968+513
+wm geometry .sigmgr._PF:35 457x342+988+513
+wm geometry .sigmgr._PF:35 457x342+1005+513
+wm geometry .sigmgr._PF:35 457x342+1022+528
+wm geometry .sigmgr._PF:35 457x342+1035+534
+wm geometry .sigmgr._PF:35 457x342+1047+539
+wm geometry .sigmgr._PF:35 457x342+1056+544
+wm geometry .sigmgr._PF:35 457x342+1069+547
+wm geometry .sigmgr._PF:35 457x342+1069+549
+wm geometry .sigmgr._PF:35 457x342+1069+550
+wm geometry .sigmgr 376x204+1009+478
+wm geometry .sigmgr 376x204+1013+491
+wm geometry .sigmgr 376x204+1018+516
+wm geometry .sigmgr 376x204+1029+546
+wm geometry .sigmgr 376x204+1040+576
+wm geometry .sigmgr 376x204+1056+614
+wm geometry .sigmgr 376x204+1073+649
+wm geometry .sigmgr 376x204+1085+668
+wm geometry .sigmgr 376x204+1102+694
+wm geometry .sigmgr 376x204+1110+706
+wm geometry .sigmgr 376x204+1126+727
+wm geometry .sigmgr 376x204+1150+743
+wm geometry .sigmgr 376x204+1150+761
+wm geometry .sigmgr 376x204+1167+774
+wm geometry .sigmgr 376x204+1172+780
+wm geometry .sigmgr._PF:35 457x342+1043+591
+wm geometry .sigmgr._PF:35 457x342+1019+623
+wm geometry .sigmgr._PF:35 457x342+990+664
+wm geometry .sigmgr._PF:35 457x342+983+685
+wm geometry .sigmgr._PF:35 457x342+977+707
+wm geometry .sigmgr._PF:35 457x342+977+726
+wm geometry .sigmgr._PF:35 457x342+977+748
+wm geometry .sigmgr._PF:35 457x342+979+764
+wm geometry .sigmgr._PF:35 457x342+988+783
+wm geometry .sigmgr._PF:35 457x342+1000+807
+wm geometry .sigmgr._PF:35 457x342+1012+825
+wm geometry .sigmgr._PF:35 457x342+1023+838
+wm geometry .sigmgr._PF:35 457x342+1034+855
+wm geometry .sigmgr._PF:35 457x342+1041+855
+wm geometry .sigmgr._PF:35 457x342+1043+855
+wm geometry .sigmgr._PF:35 457x342+1044+855
+wm geometry .sigmgr._PF:35 457x342+1054+855
+wm geometry .sigmgr._PF:35 457x342+1069+855
+Graph:Select Graph11
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph11 {Signal7 Signal6 Signal5 Signal4} 12.797n
+# M:0
+Graph:DSel
+GrMeas:Select Graph11 M:0 2
+GrMeas:MoveXLevel Graph11 M:0 2 9.4814736691792n
+# M:0
+Graph:DSel
+Graph itemselect AxisY(2,0) add
+# AxisY(2,0)
+Graph itemselect AxisY(2,0) add
+Graph axisconfig AxisY(2,0) -rang {0 0.8 exact} -gridvis n -label (V) -scale lin -unitscale auto
+wm geometry .sigmgr 376x204+1150+651
+wm geometry .sigmgr._PF:35 457x342+1069+513
+pf:read PF:36 {xsa;v(int_lft)}
+# WF:36:6
+Graph addsignal WF:36:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal8
+pf:read PF:36 {xsa;v(int_rgt)}
+# WF:36:7
+Graph addsignal WF:36:7 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal9
+wm geometry .sigmgr._PF:35 457x342+959+513
+wm geometry .sigmgr._PF:35 457x342+865+513
+wm geometry .sigmgr._PF:35 457x342+833+513
+wm geometry .sigmgr._PF:35 457x342+809+513
+wm geometry .sigmgr._PF:35 457x342+752+513
+wm geometry .sigmgr._PF:35 457x342+639+513
+wm geometry .sigmgr._PF:35 457x342+498+482
+wm geometry .sigmgr._PF:35 457x342+378+467
+wm geometry .sigmgr._PF:35 457x342+332+463
+wm geometry .sigmgr._PF:35 457x342+300+459
+wm geometry .sigmgr._PF:35 457x342+282+455
+wm geometry .sigmgr._PF:35 457x342+274+453
+wm geometry .sigmgr._PF:35 457x342+272+453
+wm geometry .sigmgr._PF:35 457x342+275+481
+wm geometry .sigmgr._PF:35 457x342+281+497
+wm geometry .sigmgr._PF:35 457x342+291+518
+wm geometry .sigmgr._PF:35 457x342+308+552
+wm geometry .sigmgr._PF:35 457x342+331+592
+wm geometry .sigmgr._PF:35 457x342+364+632
+wm geometry .sigmgr._PF:35 457x342+386+663
+wm geometry .sigmgr._PF:35 457x342+409+690
+wm geometry .sigmgr._PF:35 457x342+444+718
+wm geometry .sigmgr._PF:35 457x342+474+738
+wm geometry .sigmgr._PF:35 457x342+494+749
+wm geometry .sigmgr._PF:35 457x342+512+756
+wm geometry .sigmgr._PF:35 457x342+543+764
+wm geometry .sigmgr._PF:35 457x342+556+768
+wm geometry .sigmgr._PF:35 457x342+559+768
+wm geometry .sigmgr._PF:35 457x342+381+701
+wm geometry .sigmgr._PF:35 457x342+323+669
+wm geometry .sigmgr._PF:35 457x342+299+650
+wm geometry .sigmgr._PF:35 457x342+270+587
+wm geometry .sigmgr._PF:35 457x342+262+555
+wm geometry .sigmgr._PF:35 457x342+260+513
+wm geometry .sigmgr._PF:35 457x342+267+482
+wm geometry .sigmgr._PF:35 457x342+305+414
+wm geometry .sigmgr._PF:35 457x342+322+390
+wm geometry .sigmgr._PF:35 457x342+332+376
+wm geometry .sigmgr._PF:35 457x342+340+366
+wm geometry .sigmgr._PF:35 457x342+350+350
+wm geometry .sigmgr._PF:35 457x342+361+333
+wm geometry .sigmgr._PF:35 457x342+361+332
+wm geometry .sigmgr._PF:35 457x342+362+334
+wm geometry .sigmgr._PF:35 457x342+355+340
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:35 457x342+344+379
+wm geometry .sigmgr._PF:35 457x342+344+414
+wm geometry .sigmgr._PF:35 457x342+346+454
+wm geometry .sigmgr._PF:35 457x342+361+494
+wm geometry .sigmgr._PF:35 457x342+378+532
+wm geometry .sigmgr._PF:35 457x342+390+559
+wm geometry .sigmgr._PF:35 457x342+413+594
+wm geometry .sigmgr._PF:35 457x342+423+612
+wm geometry .sigmgr._PF:35 457x342+437+632
+wm geometry .sigmgr._PF:35 457x342+448+655
+wm geometry .sigmgr._PF:35 457x342+461+668
+wm geometry .sigmgr._PF:35 457x342+472+685
+wm geometry .sigmgr._PF:35 457x342+479+691
+wm geometry .sigmgr._PF:35 457x342+483+694
+wm geometry .sigmgr._PF:35 457x342+492+698
+wm geometry .sigmgr._PF:35 457x342+503+704
+wm geometry .sigmgr._PF:35 457x342+509+708
+wm geometry .sigmgr._PF:35 457x342+514+710
+wm geometry .sigmgr._PF:35 457x342+515+711
+wm geometry .sigmgr._PF:35 457x342+517+713
+wm geometry .sigmgr._PF:35 457x342+519+714
+wm geometry .sigmgr._PF:35 457x342+522+715
+wm geometry .sigmgr._PF:35 457x342+526+722
+wm geometry .sigmgr._PF:35 457x342+527+724
+Graph:DSel
+GrMeas:Select Graph11 M:0 2 1
+GrMeas:MoveXLevel Graph11 M:0 2 7.0801501586132n
+# M:0
+GrMeas:MoveXLevel Graph11 M:0 2 8.7820590544513n
+# M:0
+Graph:Select Graph11
+Graph:DSel
+Graph itemselect AxisY(2,0) add
+# AxisY(2,0)
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph11 M:0 2 1
+GrMeas:MoveXLevel Graph11 M:0 2 4.5156299046107n
+# M:0
+Graph:DSel
+GrMeas:Select Graph11 M:0 3
+GrMeas:MoveText Graph11 M:0 3 76 -19
+Graph:DSel
+GrMeas:Select Graph11 M:0 2 1
+GrMeas:MoveXLevel Graph11 M:0 2 7.849506234814n
+# M:0
+wm geometry .sigmgr._PF:35 457x342+519+686
+wm geometry .sigmgr._PF:35 457x342+519+669
+wm geometry .sigmgr._PF:35 457x342+525+645
+wm geometry .sigmgr._PF:35 457x342+543+611
+wm geometry .sigmgr._PF:35 457x342+557+591
+wm geometry .sigmgr._PF:35 457x342+567+571
+wm geometry .sigmgr._PF:35 457x342+580+542
+wm geometry .sigmgr._PF:35 457x342+592+513
+wm geometry .sigmgr._PF:35 457x342+602+513
+wm geometry .sigmgr._PF:35 457x342+618+482
+wm geometry .sigmgr._PF:35 457x342+631+460
+wm geometry .sigmgr._PF:35 457x342+640+446
+wm geometry .sigmgr._PF:35 457x342+648+431
+wm geometry .sigmgr._PF:35 457x342+649+431
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:35 457x342+630+461
+wm geometry .sigmgr._PF:35 457x342+618+476
+wm geometry .sigmgr._PF:35 457x342+603+501
+wm geometry .sigmgr._PF:35 457x342+590+536
+wm geometry .sigmgr._PF:35 457x342+586+565
+wm geometry .sigmgr._PF:35 457x342+586+602
+wm geometry .sigmgr._PF:35 457x342+597+633
+wm geometry .sigmgr._PF:35 457x342+612+660
+wm geometry .sigmgr._PF:35 457x342+632+691
+wm geometry .sigmgr._PF:35 457x342+653+724
+wm geometry .sigmgr._PF:35 457x342+680+754
+wm geometry .sigmgr._PF:35 457x342+703+776
+wm geometry .sigmgr._PF:35 457x342+713+784
+wm geometry .sigmgr._PF:35 457x342+716+788
+wm geometry .sigmgr._PF:35 457x342+718+792
+wm geometry .sigmgr._PF:35 457x342+719+792
+wm geometry .sigmgr._PF:35 457x342+673+749
+wm geometry .sigmgr._PF:35 457x342+625+711
+wm geometry .sigmgr._PF:35 457x342+588+679
+wm geometry .sigmgr._PF:35 457x342+571+653
+wm geometry .sigmgr._PF:35 457x342+557+621
+wm geometry .sigmgr._PF:35 457x342+551+569
+wm geometry .sigmgr._PF:35 457x342+551+513
+wm geometry .sigmgr._PF:35 457x342+553+470
+wm geometry .sigmgr._PF:35 457x342+565+433
+wm geometry .sigmgr._PF:35 457x342+581+397
+wm geometry .sigmgr._PF:35 457x342+591+370
+wm geometry .sigmgr._PF:35 457x342+598+356
+wm geometry .sigmgr._PF:35 457x342+601+351
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:35 457x342+593+389
+wm geometry .sigmgr._PF:35 457x342+587+417
+wm geometry .sigmgr._PF:35 457x342+587+451
+wm geometry .sigmgr._PF:35 457x342+587+486
+wm geometry .sigmgr._PF:35 457x342+591+516
+wm geometry .sigmgr._PF:35 457x342+600+551
+wm geometry .sigmgr._PF:35 457x342+610+579
+wm geometry .sigmgr._PF:35 457x342+619+601
+wm geometry .sigmgr._PF:35 457x342+630+621
+wm geometry .sigmgr._PF:35 457x342+638+638
+wm geometry .sigmgr._PF:35 457x342+646+649
+wm geometry .sigmgr._PF:35 457x342+652+660
+wm geometry .sigmgr._PF:35 457x342+661+675
+wm geometry .sigmgr._PF:35 457x342+672+691
+wm geometry .sigmgr._PF:35 457x342+681+700
+wm geometry .sigmgr._PF:35 457x342+683+704
+wm geometry .sigmgr._PF:35 457x342+684+704
+wm geometry .sigmgr._PF:35 457x342+622+654
+wm geometry .sigmgr._PF:35 457x342+573+607
+wm geometry .sigmgr._PF:35 457x342+554+574
+wm geometry .sigmgr._PF:35 457x342+548+551
+wm geometry .sigmgr._PF:35 457x342+546+513
+wm geometry .sigmgr._PF:35 457x342+565+457
+wm geometry .sigmgr._PF:35 457x342+593+420
+wm geometry .sigmgr._PF:35 457x342+606+400
+wm geometry .sigmgr._PF:35 457x342+606+399
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:35 457x342+580+404
+wm geometry .sigmgr._PF:35 457x342+567+413
+wm geometry .sigmgr._PF:35 457x342+555+422
+wm geometry .sigmgr._PF:35 457x342+543+436
+wm geometry .sigmgr._PF:35 457x342+540+445
+wm geometry .sigmgr._PF:35 457x342+534+467
+wm geometry .sigmgr._PF:35 457x342+530+495
+wm geometry .sigmgr._PF:35 457x342+530+514
+wm geometry .sigmgr._PF:35 457x342+530+529
+wm geometry .sigmgr._PF:35 457x342+530+550
+wm geometry .sigmgr._PF:35 457x342+536+575
+wm geometry .sigmgr._PF:35 457x342+548+604
+wm geometry .sigmgr._PF:35 457x342+554+616
+wm geometry .sigmgr._PF:35 457x342+564+644
+wm geometry .sigmgr._PF:35 457x342+579+673
+wm geometry .sigmgr._PF:35 457x342+587+695
+wm geometry .sigmgr._PF:35 457x342+595+707
+wm geometry .sigmgr._PF:35 457x342+596+710
+Graph:DSel
+GrMeas:Select Graph11 M:4 0
+GrMeas:MoveXLevel Graph11 M:4 0 6.9635810561586n
+# M:4
+wm geometry .sigmgr._PF:35 457x342+543+694
+wm geometry .sigmgr._PF:35 457x342+505+674
+wm geometry .sigmgr._PF:35 457x342+477+653
+wm geometry .sigmgr._PF:35 457x342+468+641
+wm geometry .sigmgr._PF:35 457x342+463+625
+wm geometry .sigmgr._PF:35 457x342+453+602
+wm geometry .sigmgr._PF:35 457x342+453+574
+wm geometry .sigmgr._PF:35 457x342+453+535
+wm geometry .sigmgr._PF:35 457x342+459+513
+wm geometry .sigmgr._PF:35 457x342+470+482
+wm geometry .sigmgr._PF:35 457x342+481+454
+wm geometry .sigmgr._PF:35 457x342+483+451
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:35 457x342+483+483
+wm geometry .sigmgr._PF:35 457x342+483+505
+wm geometry .sigmgr._PF:35 457x342+485+545
+wm geometry .sigmgr._PF:35 457x342+491+559
+wm geometry .sigmgr._PF:35 457x342+509+603
+wm geometry .sigmgr._PF:35 457x342+524+630
+wm geometry .sigmgr._PF:35 457x342+539+662
+wm geometry .sigmgr._PF:35 457x342+552+684
+wm geometry .sigmgr._PF:35 457x342+571+697
+wm geometry .sigmgr._PF:35 457x342+600+716
+wm geometry .sigmgr._PF:35 457x342+630+737
+wm geometry .sigmgr._PF:35 457x342+656+753
+wm geometry .sigmgr._PF:35 457x342+682+767
+wm geometry .sigmgr._PF:35 457x342+696+772
+wm geometry .sigmgr._PF:35 457x342+698+773
+Graph:Select Graph11
+Graph:DSel
+Graph itemselect Signal38 add
+# Signal38
+Graph itemselect Signal38 add
+# Signal38
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal36 add
+# Signal36
+Graph delsignal selected
+Graph:DSel
+Graph itemselect Signal37 add
+# Signal37
+Graph delsignal selected
+wm geometry .sigmgr._PF:35 457x342+568+714
+wm geometry .sigmgr._PF:35 457x342+495+661
+wm geometry .sigmgr._PF:35 457x342+463+617
+wm geometry .sigmgr._PF:35 457x342+444+574
+wm geometry .sigmgr._PF:35 457x342+438+526
+wm geometry .sigmgr._PF:35 457x342+438+470
+wm geometry .sigmgr._PF:35 457x342+442+429
+wm geometry .sigmgr._PF:35 457x342+450+403
+wm geometry .sigmgr._PF:35 457x342+468+369
+wm geometry .sigmgr._PF:35 457x342+493+328
+wm geometry .sigmgr._PF:35 457x342+511+299
+wm geometry .sigmgr._PF:35 457x342+535+271
+wm geometry .sigmgr._PF:35 457x342+547+258
+wm geometry .sigmgr._PF:35 457x342+553+252
+Graph:DSel
+pf:read PF:41 v(sa_q)
+# WF:41:2
+Graph addsignal WF:41:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal39
+pf:read PF:41 v(q)
+# WF:41:6
+Graph addsignal WF:41:6 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal40
+wm geometry .sigmgr._PF:35 457x342+545+272
+wm geometry .sigmgr._PF:35 457x342+536+298
+wm geometry .sigmgr._PF:35 457x342+532+340
+wm geometry .sigmgr._PF:35 457x342+532+363
+wm geometry .sigmgr._PF:35 457x342+536+398
+wm geometry .sigmgr._PF:35 457x342+547+436
+wm geometry .sigmgr._PF:35 457x342+555+470
+wm geometry .sigmgr._PF:35 457x342+565+495
+wm geometry .sigmgr._PF:35 457x342+575+524
+wm geometry .sigmgr._PF:35 457x342+585+547
+wm geometry .sigmgr._PF:35 457x342+609+578
+wm geometry .sigmgr._PF:35 457x342+622+598
+wm geometry .sigmgr._PF:35 457x342+632+613
+wm geometry .sigmgr._PF:35 457x342+638+621
+wm geometry .sigmgr._PF:35 457x342+641+627
+wm geometry .sigmgr._PF:35 457x342+643+630
+wm geometry .sigmgr._PF:35 457x342+644+630
+wm geometry .sigmgr._PF:35 457x342+646+629
+Graph:Select Graph11
+Graph:DSel
+Graph itemselect Signal39 add
+# Signal39
+Graph delsignal selected
+Graph:DSel
+wm geometry .sigmgr._PF:35 457x342+572+587
+wm geometry .sigmgr._PF:35 457x342+507+554
+wm geometry .sigmgr._PF:35 457x342+494+543
+wm geometry .sigmgr._PF:35 457x342+491+536
+wm geometry .sigmgr._PF:35 457x342+489+528
+wm geometry .sigmgr._PF:35 457x342+489+513
+wm geometry .sigmgr._PF:35 457x342+493+494
+wm geometry .sigmgr._PF:35 457x342+500+482
+wm geometry .sigmgr._PF:35 457x342+526+453
+wm geometry .sigmgr._PF:35 457x342+571+414
+wm geometry .sigmgr._PF:35 457x342+607+384
+wm geometry .sigmgr._PF:35 457x342+619+372
+wm geometry .sigmgr._PF:35 457x342+622+368
+ScopeSigMgr:Reload 0 {{(1) SRAM_read_latency_latch_sa.tr0}}
+wm geometry .sigmgr._PF:35 457x342+642+388
+wm geometry .sigmgr._PF:35 457x342+652+397
+wm geometry .sigmgr._PF:35 457x342+665+412
+wm geometry .sigmgr._PF:35 457x342+683+432
+wm geometry .sigmgr._PF:35 457x342+709+460
+wm geometry .sigmgr._PF:35 457x342+721+474
+wm geometry .sigmgr._PF:35 457x342+728+481
+wm geometry .sigmgr._PF:35 457x342+736+493
+wm geometry .sigmgr._PF:35 457x342+749+512
+wm geometry .sigmgr._PF:35 457x342+764+537
+wm geometry .sigmgr._PF:35 457x342+774+560
+wm geometry .sigmgr._PF:35 457x342+784+583
+wm geometry .sigmgr._PF:35 457x342+797+605
+wm geometry .sigmgr._PF:35 457x342+808+624
+wm geometry .sigmgr._PF:35 457x342+818+644
+wm geometry .sigmgr._PF:35 457x342+836+671
+wm geometry .sigmgr._PF:35 457x342+846+686
+wm geometry .sigmgr._PF:35 457x342+857+702
+wm geometry .sigmgr._PF:35 457x342+866+715
+wm geometry .sigmgr._PF:35 457x342+874+726
+wm geometry .sigmgr._PF:35 457x342+876+729
+wm geometry .sigmgr._PF:35 457x342+878+733
+wm geometry .sigmgr._PF:35 457x342+862+702
+wm geometry .sigmgr._PF:35 457x342+822+660
+wm geometry .sigmgr._PF:35 457x342+788+619
+wm geometry .sigmgr._PF:35 457x342+757+582
+wm geometry .sigmgr._PF:35 457x342+730+537
+wm geometry .sigmgr._PF:35 457x342+708+505
+wm geometry .sigmgr._PF:35 457x342+698+472
+wm geometry .sigmgr._PF:35 457x342+688+446
+wm geometry .sigmgr._PF:35 457x342+686+436
+wm geometry .sigmgr._PF:35 457x342+685+423
+wm geometry .sigmgr._PF:35 457x342+685+418
+pf:read PF:42 v(se)
+# WF:42:4
+Graph addsignal WF:42:4 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal44
+wm geometry .sigmgr._PF:35 457x342+704+427
+wm geometry .sigmgr._PF:35 457x342+721+445
+wm geometry .sigmgr._PF:35 457x342+738+467
+wm geometry .sigmgr._PF:35 457x342+761+494
+wm geometry .sigmgr._PF:35 457x342+777+513
+wm geometry .sigmgr._PF:35 457x342+799+540
+wm geometry .sigmgr._PF:35 457x342+821+565
+wm geometry .sigmgr._PF:35 457x342+838+586
+wm geometry .sigmgr._PF:35 457x342+852+601
+wm geometry .sigmgr._PF:35 457x342+862+611
+wm geometry .sigmgr._PF:35 457x342+869+620
+wm geometry .sigmgr._PF:35 457x342+879+630
+wm geometry .sigmgr._PF:35 457x342+883+634
+wm geometry .sigmgr._PF:35 457x342+885+636
+wm geometry .sigmgr._PF:35 457x342+886+637
+wm geometry .sigmgr._PF:35 457x342+860+655
+wm geometry .sigmgr._PF:35 457x342+842+673
+wm geometry .sigmgr._PF:35 457x342+835+687
+wm geometry .sigmgr._PF:35 457x342+832+701
+wm geometry .sigmgr._PF:35 457x342+832+710
+wm geometry .sigmgr._PF:35 457x342+834+718
+wm geometry .sigmgr._PF:35 457x342+839+728
+wm geometry .sigmgr._PF:35 457x342+848+738
+wm geometry .sigmgr._PF:35 457x342+853+742
+wm geometry .sigmgr._PF:35 457x342+858+744
+wm geometry .sigmgr._PF:35 457x342+868+749
+wm geometry .sigmgr._PF:35 457x342+897+755
+wm geometry .sigmgr._PF:35 457x342+922+757
+wm geometry .sigmgr._PF:35 457x342+945+761
+wm geometry .sigmgr._PF:35 457x342+966+761
+wm geometry .sigmgr._PF:35 457x342+975+761
+Graph:Select Graph11
+Graph:DSel
+Graph itemselect AxisX(0) add
+# AxisX(0)
+GrMeas:VerticalMarker Graph11 {Signal44 Signal43 Signal42 Signal41} 12.797n
+# M:6
+Graph:DSel
+GrMeas:Select Graph11 M:6 0
+GrMeas:MoveXLevel Graph11 M:6 0 9.3882183872155n
+# M:6
+Graph:DSel
+GrMeas:Select Graph11 M:6 5
+GrMeas:MoveText Graph11 M:6 5 40 28
+GrMeas:MoveText Graph11 M:6 5 58 28
+Graph:DSel
+GrMeas:Select Graph11 M:6 4 1
+GrMeas:MoveXLevel Graph11 M:6 4 9.4581598486883n
+# M:6

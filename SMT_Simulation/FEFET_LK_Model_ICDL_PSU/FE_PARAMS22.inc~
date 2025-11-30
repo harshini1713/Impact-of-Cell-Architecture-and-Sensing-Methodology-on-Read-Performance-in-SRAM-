@@ -1,0 +1,173 @@
+************************
+* Parameters
+************************
+
+*****************************************************************
+*** The values below are representative parameters. Users 
+*** should use them at their own risk and change/modify the 
+** values as per requirement.
+*** Authors : Ahmedullah Aziz and Sumeet Kumar Gupta, Penn State
+*****************************************************************
+*****************************************************************
+*** All parameters are in SI units
+
+*.lib './MOSFET_LIB.lib' Std_FET_22n_org
+.lib './MOSFET_LIB.lib' NP_2DFET_20nm
+
+
+*********************************************
+* Ferroelectric Material/Structure Parameters
+*********************************************
+*.param alpha_FE='-1.05e9'
+*.param beta_FE='1e7'
+*.param gamma_FE='6e11'
+*.param rho_FE='0.025'
+
+*********************************************
+* Ferroelectric Material/Structure Parameters Atanu HZO
+*********************************************
+
+*.param alpha_FE='-5.1e9'
+*.param beta_FE='2e11'
+*.param gamma_FE='1e7'
+*.param rho_FE='0.025'
+
+*********************************************
+* Ferroelectric Material/Structure Parameters Data_new_1
+*********************************************
+
+*.param alpha_FE='-4.8e8'
+*.param beta_FE=1.5e10'
+*.param gamma_FE='2.8e11'
+*.param rho_FE='0.025'
+
+*********************************************
+* Ferroelectric Material/Structure Parameters Data_new_2
+*********************************************
+
+*.param alpha_FE='-8e8'
+*.param beta_FE=6.5e10'
+*.param gamma_FE='2.8e11'
+*.param rho_FE='0.025'
+
+* Ferroelectric Material/Structure Parameters Data_new_22
+*********************************************
+
+*.param alpha_FE='-1.2e9'
+*.param beta_FE=9.5e10'
+*.param gamma_FE='2.8e12'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO1
+*********************************************
+
+*.param alpha_FE='-1.05e9'
+*.param beta_FE='4e8'
+*.param gamma_FE='7e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO2_bad
+*********************************************
+
+*.param alpha_FE='-0.55e9'
+*.param beta_FE='4e8'
+*.param gamma_FE='0.4e12'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO3_bad
+*********************************************
+
+*.param alpha_FE='-0.65e9'
+*.param beta_FE='4e8'
+*.param gamma_FE='1.3e12'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO4_30uC_bad_badS
+*********************************************
+
+*.param alpha_FE='-0.75e9'
+*.param beta_FE='1e9'
+*.param gamma_FE='0.8e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO5_2MV_test
+*********************************************
+
+*.param alpha_FE='-1.95e9'
+*.param beta_FE='2e10'
+*.param gamma_FE='1e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO1_similar
+*********************************************
+
+*.param alpha_FE='-1.2e9'
+*.param beta_FE='2e10'
+*.param gamma_FE='2e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO_BEST
+*********************************************
+
+*.param alpha_FE='-1.05e9'
+*.param beta_FE='4e8'
+*.param gamma_FE='4.5e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO_CLOSE_ENOUGH
+*********************************************
+*.param alpha_FE='-0.95e9'
+*.param beta_FE='6e8'
+*.param gamma_FE='4.5e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_HZO_CLOSE_ENOUGH_test_er15
+*********************************************
+
+*.param alpha_FE='-0.87e9'
+*.param beta_FE='6e8'
+*.param gamma_FE='3e11'
+*.param rho_FE='0.025'
+
+*Ferroelectric Material/Structure Parameters Data_new_test_K_Roy_Low_Pol
+*********************************************
+
+*.param alpha_FE='-8e9'
+*.param beta_FE='8e9'
+*.param gamma_FE='9e15'
+*.param rho_FE='0.025'
+
+
+*********************************************
+* Ferroelectric device parameters
+*********************************************
+
+.param toxfe_dev=10n
+.param lg_dev=20n
+
+
+*Ferroelectric Material/Calibrated PZT
+*********************************************
+*Sandeep's calibration
+*.param alpha_FE='-4.2e6'
+*.param beta_FE='8e6'
+*.param gamma_FE='2.9e8'
+
+*Niharika's calibration
+.param alpha_FE='-3.95e6'
+.param beta_FE='1.2e6'
+.param gamma_FE='3.21e8'
+
+.param rho_FE='0.025'
+
+
+*********************************************
+* Circuit parameters
+*********************************************
+.param pvdd= 0.7
+
+
+
+
+
+

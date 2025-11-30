@@ -1,0 +1,160 @@
+ ****** PrimeSim HSPICE -- V-2023.12-SP2-1 linux64 (Jul 08 2024 9057313) ******
+  Copyright (c) 1986 - 2025 by Synopsys, Inc. All Rights Reserved.
+  This software and the associated documentation are proprietary
+  to Synopsys, Inc. This software may only be used in accordance
+  with the terms and conditions of a written license agreement with
+  Synopsys, Inc. All other use, reproduction, or distribution of
+  this software is strictly prohibited.
+  Input File: SRAM_read_latency_Single_Ended.sp                                 
+  Command line options: /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/linux64/hspice -i SRAM_read_latency_Single_Ended.sp -o Outputs/
+  Start time: Fri Nov 21 15:17:41 2025
+ lic:  
+ lic: FLEXlm: SDK_12.11.9.5 
+ lic: USER:   chakr151             HOSTNAME: ececomp1.ecn.purdue.edu 
+ lic: HOSTID: 2e802104             PID:      3643944 
+ lic: Using FLEXlm license file: 
+ lic: 1718@marina.ecn.purdue.edu 
+ lic: Checkout 1 hspice 
+ lic: License/Maintenance for hspice will expire on 08-sep-2026/2025.06 
+ lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 1718@marina.ecn.purdue.edu 
+ lic:   
+  
+  ******  Machine Information  ***********************************
+  CPU:
+  model name	: AMD EPYC 7513 32-Core Processor
+  cpu MHz	: 2595.013
+ CPU(s)		: 128
+  
+  OS:
+  Linux version 4.18.0-553.78.1.el8_10.x86_64 (mockbuild@host-100-100-224-106) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-28.0.1) (GCC)) #1 SMP Tue Oct 7 02:24:16 PDT 2025
+
+ System loadavg :  21.21 23.99 23.61 21/69510 3643994
+
+  ******  Loading Files  *****************************************
+  Loading 'SRAM_read_latency_Single_Ended.sp '
+  Loading '/package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/hspice.ini '
+  Loading './FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib '
+  Loading './FEFET_LK_Model_ICDL_PSU/./MOSFET_MODELS/22fet_hp.pm '
+  **warning** (SRAM_read_latency_Single_Ended.sp:142) Undefined parameter or function definition "tblb_lft_fin" for "tblb_lft". Please enter a defined name. .measure "tblb_lft" is ignored.
+  **info** (SRAM_read_latency_Single_Ended.sp:99) DC voltage reset to initial transient source value in source 0:vbl_enbl2_lft. new dc=0.0000D+00
+  **warning** (SRAM_read_latency_Single_Ended.sp:127) Both nodes of element vgnd are connected together; Line ignored.
+  **warning** (pmos:xpu2_lft.mpfet (./FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib:118)) Warning:  Acde = 0.259654 may be too small in BSIM4 model with w=3.6e-07 l=2.2e-08.
+  
+
+  **warning** the following singular supplies were terminated to 1 meg resistor 
+          supply       node1            node2
+(SRAM_read_latency_Single_Ended.sp:116)vblb_enbl2_rgt          0:blb_enbl2_rgt    defined in subckt 0                     0:0                defined in subckt 0               
+(SRAM_read_latency_Single_Ended.sp:115)vblb_enbl_rgt           0:blb_enbl_rgt     defined in subckt 0                     0:0                defined in subckt 0               
+             
+ Warning:'1 connection nodes' occurs 5 times
+ Summary of 1 connection from the following nodes:
+ -----------------------
+ |Node      |Subckt    |
+ |----------+----------|
+ |bl        |0         |
+ |blb       |0         |
+ |blb_enbl  |0         |
+ |blb_enbl2 |0         |
+ |wl        |0         |
+ -----------------------
+              
+      
+ **info** set option symb=1 internally to help for convergence.
+ ******  Options set in the netlist  ****************************
+ co      = 131       dccap   = 1         ingold  = 1         
+ lis_new = 1         measform= 3         method  = trap      
+ post    = binary    runlvl  = 6         
+ search  = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/behave
+  
+  
+  ******  Summary of possible problems in netlist  ***************
+  Negative resistor :      0
+  Negative capacitor:      0
+  Negative inductor :      0
+  Unconnected node  :      0
+  Dangling terminal :      5
+  Source loop       :      0
+  
+  ******  Circuit Statistics  ************************************
+  Resistors           :       2
+  Voltage Sources     :      20
+  MOSFETs             :      48
+  Total # of Nodes    :     236
+  Total # of Elements :      73
+
+
+  
+  ******  Analysis Details  **************************************
+  dcop: begin dcop, cpu clock= 6.45E-02                                         
+                                                  
+ **info** dc convergence successful at Newton-Raphson method 
+ ****** PrimeSim HSPICE -- V-2023.12-SP2-1 linux64 (Jul 08 2024 9057313) ******
+ ******  
+ *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+  dcop: end dcop, cpu clock= 6.69E-02 peak memory=     559 mb tot_iter=       6 
+                                                  
+  Opening 'Outputs/SRAM_read_latency_Single_Ended.tr0' for output.
+  Waveform Format: POST=Binary, POST_VERSION=2013
+ 
+  Transient Beginning
+  100.00% Tran Time= 3.00000e-08s Estimated Time Left: 0:00:00        
+  Transient End
+ ******
+ *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
+
+ ****** transient analysis tnom=  25.000 temp=  25.000 ******
+ 
+  ******  Measured values for the netlist  ***********************
+ twl_lft_init= 9.0765e-09
+ twl_lft_fin= 9.1810e-09
+ twl_lft= 1.0453e-10
+ tbl_lft_init= 9.1834e-09
+ tbl_lft_fin= 9.7703e-09
+ wl2q_delay_lft= 6.9377e-10
+ twl_rgt_init= 9.0765e-09
+ twl_rgt_fin= 9.1810e-09
+ twl_rgt= 1.0453e-10
+ tbl_rgt_init= 9.1834e-09
+ tbl_rgt_fin= 9.7703e-09
+ wl2q_delay_rgt= 6.9377e-10
+
+          ***** job concluded
+ ******  
+ *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
+
+ ****** job statistics summary tnom=  25.000 temp=  25.000 ******
+
+  ******  PrimeSim HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :   128
+  Actual Threads Count       :     1
+
+
+  ****** Statistics of Ignored Elements ******
+  Voltage Sources :       1
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           6
+  transient          0.02       30001         480         176 rev=        19
+  readin             0.03
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used        559.85 megabytes
+           total cpu time            0.06 seconds
+           total elapsed time        0.10 seconds
+           job started at     15:17:41 11/21/2025
+           job ended   at     15:17:41 11/21/2025
+           job total runtime         0.10 seconds
+
+
+ lic: Release hspice token(s) 
+ lic: total license checkout elapse time:        0.03(s)

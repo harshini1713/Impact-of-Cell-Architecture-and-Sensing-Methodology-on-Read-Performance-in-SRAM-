@@ -1,0 +1,458 @@
+*******Reconfigurable SA********
+
+*.lib '../FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib' Std_FET_22n_lp
+.lib '../FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib' Std_FET_22n_hp
+.LIB RSA
+
+.param width='30n'
+
+.subckt inv in out vdd vss
+
+Xp out in vdd vdd pfet1 w='1*width'
+Xn out in vss vss nfet1 w='1*width'
+
+.ends
+
+.subckt inv_hp in out vdd vss 
+
+Xp out in vdd vdd pfet1 w='2*width'
+Xn out in vss vss nfet1 w='1*width'
+
+**Just 1x for normal
+
+.ends
+
+.subckt inv_drive in out vdd vss
+
+Xp out in vdd vdd pfet1 w='150*width'
+Xn out in vss vss nfet1 w='75*width'
+
+.ends
+
+.subckt inv_int in out vdd vss
+
+Xp out in vdd vdd pfet w='20*width'
+Xn out in vss vss nfet w='20*width'
+
+.ends
+
+.subckt inv_wwl in out vdd vss
+
+Xp out in vdd vdd pfet w='8*width'
+Xn out in vss vss nfet w='4*width'
+
+.ends
+
+.subckt buff in inb vdd vss
+
+Xinv1 in out vdd vss inv
+Xinv2 out inb vdd vss inv
+
+.ends
+
+.subckt inv_write in out vdd vss
+
+Xp out in vdd vdd pfet w='60*width'
+Xn out in vss vss nfet w='40*width'
+
+.ends
+
+.subckt buff_write in inb vdd vss
+
+Xinv1 in out vdd vss inv_write
+Xinv2 out inb vdd vss inv_write
+
+.ends
+
+.subckt inv_con in out vdd vss
+
+Xp out in vdd vdd pfet w='3*width'
+Xn out in vss vss nfet w='3*width'
+
+.ends
+
+.subckt buff_con in inb vdd vss
+
+Xinv1 in out vdd vss inv_con
+Xinv2 out inb vdd vss inv_con
+
+.ends
+
+.subckt unand in1 in2 outb vdd vss
+
+Xp1 outb in1 vdd vdd pfet w='8*width'
+Xp2 outb in2 vdd vdd pfet w='8*width'
+
+Xn1 outb in1 nj vss nfet w='4*width'
+Xn2 nj in2 vss vss nfet w='4*width'
+
+.ends
+
+.subckt uand in1 in2 out vdd vss
+
+Xp1 outb in1 vdd vdd pfet w='8*width'
+Xp2 outb in2 vdd vdd pfet w='8*width'
+
+Xn1 outb in1 nj vss nfet w='4*width'
+Xn2 nj in2 vss vss nfet w='4*width'
+
+Xinv outb out vdd vss inv
+
+.ends
+
+.subckt uand_hp in1 in2 out vdd vss
+
+Xp1 outb in1 vdd vdd pfet1 w='8*width'
+Xp2 outb in2 vdd vdd pfet1 w='8*width'
+
+Xn1 outb in1 nj vss nfet1 w='4*width'
+Xn2 nj in2 vss vss nfet1 w='4*width'
+
+Xinv outb out vdd vss inv_hp
+
+.ends
+
+.subckt uand_drive in1 in2 out vdd vss
+
+Xp1 outb in1 vdd vdd pfet w='25*width'
+Xp2 outb in2 vdd vdd pfet w='25*width'
+
+Xn1 outb in1 nj vss nfet w='25*width'
+Xn2 nj in2 vss vss nfet w='25*width'
+
+Xinv outb out vdd vss inv_drive
+
+.ends
+
+
+.subckt unand_drive in1 in2 out vdd vss
+
+Xp1 outb in1 vdd vdd pfet w='20*width'
+Xp2 outb in2 vdd vdd pfet w='20*width'
+
+Xn1 outb in1 nj vss nfet w='15*width'
+Xn2 nj in2 vss vss nfet w='15*width'
+
+Xinv1 outb outb_ vdd vss inv_int
+Xinv2 outb_ out vdd vss inv_drive
+
+.ends
+
+
+.subckt unor in1 in2 out vdd vss
+
+Xp1 pj in1 vdd vdd pfet w='4*width'
+Xp2 out in2 pj vdd pfet w='4*width'
+
+Xn1 out in1 vss vss nfet w='width'
+Xn2 out in2 vss vss nfet w='width'
+
+.ends
+
+.subckt unor_hp in1 in2 out vdd vss
+
+Xp1 pj in1 vdd vdd pfet1 w='4*width'
+Xp2 out in2 pj vdd pfet1 w='4*width'
+
+Xn1 out in1 vss vss nfet1 w='width'
+Xn2 out in2 vss vss nfet1 w='width'
+
+.ends
+
+.subckt unor_drive in1 in2 out vdd vss
+
+Xp1 pj in1 vdd vdd pfet w='4*width'
+Xp2 out in2 pj vdd pfet w='4*width'
+
+Xn1 out in1 vss vss nfet w='2*width'
+Xn2 out in2 vss vss nfet w='2*width'
+
+.ends
+
+.subckt uor in1 in2 out vdd vss
+
+Xp1 pj in1 vdd vdd pfet w='4*width'
+Xp2 outb in2 pj vdd pfet w='4*width'
+
+Xn1 outb in1 vss vss nfet w='width'
+Xn2 outb in2 vss vss nfet w='width'
+
+Xinv outb out vdd vss inv
+
+.ends
+
+.subckt uor_hp in1 in2 out vdd vss
+
+Xp1 pj in1 vdd vdd pfet1 w='4*width'
+Xp2 outb in2 pj vdd pfet1 w='4*width'
+
+Xn1 outb in1 vss vss nfet1 w='width'
+Xn2 outb in2 vss vss nfet1 w='width'
+
+Xinv outb out vdd vss inv_hp
+
+.ends
+
+.subckt uxor in1 in2 out vdd vss
+
+Xinv1 in1 in1b vdd vss inv
+Xinv2 in2 in2b vdd vss inv
+
+Xpu in1b in2b out vdd pfet w='width'
+Xnu in1b in2 out vss nfet w='width'
+
+Xpd in1 in2 out vdd pfet w='width'
+Xnd in1 in2b out vss nfet w='width'
+
+.ends
+
+.subckt uxor_hp in1 in2 out vdd vss
+
+Xinv1 in1 in1b vdd vss inv_hp
+Xinv2 in2 in2b vdd vss inv_hp
+
+Xpu in1b in2b out vdd pfet1 w='width'
+Xnu in1b in2 out vss nfet1 w='width'
+
+Xpd in1 in2 out vdd pfet1 w='width'
+Xnd in1 in2b out vss nfet1 w='width'
+
+.ends
+
+.subckt uxor_cmos in1 in2 out vdd vss
+
+Xinv1 in1 in1b vdd vss inv
+Xinv2 in2 in2b vdd vss inv
+
+Xpul1 lju in2 vdd vdd pfet w='4*width'
+Xpul2 out in1b lju vdd pfet w='4*width'
+Xpur1 rju in2b vdd vdd pfet w='4*width'
+Xpur2 out in1 rju vdd pfet w='4*width'
+
+Xpdl1 out in1b ljd vss nfet w='2*width'
+Xpdl2 ljd in2b vss vss nfet w='2*width'
+Xpdr1 out in1 rjd vss nfet w='2*width'
+Xpdr2 rjd in2 vss vss nfet w='2*width'
+
+.ends
+
+.subckt TG in out clk clkb vdd vss
+
+Xp in clkb out vdd pfet w='width'
+Xn in clk out vss nfet w='width'
+
+.ends
+
+.subckt TG_write in out clk clkb vdd vss
+
+Xp in clkb out vdd pfet w='2*width'
+Xn in clk out vss nfet w='2*width'
+
+.ends
+
+.subckt cci qb q vdd vss
+
+*Xinv1 qb q vdd vss inv
+*Xinv2 q qb vdd vss inv
+
+Xp1 qb q vdd vdd pfet w='1*width'
+Xn1 qb q vss vss nfet w='1*width'
+
+Xp2 q qb vdd vdd pfet w='1*width'
+Xn2 q qb vss vss nfet w='1*width'
+
+.ends
+
+.subckt DECODER4to16 AD0 AD1 AD2 AD3 O0 O1 O2 O3 O4 O5 O6 O7 O8 O9 O10 O11 O12 O13 O14 O15 vdd gnd
+
+xnot0 AD0 AD0B vdd gnd inv 
+xnot1 AD1 AD1B vdd gnd inv 
+xnot2 AD2 AD2B vdd gnd inv
+xnot3 AD3 AD3B vdd gnd inv 
+
+xnor0 AD0B AD1B AD0BAD1B vdd gnd unor 
+xnor1 AD0B AD1 AD0BAD1 vdd gnd unor
+xnor2 AD0 AD1B AD0AD1B vdd gnd unor
+xnor3 AD0 AD1 AD0AD1 vdd gnd unor
+
+xnor4 AD2B AD3B AD2BAD3B vdd gnd unor 
+xnor5 AD2B AD3 AD2BAD3 vdd gnd unor
+xnor6 AD2 AD3B AD2AD3B vdd gnd unor 
+xnor7 AD2 AD3 AD2AD3 vdd gnd unor
+
+xand0 AD0BAD1B AD2BAD3B O15 vdd gnd uand
+xand1 AD0AD1B AD2BAD3B O14 vdd gnd uand  
+xand2 AD0BAD1 AD2BAD3B O13 vdd gnd uand  
+xand3 AD0AD1 AD2BAD3B O12 vdd gnd uand  
+xand4 AD0BAD1B AD2AD3B O11 vdd gnd uand
+xand5 AD0AD1B AD2AD3B O10 vdd gnd uand 
+xand6 AD0BAD1 AD2AD3B O9 vdd gnd uand 
+xand7 AD0AD1 AD2AD3B O8 vdd gnd uand
+xand8 AD0BAD1B AD2BAD3 O7 vdd gnd uand 
+xand9 AD0AD1B AD2BAD3 O6 vdd gnd uand
+xand10 AD0BAD1 AD2BAD3 O5 vdd gnd uand 
+xand11 AD0AD1 AD2BAD3 O4 vdd gnd uand
+xand12 AD0BAD1B AD2AD3 O3 vdd gnd uand  
+xand13 AD0AD1B AD2AD3 O2 vdd gnd uand
+xand14 AD0BAD1 AD2AD3 O1 vdd gnd uand
+xand15 AD0AD1 AD2AD3 O0 vdd gnd uand
+
+.ends
+
+.subckt SA bl blb vref sample sampleb preb diff diffb vddsaen vsssaen out outb vdd vss
+
+Xpre1 blb preb vdd vdd pfet w='12*width'
+Xpre2 blb preb bl vdd pfet w='12*width'
+Xpre3 bl preb vdd vdd pfet w='12*width'
+
+XTGl outj bl sample sampleb vdd vss TG
+
+*Xpl1 outbj sampleb blb vdd pfet w='width'
+*Xnl1 outbj sample blb vss nfet w='width'
+
+Xpl2 jl1 sampleb vref vdd pfet w='width'
+
+XTGr outbj blb sample sampleb vdd vss TG
+
+*Xpr1 outj sampleb bl vdd pfet w='width'
+*Xnr1 outj sample bl vss nfet w='width'
+
+Xpr2 jr1 sampleb vref vdd pfet w='width'
+
+Xcci1 outj jr2 vdd vssen cci
+Xpr3 jr1 diff jr2 vdd pfet w='width'
+Xpr4 jr2 diffb outbj vdd pfet w='width'
+
+Xcci2 outbj jl2 vdd vssen cci
+Xpl3 jl1 diff jl2 vdd pfet w='width'
+Xpl4 jl2 diffb outj vdd pfet w='width'
+
+Xbufl outj out vdd vss buff
+Xbufr outbj outb vdd vss buff
+
+Xprsaenb vdden vddsaen vdd vdd pfet w='width'
+Xnrsaenb vssen vsssaen vss vss nfet w='1*width'
+
+.ends
+
+.subckt Comp vinp vinm out vdd vss iref='iref_par'
+
+Ics vdd n1 'iref'
+
+Xnmos1 n1 n1 vss 0 nfet w='2*width'
+
+Xpmos1 vdd n2  n2 vdd pfet w='4*width'
+Xpmos2 vdd n2 n3 vdd pfet w='4*width'
+Xnmos2 n2 vinp n4 0 nfet w='2*width'
+Xnmos3 n3 vinm n4 0 nfet w='2*width'
+
+Xnmos4 n4 n1 vss 0 nfet w='4*width'
+
+Xpmos3 vdd n3 n5 vdd pfet w='4*width'
+Xnmos5 n5 n1 vss 0 nfet w='2*width'
+
+*Cload n5 0 '10f'
+*Vnout n5 out '0'
+
+Xbuff n5 out vdd vss buff
+
+.ends
+
+.subckt mux2to1 a b cntrl cntrlbar out vdd vss
+Xpu1 a cntrlbar out vdd pfet w = width
+Xpu2 b cntrl out vdd pfet w = width
+Xpd1 a cntrl out vss nfet w = width
+Xpd2 b cntrlbar out vss nfet w = width
+.ends
+
+.subckt mux2to1_hp a b cntrl cntrlbar out vdd vss
+Xpu1 a cntrlbar out vdd pfet1 w = width
+Xpu2 b cntrl out vdd pfet1 w = width
+Xpd1 a cntrl out vss nfet1 w = width
+Xpd2 b cntrlbar out vss nfet1 w = width
+.ends
+
+.subckt mux4to1 a b c d s1 s0 s1_bar s0_bar out vdd vss
+Xmux1 a b s0 s0_bar out1 vdd vss mux2to1
+Xmux2 c d s0 s0_bar out2 vdd vss mux2to1
+Xmux3 out1 out2 s1 s1_bar out vdd vss mux2to1
+.ends 
+
+.subckt sense_amp_hp rbl ref sae_pu sae_pd sa_out_f sa_outbar_f vdd vss
+Xm1 sa_out rbl n1 vss nfet1 w = 3*width
+Xm2 sa_outbar ref n1 vss nfet1 w =3*width
+Xm3 n1 sae_pd vss vss nfet1 w = 3*width
+Xm7 sa_outbar sa_out vdd vdd pfet1 w = 2*width
+Xm8 sa_outbar sa_out gnd gnd nfet1 w = width
+Xm9 sa_out sa_outbar vdd vdd pfet1 w = 2*width
+Xm10 sa_out sa_outbar gnd gnd nfet1 w = width
+Xm4 sa_out sae_pu sa_outbar vdd pfet1 w = width
+Xm5 sa_out sae_pu vdd vdd pfet1 w = width
+Xm6 sa_outbar sae_pu vdd vdd pfet1 w = width
+
+Xinv1 sa_out sa_outbar_f vdd vss inv
+Xinv2 sa_outbar sa_out_f vdd vss inv
+.ends
+
+.subckt sense_amp_lp rbl ref sae_pu sae_pd sa_out_f sa_outbar_f vdd vss
+Xm1 sa_out rbl n1 vss nfet w = 3*width
+Xm2 sa_outbar ref n1 vss nfet w = 3*width
+Xm3 n1 sae_pd vss vss nfet w = 3*width
+Xm7 sa_outbar sa_out vdd vdd pfet w = 2*width
+Xm8 sa_outbar sa_out gnd gnd nfet w = width
+Xm9 sa_out sa_outbar vdd vdd pfet w = 2*width
+Xm10 sa_out sa_outbar gnd gnd nfet w = width
+
+Xm4 sa_out sae_pu sa_outbar vdd pfet w = width
+Xm5 sa_out sae_pu vdd vdd pfet w = width
+Xm6 sa_outbar sae_pu vdd vdd pfet w = width
+
+Xinv1 sa_out sa_outbar_f vdd vss inv
+Xinv2 sa_outbar sa_out_f vdd vss inv
+.ends
+
+.subckt aoi a b c out vdd vss
+Xpd1 out b n1 vss nfet w = width
+Xpd2 n1 c vss vss nfet w = width
+Xpd3 out a vss vss nfet w = width 
+Xpu1 out a n2 vdd pfet w = width
+Xpu2 n2 b vdd vdd pfet w = width
+Xpu3 n2 c vdd vdd pfet w = width
+.ends 
+
+.subckt aoi_hp a b c out vdd vss
+Xpd1 out b n1 vss nfet1 w = width
+Xpd2 n1 c vss vss nfet1 w = width
+Xpd3 out a vss vss nfet1 w = width 
+Xpu1 out a n2 vdd pfet1 w = width
+Xpu2 n2 b vdd vdd pfet1 w = width
+Xpu3 n2 c vdd vdd pfet1 w = width
+.ends 
+
+.subckt diff_amp_lp rbl ref sae sa_out_f sa_outbar_f vdd vss
+Xpu1 out out vdd vdd pfet1 w = 1*width 
+Xpu2 outn out vdd vdd pfet1 w = 1*width
+Xpd1 out rbl n vss nfet1 w = width
+Xpd2 outn ref n vss nfet1 w = width
+Xpd3 n sae vss vss nfet1 w = width
+
+Xinv1 outn sa_out_f vdd vss inv
+Xinv2 sa_out_f sa_outbar_f vdd vss inv
+.ends
+
+.subckt diff_amp_hp rbl ref sae sa_out_f sa_outbar_f vdd vss
+Xpu1 out out vdd vdd pfet1 w = 1.0*width
+Xpu2 outn out vdd vdd pfet1 w = 1.0*width
+Xpd1 out rbl n vss nfet1 w = 1.0*width
+Xpd2 outn ref n vss nfet1 w = 1.0*width
+Xpd3 n sae vss vss nfet1 w = 1.0*width
+
+Xinv1 outn sa_out_f vdd vss inv_hp
+Xinv2 sa_out_f sa_outbar_f vdd vss inv_hp
+.ends
+
+.endl RSA
+
+
+
+

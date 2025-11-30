@@ -1,0 +1,398 @@
+/*
+    Copyright @ 2016 Stanford University.
+    New E2CDA Code
+
+    */
+ 
+    `include "constants.vams"
+    `include "disciplines.vams"
+    `define SMALL_VAL 1e-10
+
+    module efet_110(d, g, s, b);
+        
+        inout d, g, s, b;                                                                   // Bidirectional external port
+        electrical d, g, s, b, a1, a2;                                  // a1, a2 are nodes for internal computation
+        electrical gnd;                                                                   // local ground
+        electrical di, si;                                                      // Intrinsic transistor nodes
+        
+        // Integer Flags
+	parameter integer       str        =  1                                   from [-1:1] exclude 0;
+        parameter integer       type       =  1                                   from [-1:1] exclude 0; 		 // type 1 = NFET and type -1 = PFET
+	parameter integer	type_FET   = -1                                   from [-1:1] exclude 0; 		//type 1 = 2D-FET and type -1=2D-EFET
+	parameter integer	type_Cap   =  -1				          from [-1:1] exclude 0; 		//type 1 = CD/CS and type -1= fringe
+
+	
+        
+ 
+	parameter real		 ts = 5e-9  					 from [0:inf); 				// thickness of 2D material
+	parameter real 		 C33=60           			         from [0:inf); 				//GPa  //similar for MoS2 and WSe2
+	parameter real 		  n=0.1		                                 from [0:1];   				//strain transfer coefficient
+
+	parameter real 		alpha_h=0.0379               			 from (-inf:inf);        		//eV/GPa for WSe2
+	parameter real 		alpha_e=80e-3					 from (-inf:inf); 			//eV/GPa for MoS2
+	parameter real 		alpha=(type==1)?alpha_e:alpha_h  		 from (-inf:inf); 	                
+	parameter real 		kappa=0.2					 from (-inf:inf); 			//From Dan's results 
+	parameter real 		s33 = 0.02 					 from (-inf:inf); 			// GPa-1 PZT-5H, Boston ceramics
+
+
+
+	//d33 and strain transfer has been replced by V(strain) [edited by NT]
+	//parameter real         d33_e=850e-12  	   	         	 from [0:inf); //m/V property of piezoelectric material
+	//parameter real 	 d33_h=-850e-12  			         from (-inf:inf);
+	//parameter real d33=(type==1)?d33_e:d33_h  from (-inf:inf); 	         from (-inf:inf);
+	//parameter real e33=0		from [0:inf);
+        //parameter real strain_transfer=d33*n from (-inf:inf); 
+//////////////////////////////////////////////////////////////////////////////////////////
+               
+                                       
+        parameter real          version = 1.10                          from [0: 10];          				// 2D_FET model version = 1.0.                                                                                         
+       	parameter real          W    = 1e-6                             from [0:inf);          				// Width of the device [m]
+  	
+        parameter real          Lg    = 20e-9                        from [0:inf);         				// Length of gate [m]
+	parameter real          Ag   = W*Lg                             from [0:inf);          				// Area of gate [m]
+
+
+	//parameter real        Ls    = 2*Lg               	        from [0:inf);					// Length of source [m] (2*Lg)
+	parameter real 		Ls    = 2e-9                 	from [0:inf);					// Length of source [m] (30nm corresponds to transfer length)
+	parameter real          As   = W*Ls                             from [0:inf);            			// Area of source [m]
+
+	//parameter real	Ld  =  2*Lg 			        from [0:inf);          				// Length of drain [m]   (30nm corresponds to transfer length)
+	parameter real		Ld  =  2e-9    			from [0:inf);          				// Length of drain [m]   (30nm corresponds to transfer length)
+	parameter real          Ad   = W*Ld                             from [0:inf);            			// Area of drain [m]
+
+
+        parameter real          L    = 5*Lg                             from [0:inf);            			//Total Length of the device [m]
+	parameter real 		A    = W*L                              from [0:inf);            			//Total Area of the device [m]
+
+       
+        parameter real          TTOP = 3e-9                             from [0:inf);           			// Top gate oxide thickness [m]
+	parameter real 		te   = 600e-9	        	        from [0:inf);          				// Thickness of electrostrictive dielectric [m]
+	parameter real 		tp   = 10e-9	        	        from [0:inf);          				// Thickness of gate metal [m]
+	
+	parameter real 		er_g = 12.5*(26/12.5)			        from [0:inf);           			// Relative permittivity of gate dielectric
+	parameter real 		er_s = 12.5*(26/12.5)				from [0:inf);           			// Relative permittivity of source dielectric
+	parameter real 		er_d = 12.5*(26/12.5) 				from [0:inf);           			// Relative permittivity of drain dielectric
+	parameter real 		er_e = 800				from [0:inf);           			// Relative permittivity of electrostrictive dielectric
+
+ 
+	parameter real          eps     = `P_EPS0                        from [0:inf);       		 		// Permittivity of free Space
+	parameter real          eps_g   = er_g*eps                       from [0:inf);          			// permittivity of gate dielectric
+	parameter real 		eps_e 	= er_e*eps			 from [0:inf); 	    				// permittivity of electrostrictive dielectric
+	parameter real 		eps_s 	= er_s*eps			 from [0:inf); 	    				// permittivity of source dielectric
+	parameter real 		eps_d 	= er_d*eps			 from [0:inf); 	    				// permittivity of drain dielectric
+		
+	
+
+  	parameter real          CTOP    = eps_g/TTOP                     from [0:inf);           			// Top gate capacitance
+	parameter real 		CE	= eps_e*A/te			 from [0:inf);          			//Electrostrictive capacitance
+        //parameter real 	CE	= 0			 	 from [0:inf);          			//Electrostrictive capacitance //not used for current calculation anymore
+	parameter real 		CS	= eps_s*As/TTOP 	         from [0:inf);          			//Source capacitance
+	parameter real 		CD	= eps_d*Ad/TTOP 	         from [0:inf);          			//Drain capacitance
+ 
+	parameter real 		Re_delay = 1.7e2	 		 from [0:inf);       				// Resistive Delay in electrostrictive dielectric [scaled for 150nm te]
+	parameter real          Ce_delay = 1e-12                         from [0:inf); 		   			// Capacitive Delay in electrostrictive dielectric
+                                                                                                                             
+// Device specific constants
+        parameter real          Vgs0_h_2d = -0.19                                 	from (-inf:inf);        		// Abs value of Flat band voltage for top gate holes/ p-type transistor
+        parameter real          Vgs0_e_2d = -0.19                          	        from (-inf:inf);        		// Flat band voltage for top gate electron/ n-type transistor
+        parameter real          Vgs0_2d   = (type==1)?Vgs0_e_2d:Vgs0_h_2d               from (-inf:inf);        		// Flat band voltage for the top gate
+        
+
+
+        parameter real          Vgs0_efet_h = -0.18                                	from (-inf:inf);        		// Abs value of Flat band voltage for top gate holes/ p-type transistor
+        parameter real          Vgs0_efet_e = -0.18                             		from (-inf:inf);        		// Flat band voltage for top gate electron/ n-type transistor
+        parameter real          Vgs0_efet   = (type==1)?Vgs0_efet_e:Vgs0_efet_h         from (-inf:inf);      			// Flat band voltage for the top gate
+
+        parameter real          Vgs0=(type_FET==-1)?Vgs0_efet:Vgs0_2d           	from (-inf:inf);        		// Flat band voltage for the top gate
+     
+        
+        parameter real          m0       = 9.1e-31                            		from [0:inf);           // Mass of free electron
+        parameter real          meff_e_K = 0.45*m0                        		from [0:inf);           // effective mass of electron
+        parameter real          meff_h_K = 0.64*m0                        		from [0:inf);           // effective mass of hole
+        parameter real          meff_K   = (type==1)?meff_e_K:meff_h_K        		from [0:inf);           // K valley of conduction valley
+        parameter real          meff_e_Q = 0.63*m0                        		from [0:inf);           // effective mass of electron
+        parameter real          meff_h_Q = 0*m0                             		from [0:inf);           // effective mass of hole, Note: There is no satellite valley for "holes"
+        parameter real          meff_Q   = (type==1)?meff_e_Q:meff_h_Q        		from [0:inf);           // Q valley or secondary conduction valley
+        parameter real          g_e_K    = 2.0                                 		from [0:inf);           // K valley degeneracy for electrons
+        parameter real          g_h_K    = 2.0                                 		from [0:inf);           // K valley degeneracy for holes
+        parameter real          g_K      = (type == 1)?g_e_K:g_h_K                 	from [0:inf);                         
+        parameter real          g_Q      = 6.0                                  	from [0:inf);           // Q valley degeneracy since no "Q" valley for holes, it is taken care my effective mass parapmeter
+        
+        parameter real          q    = `P_Q                                     	from [0:inf);           // Electronic Charge
+        parameter real          Eg_e = 1.2*q                                 		from [0:inf);           // Band gap of Material, in this case MoS2  [from Dan's annual review, 2017]
+        parameter real          Eg_h = 1.2*q                               		from [-inf:inf);        // Band gap of Material, in this case WSe2  [from Dan's annual review, 2017]
+        parameter real          Eg   = (type==1)?Eg_e:Eg_h                  		from [-inf:inf);        // Band gap of Material
+                             
+        parameter real          h_bar = `P_H/(2.0*`M_PI)                    		from [0:inf);           // Value of h_bar
+        parameter real          DOS_K = meff_K*g_K/(`M_PI*h_bar*h_bar)         		from [0:inf);           // 2D density of states for K valley ( Note: K is just used as an nomenclature. Depending on material it might be different)
+
+        parameter real          DOS_Q = 0         					from [0:inf);           // 2D density of states for Q valley
+        
+        parameter real          E_KQ_e = 0.13*q                            		from [0:inf);           // Energy difference between two valleys( Szabo et al., IEDM provides a energy difference of 50 meV for moS2)
+        parameter real          E_KQ_h = 0.0*q                              		from [-inf:inf);           // Energy difference between two valleys for hole
+        parameter real          E_KQ   = (type==1)?E_KQ_e:E_KQ_h               		from [0:inf);           // Energy difference between two valleys( Szabo et al., IEDM provides a energy difference of 50 meV)
+        
+	parameter real          Nimp  = 1.7e16      					from (-inf:inf);        // Impurity concentration in SI units ( Nimp = Donor - Acceptor ) 
+	//parameter real          Nimp  = 0      					from (-inf:inf);        // Impurity concentration in SI units ( Nimp = Donor - Acceptor ) 
+       parameter real          Dtrap = 1e10                 				from [0:inf);           // trap density in SI units (Default 4e15)
+        //parameter real          Dtrap = 0                 				from [0:inf);           // trap density in SI units (Default 4e15)
+        parameter real          Etrap = q*0.125                          			from [0:inf);           // trap energy (Default 0.125)
+       
+        parameter real          Rch     = 300         					from [0:inf);           // Contact resistance for electrons [ohm-um]
+        parameter real          Rce     = 300                 				from [0:inf);           // Contact resistance for holes [ohm-um]
+        parameter real          Rc      = 0.5*(1-type)*Rch+0.5*(1+type)*Rce    		from [0:inf);           // Contact resistance for the device based on the type of carriers
+       
+        
+        parameter real          eps_TMD = 0.5*(1-type)*5.16*eps+0.5*(1+type)*3.3*eps  	from [0:inf);    // Relative permittivity of channel (5.16 for WSe2, 3.3 for MoS2)
+        parameter real          T       = 300.15                            		from [-100:inf);        // Room temperature in Kelvin
+	parameter real          kb      = `P_K                                  	from (0:inf);           // Boltzmann constant
+	parameter real          kT      = kb*T			           		from (0:inf);  
+        
+        parameter real          lambda = 0.1                                		from [0:inf);           // For finite output 
+        
+        // Mobility fixed parameters
+        parameter real          mu_e	= 9e-3						from [0:inf);              //Mobility of electron Mos2
+	parameter real          mu_h	= 25e-3						from [0:inf);		   //Mobility of hole WSe2
+	parameter real 	        mu=(type==1)?mu_e:mu_h                  		from [0:inf);	           //Mobility
+        parameter real          bgf	= 0.0                               		from [0:inf);	           //Don't change this value other than 0.5
+
+ 
+        // Parameters for current calculations
+        real       N2D       = 0;
+        real       EXP_FAC   = 0;
+        real       EXP_FAC_S = 0; 
+        real       EXP_FAC_D = 0;
+        real       EXP_FAC_MID = 0;
+        real       D2D       = 0;
+        real       gS        = 0;
+        real       gD        = 0;
+        real       gmid      = 0;
+        real       Ids       = 0;            // Channel currents
+	real 	   Ig	     = 0;
+	real 	   Ig_FET    = 0;
+        real       QS        = 0;            // Charge density at the source end
+        real       QD        = 0;            // Charge density at the drain end
+        real       Qmid      = 0;
+        real       Vds       = 0;
+        real       Vgs       = 0;
+	real 	   Qgb_EFET      = 0;
+	real 	   Qgs_EFET     = 0;
+	real 	   Qgd_EFET	     = 0;
+	real       Qs0       = 0;
+        real       Qd0       = 0;
+	real       Qfs       = 0;
+	real       Qfd       = 0;
+	real 	   Qg	     = 0;
+	real 	   Qe_delay   = 0; 
+	real 	   Delta_Eg_2dEFET_del=0;
+	real 	   Delta_Eg_new=0;
+        real       Qgg_s =0;
+        real       Qgg_d =0;
+        
+	// Top contact parasitics
+        real        K_par   = 0;
+        real        K_sqr   = 0;
+        real        K_sqr_1 = 0;
+        real        K_int   = 0;
+        real        CSIDEFR = 0;
+        real        CTOPFR  = 0;
+	//real 	    E0=0;
+
+ 	
+        real        RcSource;
+        real        RcDrain;            // Final contact resistance
+        real        Vdsi = 0;
+        real        Vgsi = 0;
+        real        Vgdi = 0;
+        real        dir  = 1.0;
+        
+        real        Vgsraw;
+        real        Vgdraw;
+ 	real 	    Delta_Eg  = 0;
+	real        Delta_Eg_2dEFET = 0;
+        real        Delta_Vc = 0;
+        real        Cg=0;
+ 	real 	    QD_Elec=0;
+	real 	    QS_Elec=0;
+
+//
+        real 	    Vgbtest=0;
+        
+        analog begin
+            
+            
+
+            Vgsraw = type*(V(g,si));
+            Vgdraw = type*(V(g,di));
+            
+            // Following statements will switch the source and drain, if voltage of opposite polarity is applied to drain. 
+            // type takes care of P-type devices. 
+            if (Vgsraw >= Vgdraw) begin
+                Vds  = type*(V(d,s));
+                Vgs  = type*(V(g,s));
+                Vdsi = type*(V(di,si));
+                Vgsi = Vgsraw;
+                Vgdi = Vgdraw;
+                dir  = 1.0;
+            end
+            else begin
+                Vds  = type*(V(s,d));
+                Vgs  = type*(V(g,d));
+                Vdsi = type*(V(si,di));
+                Vgsi = Vgdraw;
+                Vgdi = Vgsraw;
+                dir  = -1.0;
+            end
+                
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	//Delta_Eg_2dEFET=q*(alpha*C33/ts)*(strain_transfer*Vgb); //old 
+       // Delta_Eg_2dEFET=q*(alpha*C33/ts)*V(strain);            //old_test_with_strain
+
+        //Delta_Eg_2dEFET=q*alpha*V(strain)/(kappa*s33*te);       //new_with_strain_approx
+
+        /*Delta_Eg_2dEFET=q*(alpha*n*C33*V(strain))/(ts+kappa*n*C33*s33*te);
+	V(Eg_in,gnd)<+ Delta_Eg_2dEFET;
+	I(Eg_in,Eg_out) <+ V(Eg_in,Eg_out)/Re_delay;
+	Qe_delay = Ce_delay*V(Eg_out,gnd);
+        I(Eg_out,gnd) <+ ddt(Qe_delay);
+	Delta_Eg = V(Eg_out,gnd);
+	Delta_Eg_new = (type_FET==1)?0.0:Delta_Eg;
+	E0      = (Eg/2.0) - (1-bgf)*Delta_Eg_new; 
+ 	//E0     = (Eg/2.0) - (1)*Delta_Eg_new; */
+
+
+        E0      = (Eg/2.0);
+       
+
+       
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+            
+            // Current Calculation(Ref: Jimenez et. al, APL, 2012)
+            N2D       = DOS_K*kT + DOS_Q*kT*exp(-E_KQ /kT);
+            D2D       = N2D/kT;     
+            //QS        = -q*(N2D*ln(1.0+(limexp((q*V(a1, gnd)-E0)/kT))));
+            QS        = -q*(N2D*ln(1.0+(limexp((q*V(a1, gnd)-E0)/kT)))-Nimp+Dtrap/(1.0+limexp((E0-Etrap-q*V(a1,gnd))/kT)));
+            //V(test1) <+ QS;
+            EXP_FAC_S = limexp((q*V(a1,gnd)-E0)/kT);
+            V(a1,gnd) <+ QS/(CTOP)+(Vgsi-Vgs0);  
+            gS        = N2D*kT*EXP_FAC_S+N2D*kT*q*q*D2D/(2*CTOP)*EXP_FAC_S*EXP_FAC_S-q*q*N2D*Dtrap*EXP_FAC/((EXP_FAC-1.0)*(CTOP))*((EXP_FAC_S+1)*ln(EXP_FAC_S+1)/(EXP_FAC+EXP_FAC_S)-ln(EXP_FAC_S+EXP_FAC));     
+            //QD        = -q*(N2D*ln(1.0+(limexp((q*V(a2, gnd)-E0)/kT))));   
+            QD        = -q*(N2D*ln(1.0+limexp((q*V(a2,gnd)-E0)/kT))-Nimp+Dtrap/(1.0+limexp((E0-Etrap-q*V(a2,gnd))/ kT)));
+	    //V(test2) <+ QD;
+            EXP_FAC_D = limexp((q*V(a2, gnd)-E0)/kT);
+  	    V(a2,gnd) <+ QD/(CTOP)+(Vgsi-Vgs0-Vdsi);
+            gD        = N2D*kT*EXP_FAC_D+N2D*kT*q*q*D2D/(2*CTOP)*EXP_FAC_D*EXP_FAC_D-q*q*N2D*Dtrap*EXP_FAC/((EXP_FAC-1.0)*(CTOP))*((EXP_FAC_D+1)*ln(EXP_FAC_D+1)/(EXP_FAC + EXP_FAC_D)-ln(EXP_FAC_D+EXP_FAC));
+    
+         
+
+//Fringe Cap
+	    K_par   = (1+tp/TTOP);
+            K_sqr   = pow(K_par,2);
+            K_sqr_1 = K_sqr-1;
+            K_int   = pow(K_sqr/K_sqr_1,K_sqr);
+            CSIDEFR = eps_g/`M_PI*ln( K_sqr_1*K_int); 
+           // V(out1) <+   CSIDEFR;
+           
+            // Top fringe
+            CTOPFR = eps_g/`M_PI*ln(1+L/(TTOP+tp));
+
+            //V(out2) <+  CTOPFR ;
+            Qfs    = type*(CSIDEFR+CTOPFR)*Vgsi  ;
+            Qfd    = type*(CSIDEFR+CTOPFR)*Vgdi  ;
+	    Qd0    = W*(Qfd);
+            Qs0    = W*(Qfs);   
+   	   
+	      /// Sumeet changed: Removed type from Qfs to be consistent with Qgd_EFET 
+         /// Sumeet Changed: Qgd_EFET -- instead of V(g,di) --> Vgdi (to be consistent with Qd0
+	   //Capacitance due to extra metal layer in EFET
+
+           if (type_FET==-1) begin
+ 	   Qgd_EFET = CD*Vgdi;
+	   Qgs_EFET = CS*Vgsi;
+           //Qgb_EFET = V(Q_fe);
+  	   QD_Elec=(type_Cap==1)?Qgd_EFET:Qd0;
+           QS_Elec=(type_Cap==1)?Qgs_EFET:Qs0;
+           end 
+            
+           if (type_FET==1) begin
+	   Qgb_EFET = 0;
+	   Qgd_EFET = CD*Vgdi;
+	   Qgs_EFET = CS*Vgsi;
+	   QD_Elec =(type_Cap==1)?Qgd_EFET:Qd0;
+           QS_Elec=(type_Cap==1)?Qgs_EFET:Qs0;;
+	   end	
+	   
+        
+	
+ 	   Ids = -W/Lg*mu*(gD-gS)*(1+lambda*Vdsi); 
+ 
+            
+
+
+ 	  //I(g,b) <+ ddt(Qgb_EFET);
+
+          QS1        = -q*N2D*ln(1.0+(limexp((q*V(a1, gnd)-E0)/kT)));
+          QD1        = -q*N2D*ln(1.0+(limexp((q*V(a2, gnd)-E0)/kT)));
+
+          Qgg_s= (type==1)? -1*(3*QS1+QD1)*Ag/8:(3*QS1+QD1)*Ag/8;
+          	
+
+          Qgg_d= (type==1)? -1*(QS1+3*QD1)*Ag/8:(QS1+3*QD1)*Ag/8;
+	  //V(Vout_d1) <+ Qgg_d; // Drain side channel charge
+
+/// Sumeet Added : If condition to take care of switching of source and drain
+/// Sumeet Changed: Renamed the charges to Qout_gate and Qout_drain
+/// Sumeet Changed: Instead of QS1 and QD1, used Qgg_s and Qgg_d in Qout_gate
+/// Sumeet Added: Multiplied Qout_* with 1e15 to reduce numerical errors.
+/// Sumeet Added: Added type in _fin to take care of PMOS
+
+	 if (Vgsraw >= Vgdraw) begin  
+          	Qgg_s_fin = Qgg_s;   ///type already taken care of in previous lines. 
+		Qgg_d_fin = Qgg_d;
+          	QS_Elec_fin = type*QS_Elec;
+                QD_Elec_fin = type*QD_Elec; 
+	  end
+          else begin
+		Qgg_s_fin = Qgg_d;
+		Qgg_d_fin = Qgg_s;
+          	QS_Elec_fin = type*QD_Elec;
+                QD_Elec_fin = type*QS_Elec; 
+          end
+
+	I(g,si) <+ ddt(Qgg_s_fin);                
+	I(g,di) <+  ddt(Qgg_d_fin);
+        I(g, si) <+ ddt(QS_Elec_fin);
+	I(g, di) <+ ddt(QD_Elec_fin);
+	//V(Qout_drain) <+ (Qgg_d_fin +QD_Elec_fin)*1e15;  // QD_Elec Drain side Fringe charge; Qgg_d: Drain side channel charge
+        //V(Qout_drain) <+ QD_Elec_fin ;
+	//V(Qout_gate) <+ (Qgb_EFET + Qgg_s_fin + Qgg_d_fin + QD_Elec_fin + QS_Elec_fin)*1e15; // Total Gate Charge
+        //V(Qout_gate) <+ (CSIDEFR+CTOPFR)*1e15;
+
+          
+            
+            // Contact resistance dependent on drain voltage. Introduced in future releases
+            RcDrain  = Rc+`SMALL_VAL; // To avoide the issue of zero contact resistance
+            RcSource = Rc+`SMALL_VAL; 
+            
+            // Final Current
+           I(di,si)      <+   type*dir*Ids ;
+           I(d,di)       <+  (V(d,di)/RcDrain);
+           I(si,s)       <+  (V(si,s)/RcSource);
+        
+          
+          
+        end // analog module ends       
+    endmodule
+
+
+
+
+
+ 
+
+
+
+
+

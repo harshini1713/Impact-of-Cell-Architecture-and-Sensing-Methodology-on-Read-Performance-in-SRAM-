@@ -1,0 +1,37 @@
+* "simulator" "HSPICE" 
+* "version" "Q-2020.03 linux64"
+* "format" "HSP"
+* "rundate" "22:16:16 11/29/2025 "
+* "netlist" "SRAM_read_latency_differential_sa_8T.sp "
+* "runtitle" "*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc= 1.000e-12       
+.nodeset
++ bl =   0.8000        
++ bl_pch =   0.            
++ blb =   0.8000        
++ hac_wlx =   0.            
++ har_blbx =   0.8000        
++ har_blx =   0.8000        
++ q =   0.8000        
++ se = 3.694e-09       
++ se_enbl =   0.8000        
++ vdd =   0.8000        
++ vdd_arr =   0.8000        
++ vss =   0.            
++ wl = 3.694e-09       
++ wl_enbl =   0.8000        
++ xsram.q = 1.462e-14       
++ xsram.qb =   0.8000        
++ xsram_har.q = 7.462e-12       
++ xsram_har.qb =   0.8000        
++ xsram_hac.q = 7.462e-12       
++ xsram_hac.qb =   0.8000        
++ xsa.n_common =   0.6972        
++ xsa.n_tail =   0.6188        
++ xsa.node_x = 3.205e-07       
++ xsa.node_y =   0.6727        
+***   END: Saved Operating Point ***                     
