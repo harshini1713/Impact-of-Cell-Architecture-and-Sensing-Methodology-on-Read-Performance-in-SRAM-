@@ -2,7 +2,7 @@
 * Subcircuit: Latch-Based Sense Amplifier (VLSA)
 * Integrated with Sense Precharge and NAND SR Latch Output
 ************************************************************************
-.subckt LATCH_SA BL BLB SE Q VDD VSS
+.subckt LATCH_SA BL BLB SE SPE Q VDD VSS
 .param lambda='11n'
 .param w_n='3*lambda'
 .param w_p='3*lambda'
@@ -12,9 +12,9 @@
 * Operation: When SPE is LOW, these pull int_lft/rgt to VDD and equalize them.
 * This prepares the nodes ST and SB (in diagram) for the next read.
 * Sizing: Standard width is usually sufficient for precharge.
-*XMp_pre_l  int_lft  SPE  VDD      VDD  pfet1 W='22n'
-*XMp_pre_r  int_rgt  SPE  VDD      VDD  pfet1 W='22n'
-*XMp_eq     int_lft  SPE  int_rgt  VDD  pfet1 W='22n'
+XMp_pre_l  int_lft  SPE  VDD      VDD  pfet1 W='22n'
+XMp_pre_r  int_rgt  SPE  VDD      VDD  pfet1 W='22n'
+XMp_eq     int_lft  SPE  int_rgt  VDD  pfet1 W='22n'
 
 * ======================================================================
 * 2. INPUT ISOLATION / COUPLING
@@ -76,4 +76,3 @@ Xinverter2 node_x   Q      VDD VSS inverter_stage
 Xp Out In vdd vdd pfet1 W = '66n'
 Xn Out In vss vss nfet1 W ='33n'
 .ends inverter_stage
-
