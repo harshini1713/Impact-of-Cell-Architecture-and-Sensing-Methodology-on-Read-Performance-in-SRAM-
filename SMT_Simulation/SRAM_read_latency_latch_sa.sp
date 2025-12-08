@@ -25,9 +25,10 @@
 ******************************************************
 *  GLOBAL SUPPLIES (Unified VDD)
 ******************************************************
-.param      vdd_supply   = 0.8
-Vvdd        VDD      0   'vdd_supply'
-Vvdd_array  VDD_ARR  0   'vdd_supply'
+.param      vdd_supply   =  0.8
+.param      vdd_half     = '0.5 * vdd_supply'
+Vvdd        VDD      0     'vdd_supply'
+Vvdd_array  VDD_ARR  0     'vdd_supply'
 Vgnd   gnd  0        0
 Vvss   VSS  0        0
 ******************************************************
@@ -35,9 +36,9 @@ Vvss   VSS  0        0
 ******************************************************
 *  Define BL and WL cap
 ******************************************************
-Cbl     BL   0 20.27f
-Cblb    BLB  0 20.27f
-Cwl     WL   0 47.29f
+Cbl     BL   0 18.432f
+Cblb    BLB  0 18.432f
+Cwl     WL   0 56.72f
 Cout    Q    0 2f
 ******************************************************
 
@@ -67,9 +68,9 @@ Xsram_hac HAC_WLx BL BLB VDD_ARR VSS SRAM M = 511
 Vhac1 HAC_WLx 0 pwl 0 0 
 
 *Vwl1 WL 0 pwl 0 0 9n 0 9.1n 0.8  
-Vwl_enbl wl_enbl 0 pwl 0 0.8  9.0n 0.8  9.1n 0  18n 0  18.1n 0.8
-Xpu1 WL  wl_enbl vdd vdd pfet1 W = '360n'
-Xpd1 WL  wl_enbl gnd gnd nfet1 W ='180n'
+Vwl_enbl wl_enbl 0 pwl  0 0.8   9.0n 0.8   9.05n 0  10.05n 0  10.1n 0.8
+Xpu1 WL  wl_enbl vdd vdd pfet1 W = '720n'
+Xpd1 WL  wl_enbl gnd gnd nfet1 W = '360n'
 
 *Vbl BL 0 pwl 0 0.8 
 *Vblb BLB 0 pwl 0 0
@@ -82,26 +83,28 @@ Xpd1 WL  wl_enbl gnd gnd nfet1 W ='180n'
 *  - WL asserted at 9.0ns -> cell connects to BL/BLB and produces small differential
 *  - SAEN asserted at 9.5ns to amplify the difference
 * ------------------------------------------------
-Vbl_pch   bl_pch   0 pwl 0 0   8.9n 0   8.91n 0.8   30n 0.8
+Vbl_pch           bl_pch_enbl   0 pwl 0 0.8   8.9n 0.8   8.95n 0   10.05n 0   10.1n 0.8
+Xpu_bl_pch_enbl   bl_pch   bl_pch_enbl vdd vdd pfet1 W = '360n'
+Xpd_bl_pch_enbl   bl_pch   bl_pch_enbl  gnd gnd nfet1 W = '180n'
 
-Xpch1     BL bl_pch vdd vdd pfet1 W = '360n'
-Xpch2     BLB bl_pch vdd vdd pfet1 W = '360n'
-Xpeq      BL bl_pch BLB vdd pfet1 W = '360n'
+Xpch1     BL  bl_pch  vdd vdd pfet1 W = '360n'
+Xpch2     BLB bl_pch  vdd vdd pfet1 W = '360n'
+Xpeq      BL  bl_pch  BLB vdd pfet1 W = '360n'
 
 
 *** 1. Sense Precharge Enable (SPE) ***
 * Needs to be 0 (ON) initially, then switch to 1 (OFF) before SE fires.
 * Logic: Input 0.8 -> Buffer Out 0 (SPE=0). Input 0 -> Buffer Out 1 (SPE=1).
 * Switch at 9.4ns (100ps before SE).
-*Vspe_enbl spe_enbl 0 pwl 0 0.8  9.39n 0.8  9.4n 0  20n 0
-*Xpu_spe   SPE spe_enbl vdd vdd pfet1 W = '360n'
-*Xpd_spe   SPE spe_enbl gnd gnd nfet1 W = '180n'
+Vspe_enbl spe_enbl 0 pwl 0 0.8   8.9n 0.8   8.95n 0    10.05n 0   10.1n 0.8
+Xpu_spe   SPE spe_enbl vdd vdd pfet1 W = '360n'
+Xpd_spe   SPE spe_enbl gnd gnd nfet1 W = '180n'
 
 
 *** 2. Sense Enable (SE) ***
 * Fire at 9.5ns 
 ***Fire the sense amp when the BL discharges around 50-60mV (9.44 ns)
-Vse_enbl  se_enbl 0 pwl  0 0.8  9.43n 0.8  9.44n 0  20n 0 20.1n 0.8
+Vse_enbl  se_enbl    0 pwl   0 0.8   9.25n 0.8   9.3n 0   10.05n 0   10.1n 0.8
 Xpu3      SE se_enbl vdd     vdd     pfet1 W = '720n'
 Xpd3      SE se_enbl gnd     gnd     nfet1 W = '180n'
 
@@ -111,32 +114,31 @@ Xpd3      SE se_enbl gnd     gnd     nfet1 W = '180n'
 * ------------------------------------------------
 * Port Map: BL BLB SE SPE Q Q_bar VDD VSS
 
-Xsa  BL BLB SE Q VDD VSS LATCH_SA 
+Xsa  BL BLB SE SPE Q VDD VSS LATCH_SA 
 
-.tran 1p 30n
+.tran 1p 20n
 
 .probe tran v(BL) v(BLB) v(SE) v(Q)
 
-.meas tran twl_init   WHEN v(WL)='0.05*(vdd_supply)' rise=1
-.meas tran twl_fin    WHEN v(WL)='0.95*(vdd_supply)' rise=1
-.meas twl param = 'twl_fin - twl_init'
+.meas tran twl_init   WHEN v(WL)=vdd_half rise=1
+.meas tran tq_fin     WHEN v(Q) =vdd_half fall=1
 
-.meas tran tbl_init   WHEN v(BL)='0.95*(vdd_supply)' fall=1
-.meas tran tbl_fin    WHEN v(BL)='0.05*(vdd_supply)' fall=1
-.meas tbl param = 'tbl_fin - tbl_init'
+.meas tran T_WL_rise_SE_rise    TRIG v(WL)   val=vdd_half rise=1  TARG v(SE)   val=vdd_half rise=1
+.meas tran T_SE_rise_Q_fall     TRIG v(SE)   val=vdd_half rise=1  TARG v(Q)    val=vdd_half fall=1
+.meas WL2Q_delay param='tq_fin - twl_init'
 
-.meas tran tsa_init   WHEN v(Q)='0.95*(vdd_supply) ' fall=1
-.meas tran tsa_fin    WHEN v(Q)='0.05*(vdd_supply) ' fall=1
-.meas tsa param = 'tsa_fin - tsa_init'
 
-.meas WL2Q_delay param='tsa_fin - twl_init'
+*.meas tran T_sense_time   WHEN v(SE)    = vdd_half rise=1
+*.meas tran V_BL_at_sense  FIND v(BL)  AT='T_sense_time'
+*.meas tran V_BLB_at_sense FIND v(BLB) AT='T_sense_time'
+*.meas tran BL_Delta_V     PARAM='abs(V_BL_at_sense - V_BLB_at_sense)'
 
-.meas tran BL_Voltage  FIND v(BL)  AT=9.44n
-.meas tran BLB_Voltage FIND v(BLB) AT=9.44n
+
+.meas tran BL_Voltage  FIND v(BL)  AT=9.3n
+.meas tran BLB_Voltage FIND v(BLB) AT=9.3n
 .meas tran Delta_V PARAM='BLB_Voltage - BL_Voltage'
 
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8n TO=10n
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.5n
 
 .end
-
 
