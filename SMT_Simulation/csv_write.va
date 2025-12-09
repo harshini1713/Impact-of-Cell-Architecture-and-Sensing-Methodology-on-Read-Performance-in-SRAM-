@@ -1,0 +1,27 @@
+`include "disciplines.vams"
+`include "constants.vams"
+
+module csv_writer(node_v1, node_v2, node_vin);
+    input node_v1, node_v2, node_vin;
+    electrical node_v1, node_v2, node_vin;
+
+    integer file_handle;
+
+    analog begin
+        // Open file at the start of the simulation
+        @ ( initial_step ) begin
+            file_handle = $fopen("butterfly.csv");
+            // Write the Header Row
+            $fstrobe(file_handle, "Vin, V1, V2");
+        end
+
+        // Write data at every DC step
+        // %g formats numbers automatically (general format)
+        $fstrobe(file_handle, "%g, %g, %g", V(node_vin), V(node_v1), V(node_v2));
+
+        // Close file at the end
+        @ ( final_step ) begin
+            $fclose(file_handle);
+        end
+    end
+endmodule
