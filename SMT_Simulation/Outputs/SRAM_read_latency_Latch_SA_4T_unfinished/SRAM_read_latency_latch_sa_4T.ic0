@@ -1,8 +1,8 @@
 * "simulator" "PrimeSim HSPICE"
 * "version" "V-2023.12-SP2-1 linux64"
 * "format" "HSP"
-* "rundate" "17:39:18 12/10/2025 "
-* "netlist" "SRAM_read_latency_latch_sa_8T.sp "
+* "rundate" "18:16:13 12/10/2025 "
+* "netlist" "SRAM_read_latency_latch_sa_4T.sp "
 * "runtitle" "*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet"
 * time =    0.            
 * temperature =   25.0000        
@@ -27,14 +27,11 @@
 + vss =   0.            
 + wl = 3.331e-09       
 + wl_enbl =   0.8000        
-+ xsram.node_r = 2.611e-02       
 + xsram.q = 1.462e-14       
 + xsram.qb =   0.8000        
-+ xsram_har.node_r = 2.611e-02       
-+ xsram_har.q = 7.462e-12       
++ xsram_har.q = 7.471e-12       
 + xsram_har.qb =   0.8000        
-+ xsram_hac.node_r = 2.611e-02       
-+ xsram_hac.q = 7.462e-12       
++ xsram_hac.q = 7.471e-12       
 + xsram_hac.qb =   0.8000        
 + xsa.com_n =   0.6407        
 + xsa.int_lft =   0.8000        

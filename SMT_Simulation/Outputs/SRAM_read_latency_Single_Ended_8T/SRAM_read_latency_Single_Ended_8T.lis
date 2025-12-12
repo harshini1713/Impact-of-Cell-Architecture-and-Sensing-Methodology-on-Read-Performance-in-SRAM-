@@ -5,13 +5,13 @@
   with the terms and conditions of a written license agreement with
   Synopsys, Inc. All other use, reproduction, or distribution of
   this software is strictly prohibited.
-  Input File: SRAM_read_latency_latch_sa_10T.sp                                 
-  Command line options: /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/linux64/hspice -i SRAM_read_latency_latch_sa_10T.sp -o Outputs/
-  Start time: Wed Dec 10 17:48:36 2025
+  Input File: SRAM_read_latency_Single_Ended_8T.sp                              
+  Command line options: /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/linux64/hspice -i SRAM_read_latency_Single_Ended_8T.sp -o Outputs/
+  Start time: Thu Dec 11 23:33:21 2025
  lic:  
  lic: FLEXlm: SDK_12.11.9.5 
  lic: USER:   hjaigane             HOSTNAME: ececomp2.ecn.purdue.edu 
- lic: HOSTID: 2e802204             PID:      3636325 
+ lic: HOSTID: 2e802204             PID:      3578526 
  lic: Using FLEXlm license file: 
  lic: 1718@marina.ecn.purdue.edu 
  lic: Checkout 1 hspice 
@@ -22,24 +22,37 @@
   ******  Machine Information  ***********************************
   CPU:
   model name	: AMD EPYC 7513 32-Core Processor
-  cpu MHz	: 2595.162
+  cpu MHz	: 3133.239
  CPU(s)		: 128
   
   OS:
   Linux version 4.18.0-553.78.1.el8_10.x86_64 (mockbuild@host-100-100-224-106) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-28.0.1) (GCC)) #1 SMP Tue Oct 7 02:24:16 PDT 2025
 
- System loadavg :  66.58 57.27 53.92 53/68639 3636351
+ System loadavg :  62.54 62.74 62.59 61/65634 3578584
 
   ******  Loading Files  *****************************************
-  Loading 'SRAM_read_latency_latch_sa_10T.sp '
+  Loading 'SRAM_read_latency_Single_Ended_8T.sp '
   Loading '/package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/hspice.ini '
   Loading './FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib '
   Loading './FEFET_LK_Model_ICDL_PSU/./MOSFET_MODELS/22fet_hp.pm '
-  Loading './latch_sa.sp '
-  **info** (SRAM_read_latency_latch_sa_10T.sp:116) DC voltage reset to initial transient source value in source 0:vbl_pch. new dc=0.8000D+00
-  **warning** (SRAM_read_latency_latch_sa_10T.sp:32) Both nodes of element vgnd are connected together; Line ignored.
-  **warning** (pmos:xpu1.mpfet (./FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib:118)) Warning:  Acde = 0.259654 may be too small in BSIM4 model with w=7.2e-07 l=2.2e-08.
+  **info** (SRAM_read_latency_Single_Ended_8T.sp:159) DC voltage reset to initial transient source value in source 0:vbl_pch_rgt. new dc=0.8000D+00
+  **warning** (SRAM_read_latency_Single_Ended_8T.sp:33) Both nodes of element vgnd are connected together; Line ignored.
+  **warning** (pmos:xpu2_lft.mpfet (./FEFET_LK_Model_ICDL_PSU/MOSFET_LIB.lib:118)) Warning:  Acde = 0.259654 may be too small in BSIM4 model with w=7.2e-07 l=2.2e-08.
   
+             
+ Warning:'1 connection nodes' occurs 6 times
+ Summary of 1 connection from the following nodes:
+ -------------------------
+ |Node        |Subckt    |
+ |------------+----------|
+ |hac_rbl_rgtx|0         |
+ |har_rbl_rgtx|0         |
+ |rbl_dummy1  |0         |
+ |rbl_dummy2  |0         |
+ |rbl_dummy3  |0         |
+ |wl_rgt      |0         |
+ -------------------------
+              
       
  **info** set option symb=1 internally to help for convergence.
  ******  Options set in the netlist  ****************************
@@ -54,21 +67,21 @@
   Negative capacitor:      0
   Negative inductor :      0
   Unconnected node  :      0
-  Dangling terminal :      0
+  Dangling terminal :      6
   Source loop       :      0
   
   ******  Circuit Statistics  ************************************
-  Capacitors(total)   :       4
+  Capacitors(total)   :       8
      Coupling Capacitors :       0
-  Voltage Sources     :      10
-  MOSFETs             :      55
-  Total # of Nodes    :     254
-  Total # of Elements :      69
+  Voltage Sources     :      13
+  MOSFETs             :      71
+  Total # of Nodes    :     335
+  Total # of Elements :      92
 
 
   
   ******  Analysis Details  **************************************
-  dcop: begin dcop, cpu clock= 7.12E-02                                         
+  dcop: begin dcop, cpu clock= 8.08E-02                                         
                                                   
  **info** dc convergence successful at Newton-Raphson method 
  ****** PrimeSim HSPICE -- V-2023.12-SP2-1 linux64 (Jul 08 2024 9057313) ******
@@ -76,9 +89,9 @@
  *.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet
 
  ****** transient analysis tnom=  25.000 temp=  25.000 ******
-  dcop: end dcop, cpu clock= 7.70E-02 peak memory=     560 mb tot_iter=      22 
+  dcop: end dcop, cpu clock= 8.41E-02 peak memory=     560 mb tot_iter=       4 
                                                   
-  Opening 'Outputs/SRAM_read_latency_latch_sa_10T.tr0' for output.
+  Opening 'Outputs/SRAM_read_latency_Single_Ended_8T.tr0' for output.
   Waveform Format: POST=Binary, POST_VERSION=2013
  
   Transient Beginning
@@ -90,15 +103,12 @@
  ****** transient analysis tnom=  25.000 temp=  25.000 ******
  
   ******  Measured values for the netlist  ***********************
- twl_init= 9.1208e-09
- tq_fin= 9.4281e-09
- t_wl_rise_se_rise= 1.6700e-10  targ= 9.2878e-09   trig= 9.1208e-09
- t_se_rise_q_fall= 1.4029e-10  targ= 9.4281e-09   trig= 9.2878e-09
- wl2q_delay= 3.0730e-10
- bl_voltage=   0.7727
- blb_voltage=   0.8168
- delta_v= 4.4124e-02
- e_read= 1.0161e-13  from= 8.9000e-09     to= 9.5000e-09
+ twl_rgt_init= 9.0486e-09
+ tq_fin= 9.4018e-09
+ t_wl_rise_sl_rgt_rise= 3.2925e-10  targ= 9.3778e-09   trig= 9.0486e-09
+ t_sl_rgt_rise_q_fall= 2.4038e-11  targ= 9.4018e-09   trig= 9.3778e-09
+ wl2q_delay= 3.5329e-10
+ e_read= 1.9653e-14  from= 8.9000e-09     to= 9.8000e-09
 
           ***** job concluded
  ******  
@@ -120,21 +130,21 @@
   ******  Runtime Statistics (seconds)  ******
 
   analysis           time    # points   tot. iter  conv.iter
-  op point           0.01           1          22
-  transient          0.08       20001        1473         402 rev=        58
-  readin             0.03
+  op point           0.00           1           4
+  transient          0.11       20001        1237         341 rev=        51
+  readin             0.02
   errchk             0.01
-  setup              0.00
+  setup              0.01
   output             0.00
 
 
-           peak memory used        560.28 megabytes
-           total cpu time            0.13 seconds
-           total elapsed time        0.17 seconds
-           job started at     17:48:36 12/10/2025
-           job ended   at     17:48:36 12/10/2025
-           job total runtime         0.17 seconds
+           peak memory used        560.39 megabytes
+           total cpu time            0.15 seconds
+           total elapsed time        0.20 seconds
+           job started at     23:33:21 12/11/2025
+           job ended   at     23:33:21 12/11/2025
+           job total runtime         0.20 seconds
 
 
  lic: Release hspice token(s) 
- lic: total license checkout elapse time:        0.03(s)
+ lic: total license checkout elapse time:        0.04(s)

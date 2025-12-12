@@ -51,11 +51,12 @@ Xn Out In vss vss nfet1 W = '44n'
 .ends
 
 *----------------------------------------------------
-* 8T SRAM / Register-File Bitcell
-*   Pin order kept the same as your original:
-*     wl bl blb vdd vss
-*   -> WL used as write+read wordline
-*   -> BL/BLB are write bitlines; BL also used as read bitline
+* 5T SRAM / Register-File Bitcell
+* Interface kept the same:   wl bl blb vdd vss
+*   - 4T latch: two inverters (X1, X2)
+*   - 1T access: NMOS from Q to BL, gate = WL
+*   - BLB pin is unused inside the cell (can act as
+*     reference / dummy bitline via periphery)
 *----------------------------------------------------
 .subckt SRAM wl bl blb vdd vss 
 
@@ -63,18 +64,10 @@ Xn Out In vss vss nfet1 W = '44n'
 X1 q  qb vdd vss INVERTER_normal
 X2 qb q  vdd vss INVERTER_normal
 
-* Write access transistors (2T) – same as your 6T cell
-X1a q  wl bl  vss nfet1 W ='33n'     * WBL <-> Q
-X1b qb wl blb vss nfet1 W ='33n'     * WBR <-> QB
+* Single access transistor (1T) : BL <-> Q
+Xacc q wl bl vss nfet1 W='33n'
 
-* Read port (2T) – added to make 8T cell
-* BL --Xrd1-- node_r --Xrd2-- GND
-* Xrd1 gate: WL  (read wordline)
-* Xrd2 gate: q   (stored data)
-Xrd1 bl  wl   node_r vss nfet1 W='33n'
-Xrd2 node_r q vss    vss nfet1 W='33n'
-
-* Initial conditions (same as before)
+* Initial conditions
 .ic V(q)  = 0
 .ic V(qb) = 0.8
 

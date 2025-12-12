@@ -43,7 +43,7 @@ Cout    Q    0 2f
 ******************************************************
 
 *----------------------------------------------------
-* Simple static CMOS inverter (used in the cell)
+* Inverter subckt (kept for compatibility / reuse)
 *----------------------------------------------------
 .subckt INVERTER_normal In Out vdd vss
 Xp Out In vdd vdd pfet1 W = '22n'
@@ -51,30 +51,28 @@ Xn Out In vss vss nfet1 W = '44n'
 .ends
 
 *----------------------------------------------------
-* 8T SRAM / Register-File Bitcell
-*   Pin order kept the same as your original:
-*     wl bl blb vdd vss
-*   -> WL used as write+read wordline
-*   -> BL/BLB are write bitlines; BL also used as read bitline
+* 4T SRAM Cell (image you sent)
+*
+* Pins:  wl bl blb vdd vss
+*   - BL connects to storage node Q via single access NFET
+*   - WL is its gate
+*   - BLB is not used inside the cell (kept for interface)
+*
+* Devices:
+*   Xp_q     : PMOS load VDD -> Q,  gate = Qb
+*   Xp_qb    : PMOS load VDD -> Qb, gate = Q
+*   Xn_qb_pd : NMOS pull-down Qb -> GND, gate = Q
+*   Xacc     : access NFET BL <-> Q, gate = WL
 *----------------------------------------------------
 .subckt SRAM wl bl blb vdd vss 
 
-* Cross-coupled storage inverters (4T)
-X1 q  qb vdd vss INVERTER_normal
-X2 qb q  vdd vss INVERTER_normal
+* internal storage nodes q and qb
+Xp_q      q   qb  vdd vdd pfet1 W='22n'   * load on Q
+Xp_qb     qb  q   vdd vdd pfet1 W='22n'   * load on Qb
+Xn_qb_pd  qb  q   vss vss nfet1 W='44n'   * pull-down on Qb
+Xacc      q   wl  bl  vss nfet1 W='33n'   * access to bitline
 
-* Write access transistors (2T) – same as your 6T cell
-X1a q  wl bl  vss nfet1 W ='33n'     * WBL <-> Q
-X1b qb wl blb vss nfet1 W ='33n'     * WBR <-> QB
-
-* Read port (2T) – added to make 8T cell
-* BL --Xrd1-- node_r --Xrd2-- GND
-* Xrd1 gate: WL  (read wordline)
-* Xrd2 gate: q   (stored data)
-Xrd1 bl  wl   node_r vss nfet1 W='33n'
-Xrd2 node_r q vss    vss nfet1 W='33n'
-
-* Initial conditions (same as before)
+* initial conditions
 .ic V(q)  = 0
 .ic V(qb) = 0.8
 

@@ -1,9 +1,9 @@
-****** HSPICE -- Q-2020.03 linux64 (Mar  8 2020) ******
+****** PrimeSim HSPICE -- V-2023.12-SP2-1 linux64 (Jul 08 2024 9057313) ******
 Input File: SRAM_read_latency_latch_sa_10T.sp
 lic:
-lic: FLEXlm: SDK_12.6
+lic: FLEXlm: SDK_12.11.9.5
 lic: USER:   hjaigane             HOSTNAME: ececomp2.ecn.purdue.edu
-lic: HOSTID: "ec2a720a9b5a"       PID:      4046310
+lic: HOSTID: 2e802204             PID:      3636325
 lic: Using FLEXlm license file:
 lic: 1718@marina.ecn.purdue.edu
 lic: Checkout 1 hspice
@@ -11,20 +11,20 @@ lic: License/Maintenance for hspice will expire on 08-sep-2026/2025.06
 lic: 1(in_use)/50(total) FLOATING license(s) on SERVER 1718@marina.ecn.purdue.edu
 lic:
 
- init: begin read circuit files, cpu clock= 4.78E-02
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/ad
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/behave
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/bjt
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/burr_brn
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/comlinear
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/dio
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/fet
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/lin_tech
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/pci
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/signet
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/ti
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/tline
-       option search = /package/eda/synopsys/hspice-Q-2020.03/hspice/parts/xilinx
+ init: begin read circuit files, cpu clock= 4.38E-02
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/ad
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/behave
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/bjt
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/burr_brn
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/comlinear
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/dio
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/fet
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/lin_tech
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/pci
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/signet
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/ti
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/tline
+       option search = /package/eda2/synopsys/hspice/V-2023.12-SP2-1/hspice/parts/xilinx
        option dccap =     1.00
        option post
        option lis_new
@@ -33,27 +33,27 @@ lic:
        option runlvl =     6.00
        option co =     132.
        option measform =     3.00
- init: end read circuit files, cpu clock= 6.17E-02 peak memory=     417 mb
- init: begin check errors, cpu clock= 6.17E-02
- init: end check errors, cpu clock= 6.58E-02 peak memory=     419 mb
- init: begin setup matrix, pivot=     0 cpu clock= 6.58E-02
-       establish matrix -- done, cpu clock= 6.60E-02 peak memory=     419 mb
-       re-order matrix -- done, cpu clock= 6.65E-02 peak memory=     419 mb
- init: end setup matrix, cpu clock= 6.80E-02 peak memory=     419 mb
- dcop: begin dcop, cpu clock= 6.80E-02
- dcop: end dcop, cpu clock= 7.20E-02 peak memory=     419 mb tot_iter=      22
+ init: end read circuit files, cpu clock= 6.21E-02 peak memory=     558 mb
+ init: begin check errors, cpu clock= 6.21E-02
+ init: end check errors, cpu clock= 6.73E-02 peak memory=     559 mb
+ init: begin setup matrix, pivot=     0 cpu clock= 6.73E-02
+       establish matrix -- done, cpu clock= 6.76E-02 peak memory=     560 mb
+       re-order matrix -- done, cpu clock= 6.82E-02 peak memory=     560 mb
+ init: end setup matrix, cpu clock= 7.11E-02 peak memory=     560 mb
+ dcop: begin dcop, cpu clock= 7.12E-02
+ dcop: end dcop, cpu clock= 7.70E-02 peak memory=     560 mb tot_iter=      22
  output: Outputs/SRAM_read_latency_latch_sa_10T.mt0
- sweep: tran tran0    begin, stop_t=  3.00E-08 #sweeps=**** cpu clock= 7.29E-02
- tran: time= 3.0624E-09 tot_iter=      16 conv_iter=       8 cpu clock= 7.35E-02
- tran: time= 6.0624E-09 tot_iter=      20 conv_iter=      10 cpu clock= 7.36E-02
- tran: time= 9.0000E-09 tot_iter=     106 conv_iter=      35 cpu clock= 7.66E-02
- tran: time= 1.2080E-08 tot_iter=     835 conv_iter=     225 cpu clock= 1.05E-01
- tran: time= 1.5025E-08 tot_iter=     857 conv_iter=     234 cpu clock= 1.06E-01
- tran: time= 1.8000E-08 tot_iter=     868 conv_iter=     237 cpu clock= 1.06E-01
- tran: time= 2.1215E-08 tot_iter=    1318 conv_iter=     369 cpu clock= 1.22E-01
- tran: time= 2.4700E-08 tot_iter=    1332 conv_iter=     375 cpu clock= 1.23E-01
- tran: time= 2.7379E-08 tot_iter=    1338 conv_iter=     377 cpu clock= 1.23E-01
- tran: time= 3.0000E-08 tot_iter=    1344 conv_iter=     379 cpu clock= 1.23E-01
- sweep: tran tran0    end, cpu clock= 1.23E-01 peak memory=     419 mb
+ sweep: tran tran0    begin, stop_t=  2.00E-08 #sweeps=**** cpu clock= 7.91E-02
+ tran: time= 2.4886E-09 tot_iter=      16 conv_iter=       8 cpu clock= 8.01E-02
+ tran: time= 4.4886E-09 tot_iter=      20 conv_iter=      10 cpu clock= 8.02E-02
+ tran: time= 6.4886E-09 tot_iter=      24 conv_iter=      12 cpu clock= 8.03E-02
+ tran: time= 8.4886E-09 tot_iter=      28 conv_iter=      14 cpu clock= 8.04E-02
+ tran: time= 1.0050E-08 tot_iter=     910 conv_iter=     246 cpu clock= 1.30E-01
+ tran: time= 1.2031E-08 tot_iter=    1444 conv_iter=     388 cpu clock= 1.62E-01
+ tran: time= 1.4388E-08 tot_iter=    1459 conv_iter=     395 cpu clock= 1.63E-01
+ tran: time= 1.6091E-08 tot_iter=    1463 conv_iter=     397 cpu clock= 1.63E-01
+ tran: time= 1.8091E-08 tot_iter=    1467 conv_iter=     399 cpu clock= 1.63E-01
+ tran: time= 2.0000E-08 tot_iter=    1471 conv_iter=     401 cpu clock= 1.63E-01
+ sweep: tran tran0    end, cpu clock= 1.63E-01 peak memory=     560 mb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)

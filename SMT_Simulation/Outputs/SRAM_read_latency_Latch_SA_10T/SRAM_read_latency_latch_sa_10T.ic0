@@ -1,7 +1,7 @@
-* "simulator" "HSPICE" 
-* "version" "Q-2020.03 linux64"
+* "simulator" "PrimeSim HSPICE"
+* "version" "V-2023.12-SP2-1 linux64"
 * "format" "HSP"
-* "rundate" "13:05:40 11/30/2025 "
+* "rundate" "17:48:36 12/10/2025 "
 * "netlist" "SRAM_read_latency_latch_sa_10T.sp "
 * "runtitle" "*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet"
 * time =    0.            
@@ -11,31 +11,34 @@
 + gmindc= 1.000e-12       
 .nodeset
 + bl =   0.8000        
-+ bl_pch =   0.            
++ bl_pch = 3.694e-09       
++ bl_pch_enbl =   0.8000        
 + blb =   0.8000        
++ hac_wlx =   0.            
 + har_blbx =   0.8000        
 + har_blx =   0.8000        
-+ q =   0.            
-+ q_sa =   0.8000        
++ q =   0.8000        
 + se = 6.690e-09       
 + se_enbl =   0.8000        
++ spe = 3.694e-09       
++ spe_enbl =   0.8000        
 + vdd =   0.8000        
 + vdd_arr =   0.8000        
 + vss =   0.            
-+ wl = 3.694e-09       
++ wl = 3.331e-09       
 + wl_enbl =   0.8000        
-+ xsram.int_rd1 = 3.152e-09       
-+ xsram.int_rd2 = 2.788e-02       
-+ xsram.q = 9.415e-15       
++ xsram.node_r = 2.611e-02       
++ xsram.q = 1.462e-14       
 + xsram.qb =   0.8000        
-+ xsram_har.int_rd1 = 3.152e-09       
-+ xsram_har.int_rd2 = 2.788e-02       
-+ xsram_har.q = 4.805e-12       
++ xsram.qrb = 3.854e-09       
++ xsram_har.node_r = 2.611e-02       
++ xsram_har.q = 7.462e-12       
 + xsram_har.qb =   0.8000        
-+ xsram_hac.int_rd1 = 3.152e-09       
-+ xsram_hac.int_rd2 = 2.788e-02       
-+ xsram_hac.q = 4.805e-12       
++ xsram_har.qrb = 3.854e-09       
++ xsram_hac.node_r = 2.611e-02       
++ xsram_hac.q = 7.462e-12       
 + xsram_hac.qb =   0.8000        
++ xsram_hac.qrb = 3.854e-09       
 + xsa.com_n =   0.6407        
 + xsa.int_lft =   0.8000        
 + xsa.int_rgt =   0.8000        
