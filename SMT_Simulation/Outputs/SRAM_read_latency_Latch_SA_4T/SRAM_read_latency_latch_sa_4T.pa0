@@ -13,18 +13,18 @@
       13 xpu3.
       14 xpd3.
       15 xsa.
-      16 xsram.xp_q.
-      17 xsram.xp_qb.
-      18 xsram.xn_qb_pd.
-      19 xsram.xacc.
-      20 xsram_har.xp_q.
-      21 xsram_har.xp_qb.
-      22 xsram_har.xn_qb_pd.
-      23 xsram_har.xacc.
-      24 xsram_hac.xp_q.
-      25 xsram_hac.xp_qb.
-      26 xsram_hac.xn_qb_pd.
-      27 xsram_hac.xacc.
+      16 xsram.xacc_l.
+      17 xsram.xacc_r.
+      18 xsram.xdriv_l.
+      19 xsram.xdriv_r.
+      20 xsram_har.xacc_l.
+      21 xsram_har.xacc_r.
+      22 xsram_har.xdriv_l.
+      23 xsram_har.xdriv_r.
+      24 xsram_hac.xacc_l.
+      25 xsram_hac.xacc_r.
+      26 xsram_hac.xdriv_l.
+      27 xsram_hac.xdriv_r.
       28 xsa.xmp_pre_l.
       29 xsa.xmp_pre_r.
       30 xsa.xmp_eq.

@@ -1,7 +1,7 @@
 * "simulator" "PrimeSim HSPICE"
 * "version" "V-2023.12-SP2-1 linux64"
 * "format" "HSP"
-* "rundate" "18:16:13 12/10/2025 "
+* "rundate" "12:26:21 12/14/2025 "
 * "netlist" "SRAM_read_latency_latch_sa_4T.sp "
 * "runtitle" "*.lib './fefet_lk_model_icdl_psu/mosfet_lib.lib' norm_2dfet"
 * time =    0.            
@@ -10,10 +10,10 @@
 .option 
 + gmindc= 1.000e-12       
 .nodeset
-+ bl =   0.8000        
++ bl =   0.5308        
 + bl_pch = 3.694e-09       
 + bl_pch_enbl =   0.8000        
-+ blb =   0.8000        
++ blb =   0.7951        
 + hac_wlx =   0.            
 + har_blbx =   0.8000        
 + har_blx =   0.8000        
@@ -25,16 +25,16 @@
 + vdd =   0.8000        
 + vdd_arr =   0.8000        
 + vss =   0.            
-+ wl = 3.331e-09       
-+ wl_enbl =   0.8000        
-+ xsram.q = 1.462e-14       
++ wl =   0.8000        
++ wl_enbl =   0.            
++ xsram.q = 8.100e-15       
 + xsram.qb =   0.8000        
-+ xsram_har.q = 7.471e-12       
++ xsram_har.q = 5.126e-12       
 + xsram_har.qb =   0.8000        
-+ xsram_hac.q = 7.471e-12       
++ xsram_hac.q = 5.489e-06       
 + xsram_hac.qb =   0.8000        
-+ xsa.com_n =   0.6407        
-+ xsa.int_lft =   0.8000        
-+ xsa.int_rgt =   0.8000        
-+ xsa.node_x = 7.153e-09       
++ xsa.com_n =   0.6063        
++ xsa.int_lft =   0.7247        
++ xsa.int_rgt =   0.7747        
++ xsa.node_x = 4.891e-08       
 ***   END: Saved Operating Point ***                     
