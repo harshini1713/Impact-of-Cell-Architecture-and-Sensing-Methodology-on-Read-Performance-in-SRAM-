@@ -187,7 +187,9 @@ Xnor1  SL_LFT  SL_RGT  Q  VDD  VSS  NOR2_normal
 
 .meas WL2Q_delay param='tq_fin - twl_rgt_init'
 
-
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.8n
+.meas tran bl_pch_rgt_rise     WHEN v(bl_pch_rgt) = vdd_half rise=1
+.meas tran WL_rgt_fall         WHEN v(WL_RGT)     = vdd_half fall=1
+ 
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=bl_pch_rgt_rise TO=WL_rgt_fall
 
 .end
