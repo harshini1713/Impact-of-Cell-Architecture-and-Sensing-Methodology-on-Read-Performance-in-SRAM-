@@ -39,6 +39,9 @@ Vvss   VSS  0        0
 Cbl     BL   0 18.432f
 Cblb    BLB  0 18.432f
 Cwl     WL   0 56.72f
+Crbl    RBL  0 18.432f
+Crwl    RWL  0 56.72f
+
 Cout    Q    0 2f
 ******************************************************
 
@@ -50,37 +53,33 @@ Xp Out In vdd vdd pfet1 W = '22n'
 Xn Out In vss vss nfet1 W = '44n'
 .ends
 
-*----------------------------------------------------
-* 10T SRAM / Register-File Bitcell
-* Interface unchanged:   wl bl blb vdd vss
-*   - WL also plays role of WWL/RWL
-*   - BL is the single-ended read bitline (RBR)
-*   - BL/BLB used for write as before
-*   Devices:
-*   - 4T latch (two inverters)
-*   - 2T write access (X1a, X1b)
-*   - 2T read stack (Xrd1, Xrd2)
-*   - 2T read buffer inverter (Xrb_inv) --> total 10T
-*----------------------------------------------------
-.subckt SRAM wl bl blb vdd vss 
+.subckt SRAM WWL WBL WBR RWL RBL vdd vss
+* Internal nodes
+* q, qb : storage
+* qr    : read inverter output
+* nrd   : series node in read stack
 
-* Cross-coupled storage inverters (4T)
-X1 q  qb vdd vss INVERTER_normal
-X2 qb q  vdd vss INVERTER_normal
+* Cross-coupled inverters (4T)
+Xcore1 q  qb vdd vss INVERTER_normal
+Xcore2 qb q  vdd vss INVERTER_normal
 
-* Write access transistors (2T)
-X1a q   wl bl  vss nfet1 W ='33n'     * WBL <-> Q (write)
-X1b qb  wl blb vss nfet1 W ='33n'     * WBR <-> QB (write)
+* Write access devices (2T), controlled by WWL
+Xwwl_q   q   WWL WBL vss nfet1 W='33n'
+Xwwl_qb  qb  WWL WBR vss nfet1 W='33n'
 
-* Read buffer inverter (2T) : QB -> qrb
-Xrb_inv qb qrb vdd vss INVERTER_normal
+* ---------------------------------------------------------
+* Read Port (4T): M7, M8, M9, M10
+* ---------------------------------------------------------
+Xm9  q_int qb  vdd vdd pfet1 W='33n'
 
-* Read stack (2T) on BL, gated by WL & buffered QB
-* BL --Xrd1-- node_r --Xrd2-- GND
-Xrd1 bl     wl   node_r vss nfet1 W='33n'   * top device, gate = WL (RWL)
-Xrd2 node_r qrb  vss    vss nfet1 W='33n'   * bottom device, gate = buffered QB
+Xm7  q_mid qb  vss vss nfet1 W='33n'
 
-* Initial conditions
+Xm10 q_int RWL q_mid vss nfet1 W='33n'
+
+Xm8  RBL   RWL q_int vss nfet1 W='33n'
+
+* Store a '1' so that read discharges RBL:
+* q = 1, qb = 0  → qr = 1 → read stack ON
 .ic V(q)  = 0
 .ic V(qb) = 0.8
 
@@ -91,21 +90,27 @@ Xrd2 node_r qrb  vss    vss nfet1 W='33n'   * bottom device, gate = buffered QB
 ******************************************************
 
 * Single cell used with SA / BL drivers
-Xsram WL BL BLB VDD VSS SRAM M = 1
-
+Xsram      WL    BL    BLB    RWL    RBL    VDD    VSS   SRAM    M = 1
 *** HA ROW ***
-Xsram_har WL HAR_BLx HAR_BLBx VDD_ARR VSS SRAM M = 511
-Vhar1 HAR_BLx  0 0.8
-Vhar2 HAR_BLBx 0 0.8
+Xsram_har  WL          HAR_BLx    HAR_BLBx     RWL       HAR_RBLx     VDD_ARR   VSS   SRAM M = 511
+Vhar1      HAR_BLx     0 0.8
+Vhar2      HAR_BLBx    0 0.8
+Vhar3      HAR_RBLx    0 0.8
 
 *** HA COL ***
-Xsram_hac HAC_WLx BL BLB VDD_ARR VSS SRAM M = 511
-Vhac1 HAC_WLx 0 pwl 0 0 
+Xsram_hac   HAC_WLx    BL         BLB          HAC_RWLx   RBL         VDD_ARR   VSS   SRAM M = 511
+Vhac1       HAC_WLx  0 0 
+Vhac2       HAC_RWLx 0 0 
 
-*Vwl1 WL 0 pwl 0 0 9n 0 9.1n 0.8  
-Vwl_enbl wl_enbl 0 pwl  0 0.8   9.0n 0.8   9.05n 0  10.05n 0  10.1n 0.8
-Xpu1 WL  wl_enbl vdd vdd pfet1 W = '720n'
-Xpd1 WL  wl_enbl gnd gnd nfet1 W = '360n'
+* WL Driver  
+Vwl_enbl         wl_enbl         0 0.8 
+Xpu1 WL          wl_enbl         vdd_arr     vdd_arr  pfet1 W = '720n'
+Xpd1 WL          wl_enbl         gnd         gnd      nfet1 W = '360n'
+
+* WL Driver for RWL
+Vrwl_enbl       rwl_enbl       0              pwl      0 0.8    9.0n 0.8    9.05n 0  10.05n 0  10.1n 0.8
+Xpu2            RWL            rwl_enbl       vdd      vdd      pfet1 W = '720n'
+Xpd2            RWL            rwl_enbl       gnd      gnd      nfet1 W = '360n'
 
 *Vbl BL 0 pwl 0 0.8 
 *Vblb BLB 0 pwl 0 0
@@ -113,33 +118,37 @@ Xpd1 WL  wl_enbl gnd gnd nfet1 W = '360n'
 * ------------------------------------------------
 * Precharge / bitline driver logic
 * ------------------------------------------------
-Vbl_pch           bl_pch_enbl   0 pwl 0 0.8   8.9n 0.8   8.95n 0   10.05n 0   10.1n 0.8
-Xpu_bl_pch_enbl   bl_pch   bl_pch_enbl vdd vdd pfet1 W = '360n'
-Xpd_bl_pch_enbl   bl_pch   bl_pch_enbl  gnd gnd nfet1 W = '180n'
+Vbl_pch           bl_pch_enbl   0 0.8   
+Xpu_bl_pch_enbl   bl_pch   bl_pch_enbl  vdd_arr  vdd_arr pfet1 W = '360n'
+Xpd_bl_pch_enbl   bl_pch   bl_pch_enbl  gnd      gnd     nfet1 W = '180n'
 
-Xpch1     BL  bl_pch  vdd vdd pfet1 W = '360n'
-Xpch2     BLB bl_pch  vdd vdd pfet1 W = '360n'
-Xpeq      BL  bl_pch  BLB vdd pfet1 W = '360n'
+Xpch1            BL  bl_pch  vdd_arr  vdd_arr pfet1 W = '360n'
+Xpch2            BLB bl_pch  vdd_arr  vdd_arr pfet1 W = '360n'
+Xpeq             BL  bl_pch  BLB      vdd_arr pfet1 W = '360n'
 
+* Precharge RBL
+Vrbl_pch             rbl_pch_enbl    0  pwl 0 0.8   8.9n 0.8   8.95n 0   10.05n 0   10.1n 0.8
+Xpu_rbl_pch_enbl     rbl_pch         rbl_pch_enbl  vdd vdd pfet1  W = '360n'
+Xpd_rbl_pch_enbl     rbl_pch         rbl_pch_enbl  gnd gnd nfet1  W = '180n'
+Xpch_rbl             RBL             rbl_pch       vdd vdd pfet1  W = '360n'
 
 *** 1. Sense Precharge Enable (SPE) ***
 Vspe_enbl spe_enbl 0 pwl 0 0.8   8.9n 0.8   8.95n 0    10.05n 0   10.1n 0.8
 Xpu_spe   SPE spe_enbl vdd vdd pfet1 W = '360n'
 Xpd_spe   SPE spe_enbl gnd gnd nfet1 W = '180n'
 
-
 *** 2. Sense Enable (SE) ***
 ***Fire the sense amp when the BL discharges around 50-60mV (9.44 ns)
-Vse_enbl  se_enbl    0 pwl   0 0.8   9.25n 0.8   9.3n 0   10.05n 0   10.1n 0.8
+Vse_enbl  se_enbl    0 pwl   0 0.8   9.38n 0.8   9.43n 0   10.05n 0   10.1n 0.8
 Xpu3      SE se_enbl vdd     vdd     pfet1 W = '720n'
 Xpd3      SE se_enbl gnd     gnd     nfet1 W = '180n'
 
-
+Vref_sa  node_ref  0  0.8
 * ------------------------------------------------
 * SENSE AMPLIFIER INSTANTIATION
 * Port Map (per latch_sa.sp): BL BLB SE SPE Q VDD VSS
 * ------------------------------------------------
-Xsa  BL BLB SE SPE Q VDD VSS LATCH_SA 
+Xsa  RBL node_ref SE SPE Q VDD VSS LATCH_SA 
 
 ******************************************************
 *  ANALYSIS, PROBES, MEASUREMENTS
@@ -148,11 +157,11 @@ Xsa  BL BLB SE SPE Q VDD VSS LATCH_SA
 
 .probe tran v(BL) v(BLB) v(SE) v(Q)
 
-.meas tran twl_init   WHEN v(WL)=vdd_half rise=1
-.meas tran tq_fin     WHEN v(Q) =vdd_half fall=1
+.meas tran twl_init   WHEN v(RWL)=vdd_half rise=1
+.meas tran tq_fin     WHEN v(Q) = vdd_half fall=1
 
-.meas tran T_WL_rise_SE_rise    TRIG v(WL)   val=vdd_half rise=1  TARG v(SE)   val=vdd_half rise=1
-.meas tran T_SE_rise_Q_fall     TRIG v(SE)   val=vdd_half rise=1  TARG v(Q)    val=vdd_half fall=1
+.meas tran T_WL_rise_SE_rise    TRIG v(RWL)   val=vdd_half rise=1  TARG v(SE)   val=vdd_half rise=1
+.meas tran T_SE_rise_Q_fall     TRIG v(SE)   val=vdd_half rise=1   TARG v(Q)    val=vdd_half fall=1
 .meas WL2Q_delay param='tq_fin - twl_init'
 
 *.meas tran T_sense_time   WHEN v(SE)    = vdd_half rise=1
@@ -160,11 +169,15 @@ Xsa  BL BLB SE SPE Q VDD VSS LATCH_SA
 *.meas tran V_BLB_at_sense FIND v(BLB) AT='T_sense_time'
 *.meas tran BL_Delta_V     PARAM='abs(V_BL_at_sense - V_BLB_at_sense)'
 
-.meas tran BL_Voltage  FIND v(BL)  AT=9.3n
-.meas tran BLB_Voltage FIND v(BLB) AT=9.3n
-.meas tran Delta_V PARAM='BLB_Voltage - BL_Voltage'
+.meas tran RBL_Voltage       FIND v(RBL)  AT=9.43n
+.meas tran node_ref_Voltage  FIND v(node_ref)  AT=9.43n
+.meas tran Delta_V           PARAM = 'node_ref_Voltage - RBL_Voltage'
 
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.5n
+.meas tran rbl_pch_rise    WHEN v(rbl_pch) = vdd_half rise=1
+.meas tran RWL_fall        WHEN v(RWL)     = vdd_half fall=1
+ 
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM = rbl_pch_rise TO = RWL_fall
+
+*.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.5n
 
 .end
-
