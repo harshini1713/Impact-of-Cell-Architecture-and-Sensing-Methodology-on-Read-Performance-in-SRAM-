@@ -44,10 +44,13 @@ Cblb_rgt    BLB_RGT  0 9.216f
 
 * Added Cap for 8T Read Bitline
 Crbl_rgt    RBL_RGT  0 9.216f
+Crbl_lft    RBL_LFT  0 9.216f
 
-Cwl_lft     WL_LFT   0 28.36f
-Cwl_rgt     WL_RGT   0 28.36f
-Cout        Q        0 2f
+Crwl_lft    RWL_LFT   0 28.36f
+Crwl_rgt    RWL_RGT   0 28.36f
+Cwl_lft     WL_LFT    0 28.36f
+Cwl_rgt     WL_RGT    0 28.36f
+Cout        Q         0 2f
 ******************************************************
 
 .subckt INVERTER_normal In Out vdd vss
@@ -91,17 +94,20 @@ Xn Out In vss vss nfet1 W = '120n'
 *****************************************************************************
 *** Left Sub-array Start (Dummy/Inactive) ***
 * Port Map: wwl wbl wbr rwl rbl vdd vss
-Xsram1          WL_LFT  BL_LFT  BLB_LFT  gnd  rbl_dummy1 VDD_ARR VSS SRAM M = 1
-XINVERTER_special_LFT   BL_LFT  SL_LFT   vdd  vss INVERTER_special 
+Xsram1                  WL_LFT   BL_LFT  BLB_LFT  RWL_LFT  RBL_LFT         VDD_ARR   VSS      SRAM M = 1
+XINVERTER_special_LFT   RBL_LFT  SL_LFT  vdd      vss      INVERTER_special 
 
 *** HA ROW ***
-Xsram_har_LFT    WL_LFT HAR_BL_LFTx HAR_BLB_LFTx gnd rbl_dummy2 VDD_ARR VSS SRAM M = 255
-Vhar1_LFT    HAR_BL_LFTx  0 0.8
-Vhar2_LFT    HAR_BLB_LFTx 0 0.8
-
+Xsram_har_LFT    WL_LFT         HAR_BL_LFTx   HAR_BLB_LFTx       RWL_LFT         HAR_RBL_LFTx   VDD_ARR   VSS   SRAM M = 255
+Vhar1_LFT        HAR_BL_LFTx  0 0.8
+Vhar2_LFT        HAR_BLB_LFTx 0 0.8
+Vhar3_LFT        HAR_RBL_LFTx 0 0.8
+     
 *** HA COL ***
-Xsram_hac_LFT    HAC_WL_LFTx BL_LFT BLB_LFT gnd rbl_dummy3 VDD_ARR VSS SRAM M = 255
-Vhac1_LFT        HAC_WL_LFTx 0 0 
+Xsram_hac_LFT    HAC_WL_LFTx     BL_LFT       BLB_LFT            HAC_RWL_LFTx    RBL_LFT        VDD_ARR   VSS   SRAM M = 255
+Vhac1_LFT        HAC_WL_LFTx  0 0 
+Vhac2_LFT        HAC_RWL_LFTx 0 0 
+
 *** Left Sub-array End ***
 *****************************************************************************
 
@@ -110,63 +116,82 @@ Vhac1_LFT        HAC_WL_LFTx 0 0
 * Port Map: wwl wbl wbr rwl rbl vdd vss
 * Note: Write ports grounded. RWL and RBL connected to active drivers.
 *****************************************************************************
-Xsram2          gnd     BL_RGT   BLB_RGT  RWL_RGT  RBL_RGT  VDD VSS SRAM M = 1
+Xsram2          WL_RGT     BL_RGT   BLB_RGT  RWL_RGT  RBL_RGT  VDD VSS SRAM M = 1
 
 * SENSING: Connected to RBL_RGT (Read Bitline)
 * If RBL drops, Inverter Output (SL_RGT) rises.
 XINVERTER_special_RGT   RBL_RGT  SL_RGT   vdd      vss INVERTER_special
 
 *** HA ROW ***
-Xsram_har_RGT    gnd HAR_BL_RGTx HAR_BLB_RGTx RWL_RGT HAR_RBL_RGTx VDD_ARR VSS SRAM M = 255
-Vhar1_RGT    HAR_BL_RGTx  0 0.8
-Vhar2_RGT    HAR_BLB_RGTx 0 0.8
+Xsram_har_RGT    WL_RGT         HAR_BL_RGTx   HAR_BLB_RGTx   RWL_RGT       HAR_RBL_RGTx   VDD_ARR   VSS   SRAM M = 255
+Vhar1_RGT        HAR_BL_RGTx        0 0.8
+Vhar2_RGT        HAR_BLB_RGTx       0 0.8
+Vhar3_RGT        HAR_RBL_RGTx       0 0.8
 
 *** HA COL ***
-Xsram_hac_RGT    HAC_WL_RGTx BL_RGT BLB_RGT gnd HAC_RBL_RGTx VDD_ARR VSS SRAM M = 255
-Vhac1_RGT        HAC_WL_RGTx 0 0 
+Xsram_hac_RGT    HAC_WL_RGTx    BL_RGT        BLB_RGT        HAC_RWL_RGTx   RBL_RGT       VDD_ARR   VSS   SRAM M = 255
+Vhac1_RGT        HAC_WL_RGTx  0 0 
+Vhac2_RGT        HAC_RWL_RGTx 0 0 
+
 *** Right Sub-array End ***
 *****************************************************************************
 
 **** WL Driver for left subarray (turned off)****
 Vwl_enbl_LFT    wl_enbl_LFT        0              0.8
-Xpu2_LFT    WL_LFT             wl_enbl_LFT    vdd_arr     vdd_arr     pfet1 W = '720n'
-Xpd2_LFT    WL_LFT             wl_enbl_LFT    gnd         gnd         nfet1 W = '360n'
+Xpu2_LFT        WL_LFT             wl_enbl_LFT    vdd_arr     vdd_arr     pfet1 W = '720n'
+Xpd2_LFT        WL_LFT             wl_enbl_LFT    gnd         gnd         nfet1 W = '360n'
+**** RWL Driver for left subarray (turned off)****
+Vrwl_enbl_LFT   rwl_enbl_LFT       0               0.8
+Xpu3_LFT        RWL_LFT            rwl_enbl_LFT    vdd_arr     vdd_arr     pfet1 W = '720n'
+Xpd3_LFT        RWL_LFT            rwl_enbl_LFT    gnd         gnd         nfet1 W = '360n'
 ************************************
 
 **** READ WL Driver for right subarray (Active) ****
+Vwl_enbl_RGT    wl_enbl_RGT        0              0.8
+Xpu2_RGT        WL_RGT             wl_enbl_RGT    vdd_arr     vdd_arr     pfet1 W = '720n'
+Xpd2_RGT        WL_RGT             wl_enbl_RGT    gnd         gnd         nfet1 W = '360n'
 * Drives RWL_RGT
-Vwl_enbl_RGT    wl_enbl_RGT        0        pwl    0 0.8    9.0n 0.8    9.05n 0  10.05n 0  10.1n 0.8
-Xpu2_RGT    RWL_RGT wl_enbl_RGT vdd      vdd     pfet1 W = '720n'
-Xpd2_RGT    RWL_RGT wl_enbl_RGT gnd      gnd     nfet1 W = '360n'
-************************************
+Vrwl_enbl_RGT   rwl_enbl_RGT       0              pwl      0 0.8    9.0n 0.8    9.05n 0  10.05n 0  10.1n 0.8
+Xpu3_RGT        RWL_RGT            rwl_enbl_RGT   vdd      vdd      pfet1 W = '720n'
+Xpd3_RGT        RWL_RGT            rwl_enbl_RGT   gnd      gnd      nfet1 W = '360n'
 
+************************************
 
 * ------------------------------------------------
 * Precharge Logic
 * ------------------------------------------------
 **** BL Pre-charge left (turned off)****
 Vbl_pch_lft           bl_pch_lft_enbl   0 0.8
-Xpu_bl_pch_enbl_lft   bl_pch_lft        bl_pch_lft_enbl  vdd_arr vdd_arr pfet1  W = '360n'
-Xpd_bl_pch_enbl_lft   bl_pch_lft        bl_pch_lft_enbl  gnd          gnd nfet1  W = '180n'
+Xpu_bl_pch_enbl_lft   bl_pch_lft        bl_pch_lft_enbl  vdd_arr      vdd_arr pfet1  W = '360n'
+Xpd_bl_pch_enbl_lft   bl_pch_lft        bl_pch_lft_enbl  gnd          gnd     nfet1  W = '180n'
 
 Xpch1_lft      BL_LFT    bl_pch_lft    vdd_arr   vdd_arr   pfet1  W = '360n'
 Xpch2_lft      BLB_LFT   bl_pch_lft    vdd_arr   vdd_arr   pfet1  W = '360n'
 Xpeq_lft       BL_LFT    bl_pch_lft    BLB_LFT   vdd_arr   pfet1  W = '360n'
+
+*** RBL Pre-charge 
+Vrbl_pch_lft           rbl_pch_lft_enbl    0  0.8 
+Xpu_rbl_pch_enbl_lft   rbl_pch_lft         rbl_pch_lft_enbl  vdd_arr  vdd_arr   pfet1  W = '360n'
+Xpd_rbl_pch_enbl_lft   rbl_pch_lft         rbl_pch_lft_enbl  gnd      gnd       nfet1  W = '180n'
+Xpch_rbl_lft           RBL_LFT             rbl_pch_lft       vdd_arr  vdd_arr   pfet1  W = '360n'
+
 *****************************
 
 **** BL and RBL Pre-charge Right ****
 * Control signal pulses 0 -> 1 -> 0 to precharge before Read
-Vbl_pch_rgt           bl_pch_rgt_enbl   0 pwl 0 0.8   8.9n 0.8   8.95n 0   10.05n 0   10.1n 0.8
-Xpu_bl_pch_enbl_rgt   bl_pch_rgt        bl_pch_rgt_enbl  vdd vdd pfet1  W = '360n'
-Xpd_bl_pch_enbl_rgt   bl_pch_rgt        bl_pch_rgt_enbl  gnd gnd nfet1  W = '180n'
+Vbl_pch_rgt           bl_pch_rgt_enbl   0 0.8  
+Xpu_bl_pch_enbl_rgt   bl_pch_rgt        bl_pch_rgt_enbl  vdd_arr  vdd_arr pfet1  W = '360n'
+Xpd_bl_pch_enbl_rgt   bl_pch_rgt        bl_pch_rgt_enbl  gnd gnd          nfet1  W = '180n'
 
-* 6T BL Precharge (Maintenance)
-Xpch1_rgt      BL_RGT   bl_pch_rgt    vdd      vdd   pfet1  W = '360n'
-Xpch2_rgt      BLB_RGT  bl_pch_rgt    vdd      vdd   pfet1  W = '360n'
-Xpeq_rgt       BL_RGT   bl_pch_rgt    BLB_RGT  vdd   pfet1  W = '360n'
+Xpch1_rgt      BL_RGT   bl_pch_rgt    vdd_arr      vdd_arr   pfet1  W = '360n'
+Xpch2_rgt      BLB_RGT  bl_pch_rgt    vdd_arr      vdd_arr   pfet1  W = '360n'
+Xpeq_rgt       BL_RGT   bl_pch_rgt    BLB_RGT      vdd_arr   pfet1  W = '360n'
 
 * 8T Read Bitline Precharge
-Xpch_rbl_rgt   RBL_RGT  bl_pch_rgt    vdd      vdd   pfet1  W = '360n'
+Vrbl_pch_rgt           rbl_pch_rgt_enbl    0  pwl 0 0.8   8.9n 0.8   8.95n 0   10.05n 0   10.1n 0.8
+Xpu_rbl_pch_enbl_rgt   rbl_pch_rgt         rbl_pch_rgt_enbl  vdd vdd pfet1  W = '360n'
+Xpd_rbl_pch_enbl_rgt   rbl_pch_rgt         rbl_pch_rgt_enbl  gnd gnd nfet1  W = '180n'
+Xpch_rbl_rgt           RBL_RGT             rbl_pch_rgt       vdd vdd pfet1  W = '360n'
 *****************************
 
 ****NOR Gate****
@@ -190,11 +215,16 @@ Xnor1  SL_LFT  SL_RGT  Q  VDD  VSS  NOR2_normal
 .meas tran twl_rgt_init   WHEN v(RWL_RGT) = vdd_half rise=1
 .meas tran tq_fin         WHEN v(Q)       = vdd_half fall=1
 
-.meas tran T_WL_rise_SL_RGT_rise    TRIG v(RWL_RGT)   val=vdd_half rise=1  TARG v(SL_RGT)   val=vdd_half rise=1
-.meas tran T_SL_RGT_rise_Q_fall      TRIG v(SL_RGT)   val=vdd_half rise=1  TARG v(Q)         val=vdd_half fall=1
+.meas tran T_WL_rise_SL_RGT_rise     TRIG v(RWL_RGT)   val=vdd_half rise=1  TARG v(SL_RGT)    val=vdd_half rise=1
+.meas tran T_SL_RGT_rise_Q_fall      TRIG v(SL_RGT)    val=vdd_half rise=1  TARG v(Q)         val=vdd_half fall=1
 
 .meas WL2Q_delay param='tq_fin - twl_rgt_init'
 
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.8n
+.meas tran rbl_pch_rgt_rise    WHEN v(rbl_pch_rgt) = vdd_half rise=1
+.meas tran RWL_rgt_fall        WHEN v(RWL_RGT)     = vdd_half fall=1
+ 
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM = rbl_pch_rgt_rise TO = RWL_rgt_fall
+
+*.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.8n
 
 .end
