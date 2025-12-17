@@ -138,7 +138,11 @@ Xsa  BL BLB SE SPE Q VDD VSS LATCH_SA
 .meas tran BLB_Voltage FIND v(BLB) AT=9.3n
 .meas tran Delta_V PARAM='BLB_Voltage - BL_Voltage'
 
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.5n
+.meas tran bl_pch_rise     WHEN v(bl_pch) = vdd_half rise=1
+.meas tran WL_fall         WHEN v(WL)     = vdd_half fall=1
+ 
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=bl_pch_rise TO=WL_fall
+
+*.meas tran E_read_1  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.5n
 
 .end
-
