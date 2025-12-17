@@ -48,14 +48,15 @@ Xp Out In vdd vdd pfet1 W = '22n'
 Xn Out In vss vss nfet1 W = '44n'
 .ends
 
-* --- MODIFIED: 4T SRAM Topology (Diagram a) ---
 .subckt SRAM wl bl blb vdd vss 
+* --- 4T SRAM Topology (Diagram a) ---
 * PMOS Access Transistors (Gate -> WL, Source/Drain -> BL/Storage)
-* ACTIVE LOW WL required to turn these ON.
+* Note: PMOS access requires Active-Low WL.
 Xacc_l  q   wl  bl   vdd  pfet1  W='33n'
 Xacc_r  qb  wl  blb  vdd  pfet1  W='33n'
 
-* NMOS Driver Transistors (Cross-Coupled, Loadless)
+* NMOS Driver Transistors (Cross-Coupled)
+* Source -> VSS, Drain -> Storage, Gate -> Opposite Storage
 Xdriv_l q   qb  vss  vss  nfet1  W='44n'
 Xdriv_r qb  q   vss  vss  nfet1  W='44n'
 
@@ -75,24 +76,22 @@ Vhar2 HAR_BLBx 0 0.8
 Xsram_hac HAC_WLx BL BLB VDD_ARR VSS SRAM M = 511
 Vhac1 HAC_WLx 0 pwl 0 0 
 
-* --- MODIFIED: Wordline Stimulus ---
-* Target: WL must be High (0.8V) to be OFF, and Low (0V) to be ON.
-* Driver: Inverter (Xpu1/Xpd1).
-* Input (wl_enbl): Must be Low (0V) to Idle, and High (0.8V) to Active.
-* Timing: Pulse High starting at 9.05n.
-Vwl_enbl wl_enbl 0 pwl  0 0   9.0n 0   9.05n 0.8  10.05n 0.8  10.1n 0
-
+*Vwl1 WL 0 pwl 0 0 9n 0 9.1n 0.8  
+Vwl_enbl wl_enbl 0 pwl  0 0.8   9.0n 0.8   9.05n 0  10.05n 0  10.1n 0.8
 Xpu1 WL  wl_enbl vdd vdd pfet1 W = '720n'
 Xpd1 WL  wl_enbl gnd gnd nfet1 W = '360n'
 
+*Vbl BL 0 pwl 0 0.8 
+*Vblb BLB 0 pwl 0 0
 
 * ------------------------------------------------
 * Precharge / bitline driver logic
+* Approach:
+*  - Drive BL/BLB precharge enable high from 0 to 8.9ns (PFET ON -> precharge to VDD)
+*  - At 8.91ns, deassert precharge enable -> PFET off => BL/BLB float
+*  - WL asserted at 9.0ns -> cell connects to BL/BLB and produces small differential
+*  - SAEN asserted at 9.5ns to amplify the difference
 * ------------------------------------------------
-* Vbl_pch is Active High logic for the signal source.
-* Driver (Xpu/Xpd) is an inverter -> 'bl_pch' node is Active Low.
-* PFETs (Xpch) turn ON when 'bl_pch' is Low.
-* Sequence: 0 to 8.9ns (High input -> Low gate -> PCH ON).
 Vbl_pch           bl_pch_enbl   0 pwl 0 0.8   8.9n 0.8   8.95n 0   10.05n 0   10.1n 0.8
 Xpu_bl_pch_enbl   bl_pch   bl_pch_enbl vdd vdd pfet1 W = '360n'
 Xpd_bl_pch_enbl   bl_pch   bl_pch_enbl  gnd gnd nfet1 W = '180n'
@@ -106,15 +105,14 @@ Xpeq      BL  bl_pch  BLB vdd pfet1 W = '360n'
 * Needs to be 0 (ON) initially, then switch to 1 (OFF) before SE fires.
 * Logic: Input 0.8 -> Buffer Out 0 (SPE=0). Input 0 -> Buffer Out 1 (SPE=1).
 * Switch at 9.4ns (100ps before SE).
-Vspe_enbl spe_enbl 0 pwl 0 0.8   8.9n 0.8   8.95n 0     10.05n 0   10.1n 0.8
+Vspe_enbl spe_enbl 0 pwl 0 0.8   8.9n 0.8   8.95n 0    10.05n 0   10.1n 0.8
 Xpu_spe   SPE spe_enbl vdd vdd pfet1 W = '360n'
 Xpd_spe   SPE spe_enbl gnd gnd nfet1 W = '180n'
 
 
 *** 2. Sense Enable (SE) ***
-* Fire at 9.3n (approx)
-* Input Logic: Active Low pulse (starts 0.8, goes 0).
-* Driver Output (SE): Active High pulse.
+* Fire at 9.5ns 
+***Fire the sense amp when the BL discharges around 50-60mV (9.44 ns)
 Vse_enbl  se_enbl    0 pwl   0 0.8   9.25n 0.8   9.3n 0   10.05n 0   10.1n 0.8
 Xpu3      SE se_enbl vdd     vdd     pfet1 W = '720n'
 Xpd3      SE se_enbl gnd     gnd     nfet1 W = '180n'
@@ -124,39 +122,36 @@ Xpd3      SE se_enbl gnd     gnd     nfet1 W = '180n'
 * SENSE AMPLIFIER INSTANTIATION
 * ------------------------------------------------
 * Port Map: BL BLB SE SPE Q Q_bar VDD VSS
+
 Xsa  BL BLB SE SPE Q VDD VSS LATCH_SA 
 
 .tran 1p 20n
 
-.probe tran v(BL) v(BLB) v(SE) v(Q) v(WL)
+.probe tran v(BL) v(BLB) v(SE) v(Q)
 
-* --- MODIFIED: Measurements for Active-Low Wordline ---
-
-* Trigger on falling edge of WL (Start of Read)
-.meas tran twl_init   WHEN v(WL)=vdd_half fall=1
-
+.meas tran twl_init   WHEN v(WL)=vdd_half rise=1
 .meas tran tq_fin     WHEN v(Q) =vdd_half fall=1
 
-* Changed Trigger to FALLING edge of WL
-.meas tran T_WL_fall_SE_rise    TRIG v(WL)   val=vdd_half fall=1  TARG v(SE)   val=vdd_half rise=1
-
+.meas tran T_WL_rise_SE_rise    TRIG v(WL)   val=vdd_half rise=1  TARG v(SE)   val=vdd_half rise=1
 .meas tran T_SE_rise_Q_fall     TRIG v(SE)   val=vdd_half rise=1  TARG v(Q)    val=vdd_half fall=1
-
 .meas WL2Q_delay param='tq_fin - twl_init'
+
+
+*.meas tran T_sense_time   WHEN v(SE)    = vdd_half rise=1
+*.meas tran V_BL_at_sense  FIND v(BL)  AT='T_sense_time'
+*.meas tran V_BLB_at_sense FIND v(BLB) AT='T_sense_time'
+*.meas tran BL_Delta_V     PARAM='abs(V_BL_at_sense - V_BLB_at_sense)'
+
 
 .meas tran BL_Voltage  FIND v(BL)  AT=9.3n
 .meas tran BLB_Voltage FIND v(BLB) AT=9.3n
 .meas tran Delta_V PARAM='BLB_Voltage - BL_Voltage'
 
-* 1. Define Start Point: When Precharge Ends (Gate goes High -> PFET OFF)
-.meas tran bl_pch_rgt_rise     WHEN v(bl_pch) = vdd_half rise=1
+.meas tran bl_pch_rise     WHEN v(bl_pch) = vdd_half rise=1
+.meas tran WL_fall         WHEN v(WL)     = vdd_half fall=1
+ 
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=bl_pch_rise TO=WL_fall
 
-* 2. Define End Point: When Wordline turns OFF (Active-Low WL goes High -> PMOS OFF)
-* NOTE: Changed from 'fall=1' to 'rise=1' because this is a 4T PMOS cell.
-.meas tran WL_rgt_end          WHEN v(WL)     = vdd_half rise=1
-
-* 3. Integrate Power between these two points
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=bl_pch_rgt_rise TO=WL_rgt_end
-
+*.meas tran E_read_1  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.5n
 
 .end
