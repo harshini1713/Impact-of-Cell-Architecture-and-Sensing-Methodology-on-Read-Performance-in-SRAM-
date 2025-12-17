@@ -80,12 +80,12 @@ Xn Out In vss vss nfet1 W = '120n'
 *****************************************************************************
 *** Left Sub-array Start (Dummy/Inactive) ***
 * Port Map: wl bl vdd vss
-Xsram1          WL_LFT  BL_LFT  VDD_ARR VSS SRAM M = 1
-XINVERTER_special_LFT   BL_LFT  SL_LFT   vdd  vss INVERTER_special 
+Xsram1                  WL_LFT  BL_LFT   VDD_ARR VSS SRAM M = 1
+XINVERTER_special_LFT   BL_LFT  SL_LFT   vdd     vss INVERTER_special 
 
 *** HA ROW ***
 Xsram_har_LFT    WL_LFT HAR_BL_LFTx VDD_ARR VSS SRAM M = 255
-Vhar1_LFT    HAR_BL_LFTx  0 0.8
+Vhar1_LFT        HAR_BL_LFTx  0 0.8
 
 *** HA COL ***
 Xsram_hac_LFT    HAC_WL_LFTx BL_LFT VDD_ARR VSS SRAM M = 255
@@ -156,7 +156,7 @@ Xn2 Q      B    vss   vss  nfet1 W='360n'
 .ends NOR2_normal
 ****NOR Gate****
 
-Xnor1  SL_LFT  SL_RGT  Q_sense  VDD  VSS  NOR2_normal
+Xnor1  SL_LFT  SL_RGT  Q  VDD  VSS  NOR2_normal
 
 .tran 1p 20n
 * Probes updated for 5T Single-Ended Read
@@ -165,14 +165,19 @@ Xnor1  SL_LFT  SL_RGT  Q_sense  VDD  VSS  NOR2_normal
 * Measurements
 * 1. When WL rises (Start of Access)
 .meas tran twl_rgt_init   WHEN v(WL_RGT) = vdd_half rise=1
-* 2. When the Sense Amplifier Output (SL_RGT) flips (indicating successful read)
-.meas tran tq_fin         WHEN v(SL_RGT) = vdd_half rise=1
+.meas tran tq_fin         WHEN v(Q)      = vdd_half fall=1
 
 .meas tran T_WL_rise_SL_RGT_rise    TRIG v(WL_RGT)   val=vdd_half rise=1  TARG v(SL_RGT)   val=vdd_half rise=1
+.meas tran T_SL_RGT_rise_Q_fall     TRIG v(SL_RGT)   val=vdd_half rise=1  TARG v(Q)        val=vdd_half fall=1
 
-* "Read Delay": Time from WL activation to Sense Output High
-.meas WL2Sense_delay param='tq_fin - twl_rgt_init'
+.meas WL2Q_delay param='tq_fin - twl_rgt_init'
 
-.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.8n
+.meas tran bl_pch_rgt_rise     WHEN v(bl_pch_rgt) = vdd_half rise=1
+.meas tran WL_rgt_fall         WHEN v(WL_RGT)     = vdd_half fall=1
+ 
+.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=bl_pch_rgt_rise TO=WL_rgt_fall
+
+
+*.meas tran E_read  INTEG par('abs(v(VDD) * i(Vvdd))') FROM=8.9n TO=9.8n
 
 .end
